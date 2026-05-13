@@ -1,0 +1,205 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fdf5e6; /* Tom levemente pastel (Old Lace) */
+  color: #333;
+}
+
+/* =========================================
+   Topo e Navegação[cite: 1]
+========================================= */
+.topo {
+  background-color: #ff6b6b; /* Vermelho/Laranja quente (remete a comida) */
+  color: white;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.topo a {
+  text-decoration: none;
+}
+
+.logo span {
+  font-size: 26px;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.topo ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+.topo ul li a {
+  color: white;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.topo ul li a:hover,
+.topo ul li a.active {
+  background-color: #ee5253;
+}
+
+/* =========================================
+   Área Principal[cite: 1]
+========================================= */
+.principal {
+  padding: 40px;
+  min-height: calc(100vh - 160px); /* Mantém o rodapé no fundo */
+  max-width: 1100px;
+  margin: 20px auto;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+  border-radius: 8px;
+}
+
+.principal h2 {
+  margin-bottom: 25px;
+  color: #2d3436;
+  border-bottom: 3px solid #ff6b6b;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+/* =========================================
+   Formulários e Botão Adicionar[cite: 3]
+========================================= */
+.btn-adicionar {
+  background-color: #10ac84; /* Verde agradável para "Novo item" */
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 25px;
+  transition: background-color 0.2s;
+  display: block;
+}
+
+.btn-adicionar:hover {
+  background-color: #01a3a4;
+}
+
+form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #2d3436;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dfe6e9;
+  border-radius: 4px;
+  font-size: 15px;
+  font-family: inherit;
+  transition: border-color 0.3s;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #ff6b6b;
+}
+
+form button[type="submit"] {
+  background-color: #0984e3;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 15px;
+  transition: background-color 0.2s;
+}
+
+form button[type="submit"]:hover {
+  background-color: #74b9ff;
+}
+
+/* =========================================
+   Tabela de Dados (CRUD)[cite: 3]
+========================================= */
+.tabela-dados {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.tabela-dados th,
+.tabela-dados td {
+  border: 1px solid #dfe6e9;
+  padding: 14px;
+  text-align: left;
+}
+
+.tabela-dados th {
+  background-color: #2d3436;
+  color: white;
+  font-weight: 600;
+}
+
+.tabela-dados tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.tabela-dados tr:hover {
+  background-color: #ffeaa7; /* Destaque suave na linha ao passar o mouse */
+}
+
+/* Botões dentro da tabela */
+.tabela-dados button {
+  padding: 6px 12px;
+  margin-right: 8px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: opacity 0.2s;
+}
+
+.tabela-dados button:hover {
+  opacity: 0.8;
+}
+
+.tabela-dados button:first-child {
+  background-color: #feca57; /* Cor Amarela para o botão de Editar */
+  color: #2d3436;
+}
+
+.tabela-dados button:last-child {
+  background-color: #ff7675; /* Cor Vermelha para o botão de Excluir */
+  color: white;
+}
+
+/* =========================================
+   Rodapé[cite: 1]
+========================================= */
+.rodape {
+  background-color: #2d3436;
+  color: #b2bec3;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  margin-top: auto;
+}

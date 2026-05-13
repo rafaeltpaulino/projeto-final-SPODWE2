@@ -1,0 +1,26 @@
+[
+    {
+      "id": 1,
+      "nome": "Bolo de Cenoura com Chocolate",
+      "categoria": "Sobremesa",
+      "tempo": "45min",
+      "autor": "Amanda Jen",
+      "imagem": "imagens/receitas/bolo-cenoura.jpg"
+    },
+    {
+      "id": 2,
+      "nome": "Lasanha Bolonhesa",
+      "categoria": "Prato Principal",
+      "tempo": "60min",
+      "autor": "Kethelyn Alves",
+      "imagem": "imagens/receitas/lasanha.jpg"
+    },
+    {
+      "id": 3,
+      "nome": "Suco Verde Detox",
+      "categoria": "Bebida",
+      "tempo": "10min",
+      "autor": "Rafael Teixeira",
+      "imagem": "imagens/receitas/suco-verde.jpg"
+    }
+  ]

@@ -1,0 +1,26 @@
+[
+    {
+      "id": 1,
+      "nome": "Vinícius Tiago",
+      "email": "vinicius@email.com",
+      "papel": "Administrador"
+    },
+    {
+      "id": 2,
+      "nome": "Amanda Jen",
+      "email": "amanda@email.com",
+      "papel": "Chef de Cozinha"
+    },
+    {
+      "id": 3,
+      "nome": "Kethelyn Alves",
+      "email": "kethelyn@email.com",
+      "papel": "Membro"
+    },
+    {
+      "id": 4,
+      "nome": "Rafael Teixeira",
+      "email": "rafael@email.com",
+      "papel": "Editor"
+    }
+  ]

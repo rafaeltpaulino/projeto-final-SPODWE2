@@ -1,0 +1,20 @@
+[
+    {
+      "id": 1,
+      "nome": "Prato Principal",
+      "descricao": "Receitas para o almoço e jantar.",
+      "icone": "imagens/categorias/principal.jpg"
+    },
+    {
+      "id": 2,
+      "nome": "Sobremesas",
+      "descricao": "Doces, bolos e tortas.",
+      "icone": "imagens/categorias/sobremesa.jpg"
+    },
+    {
+      "id": 3,
+      "nome": "Bebidas",
+      "descricao": "Sucos, drinks e vitaminas.",
+      "icone": "imagens/categorias/bebida.jpg"
+    }
+  ]
