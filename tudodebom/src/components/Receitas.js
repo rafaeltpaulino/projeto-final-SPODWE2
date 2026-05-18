@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import dadosReceitas from "../dados/receitas.json";
 
-const Receitas = () => {
-  const [listaReceitas, setListaReceitas] = useState(dadosReceitas);
+const Receitas = (props) => {
   const [exibirFormulario, setExibirFormulario] = useState(false);
 
   // Novo state: vai guardar o ID da receita que estamos editando. 
@@ -34,37 +32,7 @@ const Receitas = () => {
     setExibirFormulario(true); // Mostra o form
   };
 
-  const excluirReceita = (id) => {
-    setListaReceitas(listaReceitas.filter(r => r.id !== id));
-  };
-
   // Função adaptada: agora ela Cria ou Edita dependendo do state idEdicao
-  const salvarReceita = (e) => {
-    e.preventDefault(); 
-
-    if (idEdicao) {
-      // MODO EDIÇÃO: Atualiza a lista mapeando os itens. Se achar o ID, substitui os dados.
-      const receitasAtualizadas = listaReceitas.map((receita) => 
-        receita.id === idEdicao 
-          ? { ...receita, nome: nome, categoria: categoria, tempo: tempo, autor: autor } 
-          : receita
-      );
-      setListaReceitas(receitasAtualizadas);
-    } else {
-      // MODO CRIAÇÃO: Cria um novo registro
-      const novaReceita = {
-        id: Date.now(),
-        nome: nome,
-        categoria: categoria,
-        tempo: tempo,
-        autor: autor,
-        imagem: "imagens/receitas/padrao.jpg"
-      };
-      setListaReceitas([...listaReceitas, novaReceita]);
-    }
-
-    resetarFormulario();
-  };
 
   return (
     <main className="principal">
@@ -84,7 +52,7 @@ const Receitas = () => {
       </button>
       
       {exibirFormulario && (
-        <form onSubmit={salvarReceita} style={{ margin: "20px 0", padding: "15px", border: "1px solid #ccc", borderRadius: "5px" }}>
+        <form style={{ margin: "20px 0", padding: "15px", border: "1px solid #ccc", borderRadius: "5px" }}>
           <h3>{idEdicao ? "Editar Receita" : "Adicionar Nova Receita"}</h3>
           
           <div style={{ marginBottom: "10px" }}>
@@ -131,7 +99,7 @@ const Receitas = () => {
           </tr>
         </thead>
         <tbody>
-          {listaReceitas.map((receita) => (
+          {props.receitas.map((receita) => (
             <tr key={receita.id}>
               <td>{receita.id}</td>
               <td>{receita.nome}</td>
@@ -140,8 +108,8 @@ const Receitas = () => {
               <td>{receita.autor}</td>
               <td>
                 {/* O botão Editar agora chama a função passando a receita da linha atual */}
-                <button onClick={() => iniciarEdicao(receita)} style={{ marginRight: "5px", cursor: "pointer" }}>Editar</button>
-                <button onClick={() => excluirReceita(receita.id)} style={{ cursor: "pointer" }}>Excluir</button>
+                <button style={{ marginRight: "5px", cursor: "pointer" }}>Editar</button>
+                <button style={{ cursor: "pointer" }}>Excluir</button>
               </td>
             </tr>
           ))}
