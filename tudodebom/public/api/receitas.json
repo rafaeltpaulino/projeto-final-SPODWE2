@@ -5,7 +5,7 @@
       "categoria": "Sobremesa",
       "ingredientes":"\n3 cenouras\n1 xícara(chá) de óleo\n3 ovos\n2 xícara(chá) de açúcar\n2 xícara(chá) de farinha de trigo\n1 coler (sopa) de fermento em pó\n5 colheres (sopa) de açúcar\n3 colheres (sopa) de chocolate em pó ou achocolatado\n2 colheres (sopa) de leite\n2 colheres (sopa) de manteiga ou margatina\n\n",
       "descricao":"\n1. No liquidificador, bata as cenouras, o óleo e os ovos até obter uma mistura bem homogênea.\n2. Transfira a mistura para uma tigela, adicione o açúcar e misture bem. Adicione a farinha de trigo e mexa delicadamente. Por último, adicione o fermento em pó e misture apenas para incorporar.\n3. Despeje a massa em uma forma untada e enfarinhada (com furo no meio). Leve ao forno preaquecido a 180°C por cerca de 40 minutos.\n4. Em uma panela, misture o açúcar, o chocolate, o leite e a manteiga. Leve ao fogo médio e mexa até levantar fervura e soltar levemente do fundo da panela.\n5.Espere o bolo amornar, desenforme e despeje a calda de chocolate por cima.\n\n",
-      "tempo": "45min",
+      "tempo": "45",
       "autor": "Amanda Jen",
       "imagem": "imagens/receitas/bolo-cenoura.jpg"
     },
@@ -15,7 +15,7 @@
       "categoria": "Prato Principal",
       "ingredientes":"\nCarne moída: 500g (patinho, acém ou coxão mole)\nMolho de tomate pronto: 2 sachês\nCebola: 1 média picada\nAlho: 2 dentes picados ou amassados\nÁgua: 1 xícara de chá\nAzeite ou óleo: 1 colher de sopa\nTemperos: Sal, pimenta-do-reino e orégano a gosto\nMassa para lasanha: 1 pacote (tipo direto ao forno)\nQueijo mussarela: 400g fatiado\nPresunto: 300g fatiado\nQueijo parmesão ralado: Para salpicar por cima\n\n",
       "descricao":"\n1. Faça o Molho:\nDoure a cebola e o alho no azeite.\nRefogue a carne moída até secar.\nTempere com sal e adicione o molho pronto e a água. Deixe ferver por 5 minutos.\n2. Monte na Forma:\nComece com uma camada de molho no fundo.\nAlterne: massa seca, molho, presunto e mussarela.\nTermine com molho, mussarela e parmesão por cima.\n3. Asse:\nCubra com papel-alumínio e asse a 180°C por 20 minutos.\nTire o papel e asse mais 10 minutos para dourar o queijo.\n\n",
-      "tempo": "60min",
+      "tempo": "60",
       "autor": "Kethelyn Alves",
       "imagem": "imagens/receitas/lasanha.jpg"
     },
@@ -25,7 +25,7 @@
       "categoria": "Bebida",
       "ingredientes":"\nFolhas: 1 a 2 folhas de couve (sem o talo)\nBase doce: 2 fatias de abacaxi ou 1 maçã verde\nToque refrescante: 5 folhas de hortelã\nTermogênico: 1 rodela fina de gengibre (cerca de 1 cm)\nLíquido: 200 ml de água gelada.\n\n",
       "descricao":"\n1. Higienize bem todos os ingredientes\n2. Coloque o líquido e os sólidos no liquidificador.\n3. Bata por 3 a 4 minutos até obter uma mistura bem homogênea.\n4. Beba logo em seguida, de preferência em jejum pela manhã, para melhor absorção dos nutrientes.\n\n",
-      "tempo": "10min",
+      "tempo": "10",
       "autor": "Rafael Teixeira",
       "imagem": "imagens/receitas/suco-verde.jpg"
     }

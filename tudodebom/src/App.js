@@ -16,6 +16,10 @@ class App extends Component {
     categorias: [],
   };
 
+  currentReceitaId = 3;
+  currentCategoriaId = 3;
+  currentUsuarioId = 4;
+
   async componentDidMount() {
     try {
       const { data: receitas } = await axios.get('/api/receitas.json');
@@ -37,8 +41,43 @@ class App extends Component {
   }
 
   handleAdicionarReceita = (receita) => {
-    const receitas = [...this.state.receitas, receita];
+    this.currentReceitaId++;
+    const receitas = [...this.state.receitas, {...receita, id: this.currentReceitaId}];
+    this.setState({ receitas });
+  }
+
+  handleEditarReceita = (receita) => {
+    const receitas = this.state.receitas.map((r) => 
+      r.id === receita.id ? receita : r
+    );
     this.setState({receitas});
+  }
+
+  handleExcluirReceita = (receitaId) => {
+    if (window.confirm('Deseja realmente excluir essa receita?')){
+      const receitas = this.state.receitas.filter((r) => r.id !== receitaId);
+      this.setState({receitas});
+    }
+  }
+
+  handleAdicionarUsuario = (usuario) => {
+    this.currentUsuarioId++;
+    const usuarios = [...this.state.usuarios, {...usuario, id: this.currentUsuarioId}];
+    this.setState({usuarios});
+  }
+
+  handleEditarUsuario = (usuario) => {
+    const usuarios = this.state.usuarios.map((u) => 
+      u.id === usuario.id ? usuario : u
+    );
+    this.setState({usuarios});
+  }
+
+  handleExcluirUsuario = (usuarioId) => {
+    if(window.confirm('Deseja realmente excluir esse usuário?')){
+      const usuarios = this.state.usuarios.filter((u) => u.id !== usuarioId);
+      this.setState({usuarios});
+    }
   }
 
   render() {
@@ -46,18 +85,23 @@ class App extends Component {
       <Router>
         <Topo />
         <Routes>
-          <Route 
-            path="/" 
+          <Route
+            path="/"
             element={<Home receitas={this.state.receitas} />} />
-          <Route 
-            path="/receitas" 
+          <Route
+            path="/receitas"
             element={<TabelaReceitas receitas={this.state.receitas}
-                                     adicionarReceita={this.handleAdicionarReceita} />} />
-          <Route 
-            path="/usuarios" 
-            element={<TabelaUsuarios usuarios={this.state.usuarios} />} />
-          <Route 
-            path="/categorias" 
+                                     adicionarReceita={this.handleAdicionarReceita}
+                                     editarReceita={this.handleEditarReceita}
+                                     excluirReceita={this.handleExcluirReceita} />} />
+          <Route
+            path="/usuarios"
+            element={<TabelaUsuarios usuarios={this.state.usuarios}
+                                     adicionarUsuario={this.handleAdicionarUsuario}
+                                     editarUsuario={this.handleEditarUsuario}
+                                     excluirUsuario={this.handleExcluirUsuario} />} />
+          <Route
+            path="/categorias"
             element={<TabelaCategorias categorias={this.state.categorias} />} />
         </Routes>
         <Rodape />
