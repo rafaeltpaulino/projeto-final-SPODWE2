@@ -2,7 +2,13 @@ import React, { useState } from "react";
 
 const Receitas = (props) => {
   const [exibirFormulario, setExibirFormulario] = useState(false);
-
+  const [novaReceita, setNovaReceita] = useState({
+    id: 0,
+    nome: '',
+    categoria: '',
+    temp: 0,
+    autor: ''
+  });
   // Novo state: vai guardar o ID da receita que estamos editando. 
   // Se for null, significa que estamos criando uma nova.
   const [idEdicao, setIdEdicao] = useState(null);
@@ -32,15 +38,23 @@ const Receitas = (props) => {
     setExibirFormulario(true); // Mostra o form
   };
 
+  const handleReceitaForm = (e) => {
+    e.preventDefault();
+    if(novaReceita) {
+      props.adicionarReceita(novaReceita);
+    }
+  }
+
   // Função adaptada: agora ela Cria ou Edita dependendo do state idEdicao
 
   return (
     <main className="principal">
       <h2>Gerenciar Receitas</h2>
-      
-      <button 
-        className="btn-adicionar" 
+
+      <button
+        className="btn-adicionar"
         onClick={() => {
+          console.log(novaReceita);
           if (exibirFormulario) {
             resetarFormulario();
           } else {
@@ -50,29 +64,29 @@ const Receitas = (props) => {
       >
         {exibirFormulario ? "Cancelar" : "Nova Receita"}
       </button>
-      
+
       {exibirFormulario && (
-        <form style={{ margin: "20px 0", padding: "15px", border: "1px solid #ccc", borderRadius: "5px" }}>
+        <form style={{ margin: "20px 0", padding: "15px", border: "1px solid #ccc", borderRadius: "5px" }} onSubmit={handleReceitaForm}>
           <h3>{idEdicao ? "Editar Receita" : "Adicionar Nova Receita"}</h3>
-          
+
           <div style={{ marginBottom: "10px" }}>
             <label>Nome da Receita: </label>
-            <input type="text" value={nome} onChange={(e) => setNome(e.target.value)} required />
+            <input type="text" value={novaReceita.nome} onChange={(e) => setNovaReceita({...novaReceita, nome: e.target.value})} required />
           </div>
 
           <div style={{ marginBottom: "10px" }}>
             <label>Categoria: </label>
-            <input type="text" value={categoria} onChange={(e) => setCategoria(e.target.value)} required />
+            <input type="text" value={novaReceita.categoria} onChange={(e) => setNovaReceita({...novaReceita, categoria: e.target.value})} required />
           </div>
 
           <div style={{ marginBottom: "10px" }}>
             <label>Tempo de Preparo: </label>
-            <input type="text" value={tempo} onChange={(e) => setTempo(e.target.value)} placeholder="Ex: 45min" required />
+            <input type="text" value={novaReceita.tempo} onChange={(e) => setNovaReceita({...novaReceita, tempo: e.target.value})} placeholder="Ex: 45min" required />
           </div>
 
           <div style={{ marginBottom: "10px" }}>
             <label>Autor: </label>
-            <select value={autor} onChange={(e) => setAutor(e.target.value)} required>
+            <select value={novaReceita.autor} onChange={(e) => setNovaReceita({...novaReceita, autor: e.target.value})} required>
               <option value="">Selecione um autor...</option>
               <option value="Vinícius Tiago">Vinícius Tiago</option>
               <option value="Amanda Jen">Amanda Jen</option>
@@ -86,7 +100,7 @@ const Receitas = (props) => {
           </button>
         </form>
       )}
-      
+
       <table className="tabela-dados">
         <thead>
           <tr>
@@ -117,6 +131,6 @@ const Receitas = (props) => {
       </table>
     </main>
   );
-};
+}
 
 export default Receitas;
