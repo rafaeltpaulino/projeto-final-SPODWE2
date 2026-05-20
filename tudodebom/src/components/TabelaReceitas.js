@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 const Receitas = (props) => {
-  const [exibirFormulario, setExibirFormulario] = useState(false);
   const [novaReceita, setNovaReceita] = useState({
     id: null,
     nome: '',
@@ -12,11 +11,11 @@ const Receitas = (props) => {
     autor: '',
     imagem: ''
   });
-  // Novo state: vai guardar o ID da receita que estamos editando. 
-  // Se for null, significa que estamos criando uma nova.
+
+  const [exibirFormulario, setExibirFormulario] = useState(false);
+  
   const [edicao, setEdicao] = useState(false);
 
-  // Função para limpar e fechar o formulário
   const resetarFormulario = () => {
     setEdicao(false);
     setNovaReceita({
@@ -32,9 +31,8 @@ const Receitas = (props) => {
     setExibirFormulario(false);
   };
 
-  // Prepara o formulário com os dados da receita selecionada
   const iniciarEdicao = (receita) => {
-    setEdicao(true); // Marca que estamos editando este ID
+    setEdicao(true);
     setNovaReceita({
       id: receita.id,
       nome: receita.nome,
@@ -44,7 +42,7 @@ const Receitas = (props) => {
       tempo: receita.tempo,
       autor: receita.autor
     })
-    setExibirFormulario(true); // Mostra o form
+    setExibirFormulario(true);
   };
 
   const handleReceitaForm = (e) => {
@@ -60,21 +58,13 @@ const Receitas = (props) => {
     resetarFormulario();
   }
 
-  // Função adaptada: agora ela Cria ou Edita dependendo do state idEdicao
-
   return (
     <main className="principal">
       <h2>Gerenciar Receitas</h2>
 
       <button
         className="btn-adicionar"
-        onClick={() => {
-          if (exibirFormulario) {
-            resetarFormulario();
-          } else {
-            setExibirFormulario(true);
-          }
-        }}
+        onClick={() => exibirFormulario ? resetarFormulario() : setExibirFormulario(true)}
       >
         {exibirFormulario ? "Cancelar" : "Nova Receita"}
       </button>
@@ -95,12 +85,12 @@ const Receitas = (props) => {
 
           <div style={{ marginBottom: "10px" }}>
             <label>Ingredientes: </label>
-            <input type="text" value={novaReceita.ingredientes} onChange={(e) => setNovaReceita({ ...novaReceita, ingredientes: e.target.value })} required />
+            <textarea type="text" value={novaReceita.ingredientes} onChange={(e) => setNovaReceita({ ...novaReceita, ingredientes: e.target.value })} required />
           </div>
 
           <div style={{ marginBottom: "10px" }}>
             <label>Descrição: </label>
-            <input type="text" value={novaReceita.descricao} onChange={(e) => setNovaReceita({ ...novaReceita, descricao: e.target.value })} required />
+            <textarea type="text" value={novaReceita.descricao} onChange={(e) => setNovaReceita({ ...novaReceita, descricao: e.target.value })} required />
           </div>
 
           <div style={{ marginBottom: "10px" }}>
@@ -154,7 +144,6 @@ const Receitas = (props) => {
               <td>{receita.tempo} {'min'}</td>
               <td>{receita.autor}</td>
               <td>
-                {/* O botão Editar agora chama a função passando a receita da linha atual */}
                 <button style={{ marginRight: "5px", cursor: "pointer" }} onClick={() => iniciarEdicao(receita)}>Editar</button>
                 <button style={{ cursor: "pointer" }} onClick={() => props.excluirReceita(receita.id)}>Excluir</button>
               </td>

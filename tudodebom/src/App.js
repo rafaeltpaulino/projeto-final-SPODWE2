@@ -35,8 +35,6 @@ class App extends Component {
         "beforeend",
         "<p class'erro'>Mensagem de erro</p>"
       );
-    } finally {
-      console.log(this.state.receitas);
     }
   }
 
@@ -80,6 +78,24 @@ class App extends Component {
     }
   }
 
+  handleAdicionarCategoria = (categoria) => {
+    this.currentCategoriaId++;
+    const categorias = [...this.state.categorias, {...categoria, id: this.currentCategoriaId}];
+    this.setState({categorias});
+  }
+
+  handleEditarCategoria = (categoria) => {
+    const categorias = this.state.categorias.map((c) =>
+      c.id === categoria.id ? categoria : c
+    );
+    this.setState({categorias});
+  }
+
+  handleExcluirCategoria = (categoriaId) => {
+    const categorias = this.state.categorias.filter((c) => c.id !== categoriaId);
+    this.setState({categorias});
+  }
+
   render() {
     return (
       <Router>
@@ -102,7 +118,10 @@ class App extends Component {
                                      excluirUsuario={this.handleExcluirUsuario} />} />
           <Route
             path="/categorias"
-            element={<TabelaCategorias categorias={this.state.categorias} />} />
+            element={<TabelaCategorias categorias={this.state.categorias}
+                                       adicionarCategoria={this.handleAdicionarCategoria}
+                                       editarCategoria={this.handleEditarCategoria}
+                                       excluirCategoria={this.handleExcluirCategoria} />} />
         </Routes>
         <Rodape />
       </Router>

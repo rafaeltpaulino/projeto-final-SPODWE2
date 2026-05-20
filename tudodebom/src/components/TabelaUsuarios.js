@@ -26,7 +26,7 @@ const Usuarios = (props) => {
   };
   
   const iniciarEdicao = (usuario) => {
-    setEdicao(true); // Marca que estamos editando este ID
+    setEdicao(true);
     setNovoUsuario({
       id: usuario.id,
       nome: usuario.nome,
@@ -34,7 +34,7 @@ const Usuarios = (props) => {
       papel: usuario.papel,
       senha: usuario.senha
     })
-    setExibirFormulario(true); // Mostra o form
+    setExibirFormulario(true);
   };
 
   const handleUsuarioForm = (e) => {
@@ -56,13 +56,7 @@ const Usuarios = (props) => {
 
       <button
         className="btn-adicionar"
-        onClick={() => {
-          if (exibirFormulario) {
-            resetarFormulario();
-          } else {
-            setExibirFormulario(true);
-          }
-        }}
+        onClick={() => exibirFormulario ? resetarFormulario() : setExibirFormulario(true)}
       >
         {exibirFormulario ? "Cancelar" : "Novo Usuário"}
       </button>
@@ -108,7 +102,6 @@ const Usuarios = (props) => {
           </tr>
         </thead>
         <tbody>
-          {/* O map itera sobre o array carregado do JSON[cite: 2] */}
           {props.usuarios.map((usuario) => (
             <tr key={usuario.id}>
               <td>{usuario.id}</td>
