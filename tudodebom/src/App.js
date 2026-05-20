@@ -7,7 +7,7 @@ import Rodape from "./components/Rodape";
 import TabelaUsuarios from "./components/TabelaUsuarios";
 import TabelaCategorias from "./components/TabelaCategorias";
 import axios from 'axios';
-
+import NotFound from "./components/NotFound";
 
 class App extends Component {
   state = {
@@ -109,7 +109,9 @@ class App extends Component {
             element={<TabelaReceitas receitas={this.state.receitas}
                                      adicionarReceita={this.handleAdicionarReceita}
                                      editarReceita={this.handleEditarReceita}
-                                     excluirReceita={this.handleExcluirReceita} />} />
+                                     excluirReceita={this.handleExcluirReceita}
+                                     categorias={this.state.categorias}
+                                     usuarios={this.state.usuarios} />} />
           <Route
             path="/usuarios"
             element={<TabelaUsuarios usuarios={this.state.usuarios}
@@ -122,6 +124,9 @@ class App extends Component {
                                        adicionarCategoria={this.handleAdicionarCategoria}
                                        editarCategoria={this.handleEditarCategoria}
                                        excluirCategoria={this.handleExcluirCategoria} />} />
+          <Route 
+            path="*" 
+            element={<NotFound />} />
         </Routes>
         <Rodape />
       </Router>

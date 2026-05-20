@@ -80,7 +80,14 @@ const Receitas = (props) => {
 
           <div style={{ marginBottom: "10px" }}>
             <label>Categoria: </label>
-            <input type="text" value={novaReceita.categoria} onChange={(e) => setNovaReceita({ ...novaReceita, categoria: e.target.value })} required />
+              <select value={novaReceita.categoria} onChange={(e) => setNovaReceita({...novaReceita, categoria: e.target.value})} required>
+              <option value="">Selecione uma categoria...</option>
+              {props.categorias.map((categoria) => 
+                <option value={categoria.nome}>
+                  {categoria.nome}
+                </option>
+              )}
+            </select>
           </div>
 
           <div style={{ marginBottom: "10px" }}>
@@ -101,11 +108,12 @@ const Receitas = (props) => {
           <div style={{ marginBottom: "10px" }}>
             <label>Autor: </label>
             <select value={novaReceita.autor} onChange={(e) => setNovaReceita({ ...novaReceita, autor: e.target.value })} required>
-              <option value="">Selecione um autor...</option>
-              <option value="Vinícius Tiago">Vinícius Tiago</option>
-              <option value="Amanda Jen">Amanda Jen</option>
-              <option value="Kethelyn Alves">Kethelyn Alves</option>
-              <option value="Rafael Teixeira">Rafael Teixeira</option>
+              <option value="">Selecione um autor...</option>            
+              {props.usuarios.map((usuario) => 
+                <option value={usuario.nome}>
+                  {usuario.nome}
+                </option>
+              )}
             </select>
           </div>
 
