@@ -6,6 +6,6 @@ const Rodape = () => {
       <p>© 2026 Compartilhamento de Receitas - Todos os Direitos Reservados</p>
     </footer>
   );
-};
+}
 
 export default Rodape;

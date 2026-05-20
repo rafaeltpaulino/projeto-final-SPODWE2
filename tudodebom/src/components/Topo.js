@@ -9,6 +9,6 @@ const Topo = () => {
       <Navegacao/>
     </header>
   );
-};
+}
 
 export default Topo;

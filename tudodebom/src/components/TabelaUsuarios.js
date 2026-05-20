@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Usuarios = (props) => {
+const TabelaUsuarios = (props) => {
   const [novoUsuario, setNovoUsuario] = useState({
     id: null,
     nome: '',
@@ -118,6 +118,6 @@ const Usuarios = (props) => {
       </table>
     </main>
   );
-};
+}
 
-export default Usuarios;
+export default TabelaUsuarios;

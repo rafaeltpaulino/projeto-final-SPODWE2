@@ -18,6 +18,6 @@ const Navegacao = () => {
         </li>
     </ul>
   );
-};
+}
 
 export default Navegacao;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Receitas = (props) => {
+const TabelaReceitas = (props) => {
   const [novaReceita, setNovaReceita] = useState({
     id: null,
     nome: '',
@@ -163,4 +163,4 @@ const Receitas = (props) => {
   );
 }
 
-export default Receitas;
+export default TabelaReceitas;

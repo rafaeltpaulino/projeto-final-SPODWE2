@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Categorias = (props) => {
+const TabelaCategorias = (props) => {
   const [novaCategoria, setNovaCategoria] = useState({
     id: null,
     nome: '',
@@ -110,6 +110,6 @@ const Categorias = (props) => {
       </table>
     </main>
   );
-};
+}
 
-export default Categorias;
+export default TabelaCategorias;

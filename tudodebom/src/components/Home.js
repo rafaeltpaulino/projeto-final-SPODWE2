@@ -56,7 +56,7 @@ const Home = (props) => {
       </table>
     </main>
   );
-};
+}
 
 const estilos = {
   overlay: {

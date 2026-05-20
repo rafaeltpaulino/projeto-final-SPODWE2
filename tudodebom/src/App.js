@@ -8,6 +8,7 @@ import TabelaUsuarios from "./components/TabelaUsuarios";
 import TabelaCategorias from "./components/TabelaCategorias";
 import axios from 'axios';
 import NotFound from "./components/NotFound";
+import CadastroUsuario from "./components/CadastroUsuario";
 
 class App extends Component {
   state = {
@@ -103,7 +104,8 @@ class App extends Component {
         <Routes>
           <Route
             path="/"
-            element={<Home receitas={this.state.receitas} />} />
+            element={<Home receitas={this.state.receitas} />}
+          />
           <Route
             path="/receitas"
             element={<TabelaReceitas receitas={this.state.receitas}
@@ -111,22 +113,30 @@ class App extends Component {
                                      editarReceita={this.handleEditarReceita}
                                      excluirReceita={this.handleExcluirReceita}
                                      categorias={this.state.categorias}
-                                     usuarios={this.state.usuarios} />} />
+                                     usuarios={this.state.usuarios} />} 
+          />
           <Route
             path="/usuarios"
             element={<TabelaUsuarios usuarios={this.state.usuarios}
                                      adicionarUsuario={this.handleAdicionarUsuario}
                                      editarUsuario={this.handleEditarUsuario}
-                                     excluirUsuario={this.handleExcluirUsuario} />} />
+                                     excluirUsuario={this.handleExcluirUsuario} />}
+          />
           <Route
             path="/categorias"
             element={<TabelaCategorias categorias={this.state.categorias}
                                        adicionarCategoria={this.handleAdicionarCategoria}
                                        editarCategoria={this.handleEditarCategoria}
-                                       excluirCategoria={this.handleExcluirCategoria} />} />
+                                       excluirCategoria={this.handleExcluirCategoria} />}
+         />
           <Route 
             path="*" 
-            element={<NotFound />} />
+            element={<NotFound />} 
+          />
+          <Route
+            path="/cadastro"
+            element={<CadastroUsuario adicionarUsuario={this.handleAdicionarUsuario} />}
+          />
         </Routes>
         <Rodape />
       </Router>
