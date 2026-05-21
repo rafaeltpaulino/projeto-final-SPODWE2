@@ -5,16 +5,29 @@ const Navegacao = () => {
   return (
     <ul>
         <li>
-          <NavLink to="/">Home</NavLink>
+          <NavLink to="/">
+            Home
+          </NavLink>
         </li>
         <li>
-        <NavLink to="/Receitas">Receitas</NavLink>
+          <NavLink to="/receitas">
+            Receitas
+          </NavLink>
         </li>
         <li>
-        <NavLink to="/Usuarios">Usuários</NavLink>
+          <NavLink to="/usuarios">
+            Usuários
+          </NavLink>
         </li>
         <li>
-        <NavLink to="/Categorias">Categorias</NavLink>
+          <NavLink to="/categorias">
+            Categorias
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to='/cadastro'>
+            Cadastrar-se
+          </NavLink>
         </li>
     </ul>
   );

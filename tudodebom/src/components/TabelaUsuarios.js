@@ -10,7 +10,7 @@ const TabelaUsuarios = (props) => {
   });
 
   const [edicao, setEdicao] = useState(false);
-   
+
   const [exibirFormulario, setExibirFormulario] = useState(false);
 
   const resetarFormulario = () => {
@@ -24,7 +24,7 @@ const TabelaUsuarios = (props) => {
     })
     setExibirFormulario(false);
   };
-  
+
   const iniciarEdicao = (usuario) => {
     setEdicao(true);
     setNovoUsuario({
@@ -37,18 +37,18 @@ const TabelaUsuarios = (props) => {
     setExibirFormulario(true);
   };
 
-  const handleUsuarioForm = (e) => {
-    e.preventDefault();
-    if(!edicao) {
-      props.adicionarUsuario(novoUsuario);
-      alert(`Novo usuário ${novoUsuario.nome} adicionado com sucesso!`);
-    } else {
-      props.editarUsuario(novoUsuario);
-      alert(`Usuário ${novoUsuario.nome} atualizado com sucesso!`);
-    }
-
-    resetarFormulario();
+const handleUsuarioForm = (e) => {
+  e.preventDefault();
+  if (!edicao) {
+    props.adicionarUsuario(novoUsuario);
+    alert(`Novo usuário ${novoUsuario.nome} adicionado com sucesso!`);
+  } else {
+    props.editarUsuario(novoUsuario);
+    alert(`Usuário ${novoUsuario.nome} atualizado com sucesso!`);
   }
+
+  resetarFormulario();
+}
 
   return (
     <main className="principal">

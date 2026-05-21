@@ -135,7 +135,8 @@ class App extends Component {
           />
           <Route
             path="/cadastro"
-            element={<CadastroUsuario adicionarUsuario={this.handleAdicionarUsuario} />}
+            element={<CadastroUsuario adicionarUsuario={this.handleAdicionarUsuario}
+                                      usuarios={this.state.usuarios} />}
           />
         </Routes>
         <Rodape />
