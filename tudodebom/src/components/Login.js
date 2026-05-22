@@ -11,7 +11,7 @@ const Login = (props) => {
         const res = props.handleLogin(email, senha);
 
         if(res) {
-            sessionStorage.setItem('id', res.id);
+            sessionStorage.setItem('usuario', res.nome);
             alert('Login realizado com sucesso!');
         } else {
             alert('Email ou senha incorretos');
@@ -32,7 +32,7 @@ const Login = (props) => {
                     Senha
                 </label>
                 <input id='senha' type='password' onChange={(e) => setSenha(e.target.value)} />
-                <button type='submit' disabled={!email || !senha ? 'true' : 'false'}>
+                <button type='submit' >
                     Entrar
                 </button>
             </form>
