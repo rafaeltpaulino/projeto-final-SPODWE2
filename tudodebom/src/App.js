@@ -116,7 +116,7 @@ class App extends Component {
             element={<Home receitas={this.state.receitas} />}
           />
           <Route
-            path="/receitas"
+            path="/tabela_receitas"
             element={<TabelaReceitas receitas={this.state.receitas}
                                      adicionarReceita={this.handleAdicionarReceita}
                                      editarReceita={this.handleEditarReceita}
@@ -125,14 +125,14 @@ class App extends Component {
                                      usuarios={this.state.usuarios} />} 
           />
           <Route
-            path="/usuarios"
+            path="/tabela_usuarios"
             element={<TabelaUsuarios usuarios={this.state.usuarios}
                                      adicionarUsuario={this.handleAdicionarUsuario}
                                      editarUsuario={this.handleEditarUsuario}
                                      excluirUsuario={this.handleExcluirUsuario} />}
           />
           <Route
-            path="/categorias"
+            path="/tabela_categorias"
             element={<TabelaCategorias categorias={this.state.categorias}
                                        adicionarCategoria={this.handleAdicionarCategoria}
                                        editarCategoria={this.handleEditarCategoria}
@@ -144,8 +144,7 @@ class App extends Component {
           />
           <Route
             path="/cadastro"
-            element={<CadastroUsuario adicionarUsuario={this.handleAdicionarUsuario}
-                                      usuarios={this.state.usuarios} />}
+            element={<CadastroUsuario adicionarUsuario={this.handleAdicionarUsuario} />}
           />
           <Route
             path="/login"

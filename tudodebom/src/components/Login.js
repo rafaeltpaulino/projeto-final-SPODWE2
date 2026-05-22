@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Login = (props) => {
     const [email, setEmail] = useState('');
@@ -6,31 +7,42 @@ const Login = (props) => {
 
     const handleLoginForm = (e) => {
         e.preventDefault();
+
         const res = props.handleLogin(email, senha);
+
         if(res) {
-            console.log('Funcionou!');
-            console.log(res);
+            sessionStorage.setItem('id', res.id);
+            alert('Login realizado com sucesso!');
         } else {
-            console.log('Vazio');
-            console.log(res);
+            alert('Email ou senha incorretos');
         }
     }
 
     return (
         <div className='principal'>
-            <form onSubmit={handleLoginForm}>
+            <h2>
+                Login
+            </h2>
+            <form style={{ margin: "20px 0", padding: "15px", border: "1px solid #ccc", borderRadius: "5px" }} onSubmit={handleLoginForm}>
                 <label>
                     Email
                 </label>
-                <input type='text' onChange={(e) => setEmail(e.target.value)} />
+                <input id='email' type='text' onChange={(e) => setEmail(e.target.value)} />
                 <label>
                     Senha
                 </label>
-                <input type='password' onChange={(e) => setSenha(e.target.value)} />
-                <button type='submit'>
+                <input id='senha' type='password' onChange={(e) => setSenha(e.target.value)} />
+                <button type='submit' disabled={!email || !senha ? 'true' : 'false'}>
                     Entrar
                 </button>
             </form>
+            <p>
+                Não possui uma conta?
+                <br />
+                <Link to='/cadastro'>
+                    Cadastrar-se
+                </Link>
+            </p>
         </div>
     );
 };
