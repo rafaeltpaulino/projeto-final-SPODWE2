@@ -9,6 +9,7 @@ import TabelaCategorias from "./components/TabelaCategorias";
 import axios from 'axios';
 import NotFound from "./components/NotFound";
 import CadastroUsuario from "./components/CadastroUsuario";
+import Login from "./components/Login";
 
 class App extends Component {
   state = {
@@ -97,6 +98,14 @@ class App extends Component {
     this.setState({categorias});
   }
 
+  handleLogin = (email, senha) => {
+    const res = this.state.usuarios.find((usuario) => 
+      email === usuario.email && senha === usuario.senha
+    );
+
+    return res;
+  }
+
   render() {
     return (
       <Router>
@@ -137,6 +146,10 @@ class App extends Component {
             path="/cadastro"
             element={<CadastroUsuario adicionarUsuario={this.handleAdicionarUsuario}
                                       usuarios={this.state.usuarios} />}
+          />
+          <Route
+            path="/login"
+            element={<Login handleLogin={this.handleLogin} />}
           />
         </Routes>
         <Rodape />

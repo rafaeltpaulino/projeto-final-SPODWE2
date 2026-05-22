@@ -36,29 +36,18 @@ const CadastroUsuario = (props) => {
 
   useEffect(() => {
     const res = EMAIL_REGEX.test(email);
-    console.log(res);
-    console.log(email);
     setEmailValido(res);
   }, [email]);
 
   useEffect(() => {
-    console.log(props.usuarios);
-  }, [props.usuarios]);
-
-  useEffect(() => {
     const res = SENHA_REGEX.test(senha);
-    console.log(res);
-    console.log(senha);
     setSenhaValida(res);
     const confirmacao = senha === confirmacaoSenha;
-    console.log(confirmacaoSenha)
-    console.log(confirmacao)
     setConfirmacaoValida(confirmacao);
   }, [senha, confirmacaoSenha]);
 
   useEffect(() => {
     const res = nome.length > 0;
-    console.log(res);
     setNomeValido(res);
   }, [nome]);
 
@@ -102,7 +91,7 @@ const CadastroUsuario = (props) => {
           <h2>
             Cadastro de usuário.
           </h2>
-          <form onSubmit={handleCadastroForm}>
+          <form style={{ margin: "20px 0", padding: "15px", border: "1px solid #ccc", borderRadius: "5px" }} onSubmit={handleCadastroForm}>
             <label htmlFor='nome'>
               Nome:
               <span className={nome ? 'valid' : 'hide'}>
