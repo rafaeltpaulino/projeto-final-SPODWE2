@@ -11,6 +11,7 @@ import NotFound from "./components/NotFound";
 import CadastroUsuario from "./components/CadastroUsuario";
 import Login from "./components/Login";
 import Categorias from "./components/Categorias"
+import BuscaCategoria from "./components/BuscaCategoria";
 
 class App extends Component {
   state = {
@@ -157,6 +158,11 @@ class App extends Component {
           <Route
             path="/login"
             element={<Login handleLogin={this.handleLogin} />}
+          />
+          <Route 
+            path="/categoria/:categoriaSlug"
+            element={<BuscaCategoria categorias={this.state.categorias}
+                                     receitas={this.state.receitas} />}
           />
         </Routes>
         <Rodape />

@@ -3,18 +3,42 @@
       "id": 1,
       "nome": "Prato Principal",
       "descricao": "Receitas para o almoço e jantar.",
-      "icone": "imagens/categorias/principal.jpg"
+      "icone": "imagens/categorias/1.jpg",
+      "slug": "prato-principal"
     },
     {
       "id": 2,
       "nome": "Sobremesas",
       "descricao": "Doces, bolos e tortas.",
-      "icone": "imagens/categorias/sobremesa.jpg"
+      "icone": "imagens/categorias/2.jpg",
+      "slug": "sobremesas"
     },
     {
       "id": 3,
       "nome": "Bebidas",
       "descricao": "Sucos, drinks e vitaminas.",
-      "icone": "imagens/categorias/bebida.jpg"
+      "icone": "imagens/categorias/3.jpg",
+      "slug": "bebidas"
+    },
+    {
+      "id": 4,
+      "nome": "Café da Manhã",
+      "descricao": "Café da Manhã",
+      "icone": "imagens/categorias/4.jpg",
+      "slug": "cafe-da-manha"
+    },
+    {
+      "id": 5,
+      "nome": "Pratos Saudáveis",
+      "descricao": "Pratos Saudáveis",
+      "icone": "imagens/categorias/5.jpg",
+      "slug": "pratos-saudaveis"
+    },
+    {
+      "id": 6,
+      "nome": "Lanches",
+      "descricao": "Lanches",
+      "icone": "imagens/categorias/6.jpg",
+      "slug": "lanches"
     }
-  ]
+]

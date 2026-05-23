@@ -6,7 +6,8 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fdf5e6; /* Tom levemente pastel (Old Lace) */
+  background-color: #fdf5e6;
+  /* Tom levemente pastel (Old Lace) */
   color: #333;
 }
 
@@ -14,13 +15,14 @@ body {
    Topo e Navegação[cite: 1]
 ========================================= */
 .topo {
-  background-color: #ff6b6b; /* Vermelho/Laranja quente (remete a comida) */
+  background-color: #ff6b6b;
+  /* Vermelho/Laranja quente (remete a comida) */
   color: white;
   padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .topo a {
@@ -58,11 +60,12 @@ body {
 ========================================= */
 .principal {
   padding: 40px;
-  min-height: calc(100vh - 160px); /* Mantém o rodapé no fundo */
+  min-height: calc(100vh - 160px);
+  /* Mantém o rodapé no fundo */
   max-width: 1100px;
   margin: 20px auto;
   background-color: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
   border-radius: 8px;
 }
 
@@ -78,7 +81,8 @@ body {
    Formulários e Botão Adicionar[cite: 3]
 ========================================= */
 .btn-adicionar {
-  background-color: #10ac84; /* Verde agradável para "Novo item" */
+  background-color: #10ac84;
+  /* Verde agradável para "Novo item" */
   color: white;
   border: none;
   padding: 12px 24px;
@@ -165,7 +169,8 @@ form button[type="submit"]:hover {
 }
 
 .tabela-dados tr:hover {
-  background-color: #ffeaa7; /* Destaque suave na linha ao passar o mouse */
+  background-color: #ffeaa7;
+  /* Destaque suave na linha ao passar o mouse */
 }
 
 /* Botões dentro da tabela */
@@ -183,12 +188,14 @@ form button[type="submit"]:hover {
 }
 
 .tabela-dados button:first-child {
-  background-color: #feca57; /* Cor Amarela para o botão de Editar */
+  background-color: #feca57;
+  /* Cor Amarela para o botão de Editar */
   color: #2d3436;
 }
 
 .tabela-dados button:last-child {
-  background-color: #ff7675; /* Cor Vermelha para o botão de Excluir */
+  background-color: #ff7675;
+  /* Cor Vermelha para o botão de Excluir */
   color: white;
 }
 
@@ -205,55 +212,63 @@ form button[type="submit"]:hover {
 }
 
 .instructions {
-    font-size: 0.75rem;
-    border-radius: 0.5rem;
-    background: #000;
-    color: #fff;
-    padding: 0.25rem;
-    position: relative;
-    bottom: -10px;
+  font-size: 0.75rem;
+  border-radius: 0.5rem;
+  background: #000;
+  color: #fff;
+  padding: 0.25rem;
+  position: relative;
+  bottom: -10px;
 }
 
-.instructions > svg {
-    margin-right: 0.25rem;
+.instructions>svg {
+  margin-right: 0.25rem;
 }
 
 .offscreen {
-    position: absolute;
-    left: -9999px;
+  position: absolute;
+  left: -9999px;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 
 .valid {
-    color: limegreen;
-    margin-left: 0.25rem;
+  color: limegreen;
+  margin-left: 0.25rem;
 }
 
 .invalid {
-    color: red;
-    margin-left: 0.25rem;
+  color: red;
+  margin-left: 0.25rem;
 }
 
 .errmsg {
-    background-color: lightpink;
-    color: firebrick;
-    font-weight: bold;
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
+  background-color: lightpink;
+  color: firebrick;
+  font-weight: bold;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .line {
-    display: inline-block;
+  display: inline-block;
 }
 
 .card {
   width: 18rem;
-  border: 1px solid #ddd; 
-  margin-bottom: 15px; 
-  border-radius: 8px; 
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 15px 0 0 0;
+  gap: 20px;
+  justify-content: center;
 }
