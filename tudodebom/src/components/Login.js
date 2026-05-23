@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
 const Login = (props) => {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
+    const [sucesso, setSucesso] = useState(false);
 
     const handleLoginForm = (e) => {
         e.preventDefault();
@@ -13,9 +14,15 @@ const Login = (props) => {
         if(res) {
             sessionStorage.setItem('usuario', res.nome);
             alert('Login realizado com sucesso!');
+            setSucesso(true);
         } else {
             alert('Email ou senha incorretos');
+            setSucesso(false);
         }
+    }
+
+    if(sucesso) {
+        return <Navigate to='/' />
     }
 
     return (
@@ -32,7 +39,7 @@ const Login = (props) => {
                     Senha
                 </label>
                 <input id='senha' type='password' onChange={(e) => setSenha(e.target.value)} />
-                <button type='submit' >
+                <button type='submit' style={{ cursor: "pointer" }} disabled={!email || !senha ? true : false} >
                     Entrar
                 </button>
             </form>

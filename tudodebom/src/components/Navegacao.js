@@ -30,20 +30,27 @@ const Navegacao = (props) => {
           Tabela de Categorias
         </NavLink>
       </li>
-      {!props.logado ? (<><li>
-        <NavLink to='/cadastro'>
-          Cadastrar-se
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to='/login'>
-          Login
-        </NavLink>
-      </li></>) : (
+      {!props.logado ? 
+      (
+        <>
+          <li>
+            <NavLink to='/cadastro'>
+              Cadastrar-se
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to='/login'>
+              Login
+            </NavLink>
+          </li>
+        </>
+      ) : 
+      (
         <li>
           teste
-        </li>
-      )}
+        </li> 
+      )
+      }
     </ul>
   );
 };

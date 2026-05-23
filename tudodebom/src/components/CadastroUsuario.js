@@ -68,7 +68,7 @@ const CadastroUsuario = (props) => {
 
     props.adicionarUsuario(usuario);
     setSucesso(true);
-  }
+  };
 
   return (
     <>
