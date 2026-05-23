@@ -29,7 +29,7 @@ const Home = (props) => {
             {props.receitas.map((receita) => (
               <div key={receita.id} className="card">
 
-              <img src={"/imagens/receitas/"+receita.id+".jpg"} className="card-img-top" alt={receita.titulo} style={{ width: "100%", height: "160px", objectFit: "cover" }} />
+              <img src={receita.imagem} className="card-img-top" alt={receita.titulo} style={{ width: "100%", height: "160px", objectFit: "cover" }} />
               
               {/* Corpo do Card */}
               <div className="card-body" style={{ padding: "15px" }}>

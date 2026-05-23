@@ -3,30 +3,180 @@
       "id": 1,
       "nome": "Bolo de Cenoura com Chocolate",
       "categoria": "Sobremesas",
-      "ingredientes":"\n3 cenouras\n1 xícara(chá) de óleo\n3 ovos\n2 xícara(chá) de açúcar\n2 xícara(chá) de farinha de trigo\n1 coler (sopa) de fermento em pó\n5 colheres (sopa) de açúcar\n3 colheres (sopa) de chocolate em pó ou achocolatado\n2 colheres (sopa) de leite\n2 colheres (sopa) de manteiga ou margatina\n\n",
-      "descricao":"\n1. No liquidificador, bata as cenouras, o óleo e os ovos até obter uma mistura bem homogênea.\n2. Transfira a mistura para uma tigela, adicione o açúcar e misture bem. Adicione a farinha de trigo e mexa delicadamente. Por último, adicione o fermento em pó e misture apenas para incorporar.\n3. Despeje a massa em uma forma untada e enfarinhada (com furo no meio). Leve ao forno preaquecido a 180°C por cerca de 40 minutos.\n4. Em uma panela, misture o açúcar, o chocolate, o leite e a manteiga. Leve ao fogo médio e mexa até levantar fervura e soltar levemente do fundo da panela.\n5.Espere o bolo amornar, desenforme e despeje a calda de chocolate por cima.\n\n",
+      "ingredientes": "\n3 cenouras\n1 xícara(chá) de óleo\n3 ovos\n2 xícara(chá) de açúcar\n2 xícara(chá) de farinha de trigo\n1 coler (sopa) de fermento em pó\n5 colheres (sopa) de açúcar\n3 colheres (sopa) de chocolate em pó ou achocolatado\n2 colheres (sopa) de leite\n2 colheres (sopa) de manteiga ou margatina\n\n",
+      "descricao": "\n1. No liquidificador, bata as cenouras, o óleo e os ovos até obter uma mistura bem homogênea.\n2. Transfira a mistura para uma tigela, adicione o açúcar e misture bem. Adicione a farinha de trigo e mexa delicadamente. Por último, adicione o fermento em pó e misture apenas para incorporar.\n3. Despeje a massa em uma forma untada e enfarinhada (com furo no meio). Leve ao forno preaquecido a 180°C por cerca de 40 minutos.\n4. Em uma panela, misture o açúcar, o chocolate, o leite e a manteiga. Leve ao fogo médio e mexa até levantar fervura e soltar levemente do fundo da panela.\n5.Espere o bolo amornar, desenforme e despeje a calda de chocolate por cima.\n\n",
       "tempo": "45",
       "autor": "Amanda Jen",
-      "imagem": "imagens/receitas/bolo-cenoura.jpg"
+      "imagem": "imagens/receitas/1.jpg"
     },
     {
       "id": 2,
       "nome": "Lasanha Bolonhesa",
       "categoria": "Prato Principal",
-      "ingredientes":"\nCarne moída: 500g (patinho, acém ou coxão mole)\nMolho de tomate pronto: 2 sachês\nCebola: 1 média picada\nAlho: 2 dentes picados ou amassados\nÁgua: 1 xícara de chá\nAzeite ou óleo: 1 colher de sopa\nTemperos: Sal, pimenta-do-reino e orégano a gosto\nMassa para lasanha: 1 pacote (tipo direto ao forno)\nQueijo mussarela: 400g fatiado\nPresunto: 300g fatiado\nQueijo parmesão ralado: Para salpicar por cima\n\n",
-      "descricao":"\n1. Faça o Molho:\nDoure a cebola e o alho no azeite.\nRefogue a carne moída até secar.\nTempere com sal e adicione o molho pronto e a água. Deixe ferver por 5 minutos.\n2. Monte na Forma:\nComece com uma camada de molho no fundo.\nAlterne: massa seca, molho, presunto e mussarela.\nTermine com molho, mussarela e parmesão por cima.\n3. Asse:\nCubra com papel-alumínio e asse a 180°C por 20 minutos.\nTire o papel e asse mais 10 minutos para dourar o queijo.\n\n",
+      "ingredientes": "\nCarne moída: 500g (patinho, acém ou coxão mole)\nMolho de tomate pronto: 2 sachês\nCebola: 1 média picada\nAlho: 2 dentes picados ou amassados\nÁgua: 1 xícara de chá\nAzeite ou óleo: 1 colher de sopa\nTemperos: Sal, pimenta-do-reino e orégano a gosto\nMassa para lasanha: 1 pacote (tipo direto ao forno)\nQueijo mussarela: 400g fatiado\nPresunto: 300g fatiado\nQueijo parmesão ralado: Para salpicar por cima\n\n",
+      "descricao": "\n1. Faça o Molho:\nDoure a cebola e o alho no azeite.\nRefogue a carne moída até secar.\nTempere com sal e adicione o molho pronto e a água. Deixe ferver por 5 minutos.\n2. Monte na Forma:\nComece com uma camada de molho no fundo.\nAlterne: massa seca, molho, presunto e mussarela.\nTermine com molho, mussarela e parmesão por cima.\n3. Asse:\nCubra com papel-alumínio e asse a 180°C por 20 minutos.\nTire o papel e asse mais 10 minutos para dourar o queijo.\n\n",
       "tempo": "60",
       "autor": "Kethelyn Alves",
-      "imagem": "imagens/receitas/lasanha.jpg"
+      "imagem": "imagens/receitas/2.jpg"
     },
     {
       "id": 3,
       "nome": "Suco Verde Detox",
       "categoria": "Bebidas",
-      "ingredientes":"\nFolhas: 1 a 2 folhas de couve (sem o talo)\nBase doce: 2 fatias de abacaxi ou 1 maçã verde\nToque refrescante: 5 folhas de hortelã\nTermogênico: 1 rodela fina de gengibre (cerca de 1 cm)\nLíquido: 200 ml de água gelada.\n\n",
-      "descricao":"\n1. Higienize bem todos os ingredientes\n2. Coloque o líquido e os sólidos no liquidificador.\n3. Bata por 3 a 4 minutos até obter uma mistura bem homogênea.\n4. Beba logo em seguida, de preferência em jejum pela manhã, para melhor absorção dos nutrientes.\n\n",
+      "ingredientes": "\nFolhas: 1 a 2 folhas de couve (sem o talo)\nBase doce: 2 fatias de abacaxi ou 1 maçã verde\nToque refrescante: 5 folhas de hortelã\nTermogênico: 1 rodela fina de gengibre (cerca de 1 cm)\nLíquido: 200 ml de água gelada.\n\n",
+      "descricao": "\n1. Higienize bem todos os ingredientes\n2. Coloque o líquido e os sólidos no liquidificador.\n3. Bata por 3 a 4 minutos até obter uma mistura bem homogênea.\n4. Beba logo em seguida, de preferência em jejum pela manhã, para melhor absorção dos nutrientes.\n\n",
       "tempo": "10",
       "autor": "Rafael Teixeira",
-      "imagem": "imagens/receitas/suco-verde.jpg"
+      "imagem": "imagens/receitas/3.jpg"
+    },
+    {
+      "id": 4,
+      "nome": "Pudim de Leite Condensado",
+      "categoria": "Sobremesas",
+      "ingredientes": "\n1 lata de leite condensado\n1 lata de leite (medida da lata de leite condensado)\n3 ovos inteiros\n1 xícara (chá) de açúcar\n1/2 xícara de água\n\n",
+      "descricao": "\n1. Em uma panela, derreta o açúcar até ficar dourado. Adicione a água quente e deixe ferver até dissolver os torrões e engrossar.\n2. Despeje a calda em uma forma com furo central e reserve.\n3. Bata todos os ingredientes do pudim no liquidificador e despeje na forma reservada.\n4. Asse em banho-maria, em forno preaquecido a 180°C, por cerca de 1 hora e 30 minutos.\n5. Espere esfriar e leve à geladeira por pelo menos 4 horas antes de desenformar.\n\n",
+      "tempo": "90",
+      "autor": "Vinícius Tiago",
+      "imagem": "imagens/receitas/4.jpg"
+    },
+    {
+      "id": 5,
+      "nome": "Brigadeiro de Panela",
+      "categoria": "Sobremesas",
+      "ingredientes": "\n1 lata de leite condensado\n2 colheres (sopa) de manteiga\n4 colheres (sopa) de chocolate em pó\nChocolate granulado a gosto para enrolar\n\n",
+      "descricao": "\n1. Em uma panela, misture o leite condensado, a manteiga e o chocolate em pó.\n2. Leve ao fogo baixo e mexa sem parar até desgrudar do fundo da panela.\n3. Despeje em um prato untado com manteiga e deixe esfriar.\n4. Com as mãos untadas, faça bolinhas e passe no granulado.\n\n",
+      "tempo": "30",
+      "autor": "Rafael Teixeira",
+      "imagem": "imagens/receitas/5.jpg"
+    },
+    {
+      "id": 6,
+      "nome": "Mousse de Maracujá",
+      "categoria": "Sobremesas",
+      "ingredientes": "\n1 lata de leite condensado\n1 lata de creme de leite\n1 lata de suco concentrado de maracujá (medida da lata de leite condensado)\nPolpa de 1 maracujá para decorar\n\n",
+      "descricao": "\n1. Coloque o leite condensado, o creme de leite e o suco de maracujá no liquidificador.\n2. Bata bem por cerca de 3 a 5 minutos, até obter uma consistência bem cremosa.\n3. Despeje a mistura em taças individuais ou em uma travessa.\n4. Decore com a polpa de maracujá por cima e leve à geladeira por cerca de 4 horas antes de servir.\n\n",
+      "tempo": "15",
+      "autor": "Amanda Jen",
+      "imagem": "imagens/receitas/6.jpg"
+    },
+    {
+      "id": 7,
+      "nome": "Torta de Limão",
+      "categoria": "Sobremesas",
+      "ingredientes": "\n1 pacote de biscoito maisena\n100g de manteiga derretida\n1 lata de leite condensado\n1 caixinha de creme de leite\nSuco de 4 limões\nRaspas de limão para decorar\n\n",
+      "descricao": "\n1. Triture os biscoitos no liquidificador até formar uma farofa. Misture com a manteiga derretida.\n2. Forre o fundo e as laterais de uma forma de fundo removível com essa massa e asse por 10 minutos a 180°C.\n3. No liquidificador, bata o leite condensado, o creme de leite e o suco de limão até firmar.\n4. Despeje o recheio sobre a massa já fria, decore com raspas de limão e leve à geladeira por 3 horas.\n\n",
+      "tempo": "40",
+      "autor": "Kethelyn Alves",
+      "imagem": "imagens/receitas/7.jpg"
+    },
+    {
+      "id": 8,
+      "nome": "Pavê de Chocolate Simples",
+      "categoria": "Sobremesas",
+      "ingredientes": "\n1 pacote de biscoito champanhe\n1 lata de leite condensado\n2 latas de leite (use a lata de leite condensado como medida)\n2 gemas\n2 colheres (sopa) de amido de milho\n200g de chocolate meio amargo derretido\n1 lata de creme de leite\n\n",
+      "descricao": "\n1. Em uma panela, misture o leite condensado, o leite (reserve um pouco para dissolver o amido), as gemas e o amido dissolvido. Cozinhe até engrossar.\n2. Divida o creme em duas partes e em uma delas misture o chocolate derretido.\n3. Em um refratário, faça uma camada de biscoitos umedecidos no leite, uma de creme branco, mais biscoitos e o creme de chocolate.\n4. Cubra com o creme de leite gelado e leve à geladeira por 2 horas antes de servir.\n\n",
+      "tempo": "45",
+      "autor": "Vinícius Tiago",
+      "imagem": "imagens/receitas/8.jpg"
+    },
+    {
+      "id": 9,
+      "nome": "Estrogonofe de Frango",
+      "categoria": "Prato Principal",
+      "ingredientes": "\n500g de peito de frango em cubos\n1 cebola picada\n2 dentes de alho picados\n1 colher (sopa) de manteiga\n2 colheres (sopa) de ketchup\n1 colher (sopa) de mostarda\n1 lata de creme de leite\nSal e pimenta a gosto\n\n",
+      "descricao": "\n1. Em uma panela, doure a cebola e o alho na manteiga.\n2. Adicione o frango e refogue até dourar. Tempere com sal e pimenta.\n3. Acrescente o ketchup e a mostarda, misturando bem.\n4. Desligue o fogo, adicione o creme de leite e misture. Sirva com arroz e batata palha.\n\n",
+      "tempo": "30",
+      "autor": "Rafael Teixeira",
+      "imagem": "imagens/receitas/9.jpg"
+    },
+    {
+      "id": 10,
+      "nome": "Feijoada Simples",
+      "categoria": "Prato Principal",
+      "ingredientes": "\n500g de feijão preto\n200g de carne seca dessalgada\n200g de costelinha de porco salgada\n1 calabresa fatiada\n1 paio fatiado\n2 folhas de louro\nAlho e cebola para refogar\n\n",
+      "descricao": "\n1. Deixe as carnes salgadas de molho de véspera, trocando a água.\n2. Cozinhe o feijão com as carnes e o louro na panela de pressão por 30 minutos.\n3. Adicione a calabresa e o paio e cozinhe sem pressão por mais 15 minutos.\n4. Faça um refogado com alho, cebola e óleo, junte um pouco do caldo da feijoada e devolva à panela para engrossar.\n\n",
+      "tempo": "90",
+      "autor": "Amanda Jen",
+      "imagem": "imagens/receitas/10.jpg"
+    },
+    {
+      "id": 11,
+      "nome": "Macarrão Carbonara",
+      "categoria": "Prato Principal",
+      "ingredientes": "\n300g de espaguete\n150g de bacon em cubos\n3 gemas\n1 ovo inteiro\n100g de queijo parmesão ralado\nPimenta-do-reino a gosto\nSal a gosto\n\n",
+      "descricao": "\n1. Cozinhe o macarrão em água com sal até ficar al dente. Reserve uma xícara da água do cozimento.\n2. Frite o bacon até dourar e soltar a gordura. Desligue o fogo.\n3. Em uma tigela, bata as gemas, o ovo, o queijo ralado e a pimenta-do-reino.\n4. Escorra o macarrão e jogue na panela do bacon ainda quente (fogo desligado). Misture os ovos batidos rapidamente, adicionando a água do cozimento aos poucos para formar um creme.\n\n",
+      "tempo": "20",
+      "autor": "Kethelyn Alves",
+      "imagem": "imagens/receitas/11.jpg"
+    },
+    {
+      "id": 12,
+      "nome": "Escondidinho de Carne Seca",
+      "categoria": "Prato Principal",
+      "ingredientes": "\n1 kg de mandioca cozida e amassada\n2 colheres (sopa) de manteiga\n1/2 xícara de leite\n500g de carne seca dessalgada, cozida e desfiada\n1 cebola picada\n200g de queijo coalho ou mussarela ralada\n\n",
+      "descricao": "\n1. Faça um purê com a mandioca, a manteiga e o leite. Tempere com sal e reserve.\n2. Refogue a cebola e junte a carne seca desfiada, refogando bem.\n3. Em um refratário, coloque metade do purê, o recheio de carne seca e cubra com o restante do purê.\n4. Polvilhe o queijo ralado por cima e leve ao forno para gratinar por 20 minutos.\n\n",
+      "tempo": "50",
+      "autor": "Vinícius Tiago",
+      "imagem": "imagens/receitas/12.jpg"
+    },
+    {
+      "id": 13,
+      "nome": "Frango Assado com Batatas",
+      "categoria": "Prato Principal",
+      "ingredientes": "\n1 frango inteiro ou em pedaços (1,5kg)\n4 batatas médias em pedaços\n4 dentes de alho amassados\nSuco de 1 limão\n1 colher (sopa) de colorau\nSal, pimenta e alecrim a gosto\n2 colheres (sopa) de azeite\n\n",
+      "descricao": "\n1. Tempere o frango e as batatas com alho, limão, colorau, sal, pimenta, alecrim e azeite.\n2. Deixe marinar por pelo menos 30 minutos.\n3. Disponha em uma assadeira, cubra com papel-alumínio e asse a 200°C por 40 minutos.\n4. Retire o papel-alumínio e deixe dourar por mais 30 minutos.\n\n",
+      "tempo": "80",
+      "autor": "Rafael Teixeira",
+      "imagem": "imagens/receitas/13.jpg"
+    },
+    {
+      "id": 14,
+      "nome": "Caipirinha de Limão",
+      "categoria": "Bebidas",
+      "ingredientes": "\n1 limão taiti\n2 colheres (sopa) de açúcar\n50 ml de cachaça\nGelo a gosto\n\n",
+      "descricao": "\n1. Corte o limão em fatias, retirando o miolo branco para não amargar.\n2. Coloque o limão e o açúcar em um copo e amasse bem com um socador.\n3. Adicione o gelo até o topo do copo.\n4. Complete com a cachaça, mexa bem e sirva em seguida.\n\n",
+      "tempo": "5",
+      "autor": "Amanda Jen",
+      "imagem": "imagens/receitas/14.jpg"
+    },
+    {
+      "id": 15,
+      "nome": "Vitamina de Banana com Aveia",
+      "categoria": "Bebidas",
+      "ingredientes": "\n2 bananas pratas maduras\n2 colheres (sopa) de aveia em flocos\n300 ml de leite gelado\n1 colher (sopa) de mel\n\n",
+      "descricao": "\n1. Descasque as bananas e corte-as em rodelas.\n2. Coloque as bananas, a aveia, o leite e o mel no liquidificador.\n3. Bata tudo por cerca de 2 minutos até a mistura ficar homogênea e cremosa.\n4. Sirva imediatamente.\n\n",
+      "tempo": "5",
+      "autor": "Kethelyn Alves",
+      "imagem": "imagens/receitas/15.jpg"
+    },
+    {
+      "id": 16,
+      "nome": "Limonada Suíça",
+      "categoria": "Bebidas",
+      "ingredientes": "\n2 limões taiti\n1/2 lata de leite condensado\n500 ml de água gelada\nGelo a gosto\n\n",
+      "descricao": "\n1. Lave bem os limões, corte as pontas, divida em quatro partes e retire o miolo branco.\n2. Coloque os limões no liquidificador com a água gelada e bata rapidamente (modo pulsar) para não amargar.\n3. Coe a mistura e volte o líquido para o liquidificador limpo.\n4. Adicione o leite condensado e o gelo, bata bem e sirva.\n\n",
+      "tempo": "10",
+      "autor": "Vinícius Tiago",
+      "imagem": "imagens/receitas/16.jpg"
+    },
+    {
+      "id": 17,
+      "nome": "Chá Gelado de Pêssego",
+      "categoria": "Bebidas",
+      "ingredientes": "\n3 saquinhos de chá preto\n1 litro de água fervente\n2 pêssegos maduros picados\nAçúcar ou adoçante a gosto\nGelo a gosto\n\n",
+      "descricao": "\n1. Faça a infusão dos saquinhos de chá preto na água fervente por 5 minutos. Retire os saquinhos e deixe o chá esfriar.\n2. No liquidificador, bata os pêssegos picados com um pouco do chá até triturar bem.\n3. Junte a mistura de pêssego ao restante do chá, adoce a gosto e misture.\n4. Sirva em copos com bastante gelo.\n\n",
+      "tempo": "15",
+      "autor": "Rafael Teixeira",
+      "imagem": "imagens/receitas/17.jpg"
+    },
+    {
+      "id": 18,
+      "nome": "Smoothie de Morango",
+      "categoria": "Bebidas",
+      "ingredientes": "\n1 xícara de morangos congelados\n1/2 xícara de iogurte natural\n1/2 xícara de leite\n1 colher (sopa) de açúcar ou mel\n\n",
+      "descricao": "\n1. Coloque os morangos congelados, o iogurte, o leite e o adoçante de sua preferência no liquidificador.\n2. Bata tudo até obter um creme espesso e liso.\n3. Se necessário, pare o liquidificador, mexa com uma colher e volte a bater.\n4. Sirva em seguida, bem gelado.\n\n",
+      "tempo": "5",
+      "autor": "Amanda Jen",
+      "imagem": "imagens/receitas/18.jpg"
     }
-  ]
+]

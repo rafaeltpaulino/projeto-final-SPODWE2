@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Categoria = (props) => {
     const categoriaNome = props.categoria.nome;
@@ -11,6 +12,10 @@ const Categoria = (props) => {
             <h3>
                 {props.categoria.descricao}
             </h3>
+            <Link to='/categorias'>
+                Voltar
+            </Link>
+
             <div className='cards-container'>
                 {props.receitas.filter((receita) => receita.categoria === categoriaNome).map(r => (
                     <div key={r.id} className="card">
