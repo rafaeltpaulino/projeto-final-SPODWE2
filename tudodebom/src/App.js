@@ -10,12 +10,14 @@ import axios from 'axios';
 import NotFound from "./components/NotFound";
 import CadastroUsuario from "./components/CadastroUsuario";
 import Login from "./components/Login";
+import Categorias from "./components/Categorias"
 
 class App extends Component {
   state = {
     receitas: [],
     usuarios: [],
     categorias: [],
+    logado: false
   };
 
   currentReceitaId = 3;
@@ -99,21 +101,27 @@ class App extends Component {
   }
 
   handleLogin = (email, senha) => {
-    const res = this.state.usuarios.find((usuario) => 
+    const logado = this.state.usuarios.find((usuario) => 
       email === usuario.email && senha === usuario.senha
     );
 
-    return res;
+    this.setState({logado})
+
+    return logado;
   }
 
   render() {
     return (
       <Router>
-        <Topo />
+        <Topo logado={this.state.logado} />
         <Routes>
           <Route
             path="/"
             element={<Home receitas={this.state.receitas} />}
+          />
+          <Route 
+            path="/categorias"
+            element={<Categorias categorias={this.state.categorias}/>}
           />
           <Route
             path="/tabela_receitas"

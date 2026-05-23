@@ -27,7 +27,7 @@ const Home = (props) => {
 
       
             {props.receitas.map((receita) => (
-              <div key={receita.id} className="card" style={{ width: "18rem", border: "1px solid #ddd", marginBottom: "15px", borderRadius: "8px", overflow: "hidden", boxShadow: "0 4px 6px rgba(0,0,0,0.1)" }}>
+              <div key={receita.id} className="card">
 
               <img src={"/imagens/receitas/"+receita.id+".jpg"} className="card-img-top" alt={receita.titulo} style={{ width: "100%", height: "160px", objectFit: "cover" }} />
               

@@ -1,12 +1,18 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const Navegacao = () => {
+const Navegacao = (props) => {
+
   return (
     <ul>
       <li>
         <NavLink to="/">
           Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to='/categorias'>
+          Categorias
         </NavLink>
       </li>
       <li>
@@ -24,7 +30,7 @@ const Navegacao = () => {
           Tabela de Categorias
         </NavLink>
       </li>
-      <li>
+      {!props.logado ? (<><li>
         <NavLink to='/cadastro'>
           Cadastrar-se
         </NavLink>
@@ -33,9 +39,13 @@ const Navegacao = () => {
         <NavLink to='/login'>
           Login
         </NavLink>
-      </li>
+      </li></>) : (
+        <li>
+          teste
+        </li>
+      )}
     </ul>
   );
-}
+};
 
 export default Navegacao;

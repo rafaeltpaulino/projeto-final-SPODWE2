@@ -248,3 +248,12 @@ form button[type="submit"]:hover {
 .line {
     display: inline-block;
 }
+
+.card {
+  width: 18rem;
+  border: 1px solid #ddd; 
+  margin-bottom: 15px; 
+  border-radius: 8px; 
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
