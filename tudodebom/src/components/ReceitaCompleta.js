@@ -25,6 +25,8 @@ const ReceitaCompleta = (props) => {
         <section className="receita-secao">
         <h3>🍳 Modo de Preparo</h3>
         <p className="text-quebra-linha receita-texto">{props.receita.descricao}</p>
+
+        <button onClick={() => window.history.back()} className="btn-voltar">Voltar</button>
         </section>
     </div>
     );
