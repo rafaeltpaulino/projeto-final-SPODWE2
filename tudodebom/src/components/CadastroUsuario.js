@@ -72,141 +72,144 @@ const CadastroUsuario = (props) => {
 
   return (
     <>
-      {sucesso ? (
-        <div className='principal'>
-          <h2>
-            Cadastro realizado com sucesso!
-          </h2>
-          <p>
-            <Link to='/login'>
-              Entrar
-            </Link>
-          </p>
-        </div>
-      ) : (
-        <div className='principal'>
-          <p ref={errRef} className={mensagemErr ? 'errmsg' : 'offscreen'} aria-live='assertive'>
-            {mensagemErr}
-          </p>
-          <h2>
-            Cadastro de usuário.
-          </h2>
-          <form style={{ margin: "20px 0", padding: "15px", border: "1px solid #ccc", borderRadius: "5px" }} onSubmit={handleCadastroForm}>
-            <label htmlFor='nome'>
-              Nome:
-              <span className={nome ? 'valid' : 'hide'}>
-                <FontAwesomeIcon icon={faCheck} />
-              </span>
-              <span className={!nome ? 'invalid' : 'hide'}>
-                <FontAwesomeIcon icon={faTimes} />
-              </span>
-            </label>
-            <input
-              type='text'
-              id='nome'
-              ref={nomeRef}
-              autoComplete='off'
-              onChange={(e) => setNome(e.target.value)}
-              required
-              aria-describedby='nnote'
-              onFocus={() => setFocoNome(true)}
-              onBlur={() => setFocoNome(false)}
-            />
-            <label htmlFor='email'>
-              Email:
-              <span className={emailValido ? 'valid' : 'hide'}>
-                <FontAwesomeIcon icon={faCheck} />
-              </span>
-              <span className={emailValido || !email ? 'hide' : 'invalid'}>
-                <FontAwesomeIcon icon={faTimes} />
-              </span>
-            </label>
-            <input
-              type='text'
-              id='email'
-              autoComplete='off'
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              aria-invalid={emailValido ? 'false' : 'true'}
-              aria-describedby='eidnote'
-              onFocus={() => setFocoEmail(true)}
-              onBlur={() => setFocoEmail(false)}
-            />
-            <p id='eidnote' className={focoEmail && email && !emailValido ? 'instructions' : 'offscreen'}>
-              <FontAwesomeIcon icon={faInfoCircle} />
-              Deve haver apenas letras, números, e alguns caracteres especiais (._%+-) antes do @.<br />
-              <FontAwesomeIcon icon={faInfoCircle} />
-              Deve haver apenas letras, números e os caracteres especiais - e . depois do @.<br />
-              <FontAwesomeIcon icon={faInfoCircle} />
-              Deve haver apenas letras depois do ponto (ou pontos).<br />
-            </p>
-            <label htmlFor='senha'>
-              Senha:
-              <span className={senhaValida ? 'valid' : 'hide'}>
-                <FontAwesomeIcon icon={faCheck} />
-              </span>
-              <span className={senhaValida || !senha ? 'hide' : 'invalid'}>
-                <FontAwesomeIcon icon={faTimes} />
-              </span>
-            </label>
-            <input
-              type='password'
-              id='senha'
-              onChange={(e) => setSenha(e.target.value)}
-              required
-              aria-invalid={senhaValida ? 'false' : 'true'}
-              aria-describedby='snote'
-              onFocus={() => setFocoSenha(true)}
-              onBlur={() => setFocoSenha(false)}
-            />
-            <p id='snote' className={focoSenha && senha && !senhaValida ? 'instructions' : 'offscreen'}>
-              <FontAwesomeIcon icon={faInfoCircle} />
-              8 a 24 caracteres.<br />
-              <FontAwesomeIcon icon={faInfoCircle} />
-              Deve conter letras maiúsculas e minúsculas, um número e um caractere especial<br />
-              <FontAwesomeIcon icon={faInfoCircle} />
-              Caracteres especiais permitidos: <span aria-label='exclamation mark'>!</span> <span aria-label='at symbol'>@</span><span aria-label='hashtag'>#</span><span aria-label='dollar sign'>$</span><span aria-label='percent'>%</span>
-            </p>
-            <label htmlFor='confirmacao_senha'>
-              Confirmação de senha:
-              <span className={confirmacaoValida && confirmacaoSenha ? 'valid' : 'hide'}>
-                <FontAwesomeIcon icon={faCheck} />
-              </span>
-              <span className={confirmacaoValida || !confirmacaoSenha ? 'hide' : 'invalid'}>
-                <FontAwesomeIcon icon={faTimes} />
-              </span>
-            </label>
-            <input
-              type='password'
-              id='confirmacao_senha'
-              onChange={(e) => setConfirmacaoSenha(e.target.value)}
-              required
-              aria-invalid={confirmacaoValida ? 'false' : 'true'}
-              aria-describedby='cnote'
-              onFocus={() => setFocoConfirmacao(true)}
-              onBlur={() => setFocoConfirmacao(false)}
-            />
-            <p id='cnote' className={focoCofirmacao && confirmacaoSenha && !confirmacaoValida ? 'instructions' : 'offscreen'}>
-              <FontAwesomeIcon icon={faInfoCircle} />
-              As senhas devem ser iguais.
-            </p>
-
-            <button type='submit' style={{ cursor: "pointer" }} disabled={!nomeValido || !emailValido || !senhaValida || !confirmacaoValida ? true : false}>
-              Cadastrar-se
-            </button>
-          </form>
-          <br />
-
-          <p>
-            Já possui uma conta?<br />
-            <span>
+      {sucesso ?
+        (
+          <div className='principal'>
+            <h2>
+              Cadastro realizado com sucesso!
+            </h2>
+            <p>
               <Link to='/login'>
                 Entrar
               </Link>
-            </span>
-          </p>
-        </div>
-      )}
+            </p>
+          </div>
+        ) :
+        (
+          <div className='principal'>
+            <p ref={errRef} className={mensagemErr ? 'errmsg' : 'offscreen'} aria-live='assertive'>
+              {mensagemErr}
+            </p>
+            <h2>
+              Cadastro de usuário.
+            </h2>
+            <form style={{ margin: "20px 0", padding: "15px", border: "1px solid #ccc", borderRadius: "5px" }} onSubmit={handleCadastroForm}>
+              <label htmlFor='nome'>
+                Nome:
+                <span className={nome ? 'valid' : 'hide'}>
+                  <FontAwesomeIcon icon={faCheck} />
+                </span>
+                <span className={!nome ? 'invalid' : 'hide'}>
+                  <FontAwesomeIcon icon={faTimes} />
+                </span>
+              </label>
+              <input
+                type='text'
+                id='nome'
+                ref={nomeRef}
+                autoComplete='off'
+                onChange={(e) => setNome(e.target.value)}
+                required
+                aria-describedby='nnote'
+                onFocus={() => setFocoNome(true)}
+                onBlur={() => setFocoNome(false)}
+              />
+              <label htmlFor='email'>
+                Email:
+                <span className={emailValido ? 'valid' : 'hide'}>
+                  <FontAwesomeIcon icon={faCheck} />
+                </span>
+                <span className={emailValido || !email ? 'hide' : 'invalid'}>
+                  <FontAwesomeIcon icon={faTimes} />
+                </span>
+              </label>
+              <input
+                type='text'
+                id='email'
+                autoComplete='off'
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                aria-invalid={emailValido ? 'false' : 'true'}
+                aria-describedby='eidnote'
+                onFocus={() => setFocoEmail(true)}
+                onBlur={() => setFocoEmail(false)}
+              />
+              <p id='eidnote' className={focoEmail && email && !emailValido ? 'instructions' : 'offscreen'}>
+                <FontAwesomeIcon icon={faInfoCircle} />
+                Deve haver apenas letras, números, e alguns caracteres especiais (._%+-) antes do @.<br />
+                <FontAwesomeIcon icon={faInfoCircle} />
+                Deve haver apenas letras, números e os caracteres especiais - e . depois do @.<br />
+                <FontAwesomeIcon icon={faInfoCircle} />
+                Deve haver apenas letras depois do ponto (ou pontos).<br />
+              </p>
+              <label htmlFor='senha'>
+                Senha:
+                <span className={senhaValida ? 'valid' : 'hide'}>
+                  <FontAwesomeIcon icon={faCheck} />
+                </span>
+                <span className={senhaValida || !senha ? 'hide' : 'invalid'}>
+                  <FontAwesomeIcon icon={faTimes} />
+                </span>
+              </label>
+              <input
+                type='password'
+                id='senha'
+                onChange={(e) => setSenha(e.target.value)}
+                required
+                aria-invalid={senhaValida ? 'false' : 'true'}
+                aria-describedby='snote'
+                onFocus={() => setFocoSenha(true)}
+                onBlur={() => setFocoSenha(false)}
+              />
+              <p id='snote' className={focoSenha && senha && !senhaValida ? 'instructions' : 'offscreen'}>
+                <FontAwesomeIcon icon={faInfoCircle} />
+                8 a 24 caracteres.<br />
+                <FontAwesomeIcon icon={faInfoCircle} />
+                Deve conter letras maiúsculas e minúsculas, um número e um caractere especial<br />
+                <FontAwesomeIcon icon={faInfoCircle} />
+                Caracteres especiais permitidos: <span aria-label='exclamation mark'>!</span> <span aria-label='at symbol'>@</span><span aria-label='hashtag'>#</span><span aria-label='dollar sign'>$</span><span aria-label='percent'>%</span>
+              </p>
+              <label htmlFor='confirmacao_senha'>
+                Confirmação de senha:
+                <span className={confirmacaoValida && confirmacaoSenha ? 'valid' : 'hide'}>
+                  <FontAwesomeIcon icon={faCheck} />
+                </span>
+                <span className={confirmacaoValida || !confirmacaoSenha ? 'hide' : 'invalid'}>
+                  <FontAwesomeIcon icon={faTimes} />
+                </span>
+              </label>
+              <input
+                type='password'
+                id='confirmacao_senha'
+                onChange={(e) => setConfirmacaoSenha(e.target.value)}
+                required
+                aria-invalid={confirmacaoValida ? 'false' : 'true'}
+                aria-describedby='cnote'
+                onFocus={() => setFocoConfirmacao(true)}
+                onBlur={() => setFocoConfirmacao(false)}
+              />
+              <p id='cnote' className={focoCofirmacao && confirmacaoSenha && !confirmacaoValida ? 'instructions' : 'offscreen'}>
+                <FontAwesomeIcon icon={faInfoCircle} />
+                As senhas devem ser iguais.
+              </p>
+
+              <button type='submit' style={{ cursor: "pointer" }} disabled={!nomeValido || !emailValido || !senhaValida || !confirmacaoValida ? true : false}>
+                Cadastrar-se
+              </button>
+            </form>
+            <br />
+
+            <p>
+              Já possui uma conta?<br />
+              <span>
+                <Link to='/login'>
+                  Entrar
+                </Link>
+              </span>
+            </p>
+          </div>
+        )
+      }
     </>
   );
 }

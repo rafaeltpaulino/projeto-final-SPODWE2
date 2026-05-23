@@ -11,7 +11,7 @@ const Login = (props) => {
 
         const res = props.handleLogin(email, senha);
 
-        if(res) {
+        if (res) {
             sessionStorage.setItem('usuario', res.nome);
             alert('Login realizado com sucesso!');
             setSucesso(true);
@@ -21,36 +21,39 @@ const Login = (props) => {
         }
     }
 
-    if(sucesso) {
-        return <Navigate to='/' />
-    }
-
     return (
-        <div className='principal'>
-            <h2>
-                Login
-            </h2>
-            <form style={{ margin: "20px 0", padding: "15px", border: "1px solid #ccc", borderRadius: "5px" }} onSubmit={handleLoginForm}>
-                <label>
-                    Email
-                </label>
-                <input id='email' type='text' onChange={(e) => setEmail(e.target.value)} />
-                <label>
-                    Senha
-                </label>
-                <input id='senha' type='password' onChange={(e) => setSenha(e.target.value)} />
-                <button type='submit' style={{ cursor: "pointer" }} disabled={!email || !senha ? true : false} >
-                    Entrar
-                </button>
-            </form>
-            <p>
-                Não possui uma conta?
-                <br />
-                <Link to='/cadastro'>
-                    Cadastrar-se
-                </Link>
-            </p>
-        </div>
+        <>
+            {sucesso ?
+                (<Navigate to='/' />) :
+                (
+                    <div className='principal'>
+                        <h2>
+                            Login
+                        </h2>
+                        <form style={{ margin: "20px 0", padding: "15px", border: "1px solid #ccc", borderRadius: "5px" }} onSubmit={handleLoginForm}>
+                            <label>
+                                Email
+                            </label>
+                            <input id='email' type='text' onChange={(e) => setEmail(e.target.value)} />
+                            <label>
+                                Senha
+                            </label>
+                            <input id='senha' type='password' onChange={(e) => setSenha(e.target.value)} />
+                            <button type='submit' style={{ cursor: "pointer" }} disabled={!email || !senha ? true : false} >
+                                Entrar
+                            </button>
+                        </form>
+                        <p>
+                            Não possui uma conta?
+                            <br />
+                            <Link to='/cadastro'>
+                                Cadastrar-se
+                            </Link>
+                        </p>
+                    </div>
+                )
+            }
+        </>
     );
 };
 
