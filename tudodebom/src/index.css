@@ -290,8 +290,24 @@ body {
   padding-left: 14px;
 }
 
+.btn-voltar{
+  background-color: #fa790f;
+  color: white;
+  border: none;
+  padding: 12px 150px;
+  border-radius: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 15px;
+  transition: background-color 0.2s;
+}
+
+.btn-voltar:hover{
+  background-color: #d87212;
+}
+
 /* =========================================
-  Formulários e Botão Adicionar[cite: 3]
+  Formulários e Botão Adicionar
 ========================================= */
 .btn-adicionar {
   background-color: #10ac84;
@@ -355,7 +371,7 @@ form button[type="submit"]:hover {
 }
 
 /* =========================================
-   Tabela de Dados (CRUD)[cite: 3]
+   Tabela de Dados (CRUD)
 ========================================= */
 .tabela-dados {
   width: 100%;
@@ -413,7 +429,7 @@ form button[type="submit"]:hover {
 }
 
 /* =========================================
-   Rodapé[cite: 1]
+   Rodapé
 ========================================= */
 .rodape {
   background-color: #2d3436;
