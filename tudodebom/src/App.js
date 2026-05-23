@@ -12,6 +12,7 @@ import CadastroUsuario from "./components/CadastroUsuario";
 import Login from "./components/Login";
 import Categorias from "./components/Categorias"
 import BuscaCategoria from "./components/BuscaCategoria";
+import ReceitaCompleta from "./components/ReceitaCompleta";
 
 class App extends Component {
   state = {
@@ -119,6 +120,10 @@ class App extends Component {
           <Route
             path="/"
             element={<Home receitas={this.state.receitas} />}
+          />
+          <Route 
+            path="/receitas/:id" 
+            element={<ReceitaCompleta />} 
           />
           <Route 
             path="/categorias"
