@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 
 const Home = (props) => {
   const [expandido, setExpandido] = useState(false);
@@ -15,96 +16,54 @@ const Home = (props) => {
         inesquecível ou do prato principal perfeito.</p>
       <p>Portanto vamos começar! Utilize o menu acima para gerenciar as Receitas, Categorias e Usuários do sistema.</p>
 
-      <table className="cards-dados">
-        <tbody>
-          <div style={{ 
-            display: "flex", 
-            flexWrap: "wrap",
-            margin: "15px 0 0 0",
-            gap: "20px",         
-            justifyContent: "center"
-            }}>
-
-      
+      <div className="cards-container">
             {props.receitas.map((receita) => (
               <div key={receita.id} className="card">
 
-              <img src={receita.imagem} className="card-img-top" alt={receita.titulo} style={{ width: "100%", height: "160px", objectFit: "cover" }} />
+              <img src={receita.imagem} className="card-img-top" alt={receita.titulo} />
               
               {/* Corpo do Card */}
-              <div className="card-body" style={{ padding: "15px" }}>
-                <h5 className="card-title" style={{fontSize: "1.5em", margin: "0 0 10px 0", color: "#333" }}>{receita.nome}</h5>
+              <div className="card-body">
+                <h5 className="card-title" >{receita.nome} </h5>
+                <p className="card-text-categoria">{receita.categoria} </p>
+                <p className="card-text-autor">{receita.autor} </p>
                 
-                <p className="card-text" style={{ fontSize: "0.9em", color: "#666", height: "40px", overflow: "hidden" }}>
-                  {receita.categoria}
-                </p>
-
-                <p className="card-text" style={{ fontSize: "0.9em", color: "#666", height: "30px", overflow: "hidden" }}>
-                  {receita.autor}
-                </p>
-                
-                <CardReceita key={receita.id} receita={receita} estilos={estilos} />
-              
-                <div style={{ display: "flex", justifyContent: "between", alignItems: "center", marginTop: "15px" }}>
-                </div>
+                <CardReceita key={receita.id} receita={receita} className="modal-janela" />
+          
                 </div>
 
               </div>
             ))}
-          </div>
-        </tbody>
-      </table>
+        </div>
     </main>
   );
 }
 
-const estilos = {
-  overlay: {
-    position: "fixed", 
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    display: "flex",        
-    justifyContent: "center",
-    alignItems: "center",
-    zIndex: 1000,
-    backgroundColor: "rgba(255, 250, 175, 0)"
-  },
-  janela: {
-    backgroundColor: '#fff',
-    width: '700px',    
-    height: '400px',     
-    padding: '20px',
-    borderRadius: '12px',
-    boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
-    
-    display: 'flex',
-    flexDirection: 'column',  
-    overflowY: 'auto',         
-    boxSizing: 'border-box' 
-  }
-};
-
-function CardReceita({ receita, estilos }) {
+function CardReceita({ receita }) {
   const [expandido, setExpandido] = useState(false);
+  const navigate = useNavigate();
+
+  const ReceitaCompleta = () => {
+    navigate(`/receitas/${receita.id}`);
+  }
 
   return (
-    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "15px" }}>
-      <span style={{ fontSize: "0.85em", color: "#999", marginRight: "10px" }}>⏱️ {receita.tempo}</span>
-      <button onClick={() => setExpandido(true)} style={{ marginRight: "5px", cursor: "pointer", backgroundColor: "#db7336", color: "white", padding: "5px 10px", borderRadius: "4px", border: "none", fontSize: "0.9em" }}>
-        Ver receita
-      </button>
+    <div className="card-acoes">
+      <span className="card-tempo">⏱️ {receita.tempo}</span>
+      <button onClick={() => setExpandido(true)} className="btn-ver">Ver Ingredientes </button>
 
       {expandido && (
-        <div style={estilos.overlay}>
-          <div style={estilos.janela}>
+        <div className="modal-overlay">
+          <div className="modal-janela">
             <h2>{receita.nome}</h2>
             <hr />
-            <p style={{ whiteSpace: "pre-line" }}><strong>Ingredientes:</strong> {receita.ingredientes}</p>
-            <p style={{ whiteSpace: "pre-line" }}><strong>Modo de preparo:</strong> {receita.descricao}</p>
+            <p className="text-quebra-linha"><strong>Ingredientes:</strong> {receita.ingredientes} </p>
             <hr />
-            <button onClick={() => setExpandido(false)}>Fechar Janela</button>
+            
+            <div className="modal-botoes-container">
+              <button onClick={() => setExpandido(false)} className="btn-fechar-ingredientes">Fechar Janela </button>
+              <button onClick={ReceitaCompleta} className="btn-ver">Ver Receita</button>
+            </div>
           </div>
         </div>
       )}
