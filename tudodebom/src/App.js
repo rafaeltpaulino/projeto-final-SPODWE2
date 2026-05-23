@@ -13,6 +13,7 @@ import Login from "./components/Login";
 import Categorias from "./components/Categorias"
 import BuscaCategoria from "./components/BuscaCategoria";
 import ReceitaCompleta from "./components/ReceitaCompleta";
+import BuscaReceita from "./components/BuscaReceita";
 
 class App extends Component {
   state = {
@@ -122,8 +123,8 @@ class App extends Component {
             element={<Home receitas={this.state.receitas} />}
           />
           <Route 
-            path="/receitas/:id" 
-            element={<ReceitaCompleta />} 
+            path="/receitas/:receitaId" 
+            element={<BuscaReceita receitas={this.state.receitas} />} 
           />
           <Route 
             path="/categorias"
