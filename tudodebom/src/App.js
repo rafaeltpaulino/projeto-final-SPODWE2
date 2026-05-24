@@ -24,9 +24,10 @@ class App extends Component {
     logado: false
   };
 
-  currentReceitaId = 3;
+  currentReceitaId = 18;
   currentCategoriaId = 3;
   currentUsuarioId = 4;
+  currentAvaliacaoId = 4;
 
   async componentDidMount() {
     try {
@@ -54,59 +55,59 @@ class App extends Component {
     this.currentReceitaId++;
     const receitas = [...this.state.receitas, {...receita, id: this.currentReceitaId}];
     this.setState({ receitas });
-  }
+  };
 
   handleEditarReceita = (receita) => {
     const receitas = this.state.receitas.map((r) => 
       r.id === receita.id ? receita : r
     );
     this.setState({receitas});
-  }
+  };
 
   handleExcluirReceita = (receitaId) => {
     if (window.confirm('Deseja realmente excluir essa receita?')){
       const receitas = this.state.receitas.filter((r) => r.id !== receitaId);
       this.setState({receitas});
     }
-  }
+  };
 
   handleAdicionarUsuario = (usuario) => {
     this.currentUsuarioId++;
     const usuarios = [...this.state.usuarios, {...usuario, id: this.currentUsuarioId}];
     this.setState({usuarios});
-  }
+  };
 
   handleEditarUsuario = (usuario) => {
     const usuarios = this.state.usuarios.map((u) => 
       u.id === usuario.id ? usuario : u
     );
     this.setState({usuarios});
-  }
+  };
 
   handleExcluirUsuario = (usuarioId) => {
     if(window.confirm('Deseja realmente excluir esse usuário?')){
       const usuarios = this.state.usuarios.filter((u) => u.id !== usuarioId);
       this.setState({usuarios});
     }
-  }
+  };
 
   handleAdicionarCategoria = (categoria) => {
     this.currentCategoriaId++;
     const categorias = [...this.state.categorias, {...categoria, id: this.currentCategoriaId}];
     this.setState({categorias});
-  }
+  };
 
   handleEditarCategoria = (categoria) => {
     const categorias = this.state.categorias.map((c) =>
       c.id === categoria.id ? categoria : c
     );
     this.setState({categorias});
-  }
+  };
 
   handleExcluirCategoria = (categoriaId) => {
     const categorias = this.state.categorias.filter((c) => c.id !== categoriaId);
     this.setState({categorias});
-  }
+  };
 
   handleLogin = (email, senha) => {
     const usuario = this.state.usuarios.find((usuario) => 
@@ -123,7 +124,53 @@ class App extends Component {
 
       return false;
     }
-  }
+  };
+
+  handleAtualizarNotaReceita = (idReceita, nota) => {
+    const receita = this.state.receitas.find((r) => r.id === idReceita);
+
+    const qtdAvaliacoes = receita.quantidade_avaliacoes;
+    console.log(qtdAvaliacoes);
+
+    const somatorioNotas = receita.nota_media * qtdAvaliacoes;
+    console.log(somatorioNotas);
+
+    const novaMedia = (somatorioNotas + nota) / (qtdAvaliacoes + 1);
+    console.log((somatorioNotas + nota));
+    console.log('/');
+    console.log((qtdAvaliacoes + 1));
+    console.log(novaMedia);
+
+    const receitaAtualizada = {...receita, nota_media: novaMedia, quantidade_avaliacoes: qtdAvaliacoes + 1};
+    console.log('Receita atualizada');
+    console.log(receitaAtualizada);
+    
+    this.handleEditarReceita(receitaAtualizada);
+  };
+
+  handleNovaAvaliacao = (idReceita, idUsuario, nota, comentario) => {
+    const usuario = this.state.usuarios.find((u) => u.id === idUsuario);
+
+    const data = Date.now();
+    this.currentAvaliacaoId++;
+    const avaliacao = {
+      id: this.currentAvaliacaoId,
+      id_receita: idReceita,
+      id_usuario: idUsuario,
+      nome_usuario: usuario.nome,
+      nota: nota,
+      comentario: comentario,
+      data_avaliacao: data
+    };
+
+    this.handleAtualizarNotaReceita(idReceita, nota);
+    console.log('Nova avaliação!');
+    console.log(avaliacao);
+
+    const avaliacoes = [...this.state.avaliacoes, avaliacao];
+
+    this.setState({avaliacoes});
+  };
 
   render() {
     return (
@@ -138,7 +185,8 @@ class App extends Component {
             path="/receitas/:receitaId" 
             element={<BuscaReceita receitas={this.state.receitas}
                                    avaliacoes={this.state.avaliacoes}
-                                   logado={this.state.logado} />} 
+                                   logado={this.state.logado}
+                                   handleNovaAvaliacao={this.handleNovaAvaliacao} />} 
           />
           <Route 
             path="/categorias"

@@ -568,3 +568,87 @@ form button[type="submit"]:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
   transition: all 0.2s ease-in-out;
 }
+
+/* Container do formulário em formato de cartão */
+.formulario-avaliacao {
+  max-width: 800px;
+  margin: 2rem 0;
+  padding: 20px;
+  background-color: #f8f9fa; /* Um cinza/azulado bem sutil para se diferenciar da lista */
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.formulario-avaliacao h3 {
+  font-size: 1.25rem;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+/* Usando Grid para estruturar os campos */
+.formulario-avaliacao form {
+  display: grid;
+  grid-template-columns: 3fr 1fr; /* O campo de nome fica 3x maior que o campo de nota */
+  gap: 15px;
+}
+
+.grupo-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Faz o campo de comentário ocupar a largura total do grid */
+.comentario-form {
+  grid-column: 1 / -1; 
+}
+
+/* Estilos das labels */
+.grupo-form label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+/* Estilos dos inputs e textarea */
+.grupo-form input,
+.grupo-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: inherit; /* Garante que o textarea use a mesma fonte do site */
+  background-color: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Efeito ao clicar no campo para digitar */
+.grupo-form input:focus,
+.grupo-form textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* Estilo do botão de envio */
+.btn-enviar-avaliacao {
+  grid-column: 1 / -1; /* Força o botão a ir para a linha de baixo e ocupar tudo */
+  background-color: #2c3e50;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 5px;
+}
+
+.btn-enviar-avaliacao:hover {
+  background-color: #1a252f;
+}

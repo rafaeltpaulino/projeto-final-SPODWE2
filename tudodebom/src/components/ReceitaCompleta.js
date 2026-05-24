@@ -4,8 +4,6 @@ import NovaAvaliacao from './NovaAvaliacao';
 
 const ReceitaCompleta = (props) => {
 
-    console.log(props.avaliacoes);
-
     return (
         <div className="principal">
             <header className="receita-header">
@@ -14,6 +12,7 @@ const ReceitaCompleta = (props) => {
                     <span>📁 <strong>Categoria:</strong> {props.receita.categoria}</span>
                     <span>✍️ <strong>Por:</strong> {props.receita.autor}</span>
                     <span>⏱️ <strong>Preparo:</strong> {props.receita.tempo}</span>
+                    <span>⭐ <strong>Nota média:</strong> {props.receita.nota_media}</span>
                 </div>
             </header>
 
@@ -32,7 +31,7 @@ const ReceitaCompleta = (props) => {
                 <button onClick={() => window.history.back()} className="btn-voltar">Voltar</button>
             </section>
 
-            <NovaAvaliacao logado={props.logado} />
+            <NovaAvaliacao logado={props.logado} handleNovaAvaliacao={props.handleNovaAvaliacao} idReceita={props.receita.id}/>
 
             <div className='avaliacoes'>
                 <h2>
