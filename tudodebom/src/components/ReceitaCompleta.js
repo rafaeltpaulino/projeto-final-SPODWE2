@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import DateObject from 'react-date-object'
+import NovaAvaliacao from './NovaAvaliacao';
 
 const ReceitaCompleta = (props) => {
 
@@ -30,6 +31,8 @@ const ReceitaCompleta = (props) => {
 
                 <button onClick={() => window.history.back()} className="btn-voltar">Voltar</button>
             </section>
+
+            <NovaAvaliacao logado={props.logado} />
 
             <div className='avaliacoes'>
                 <h2>

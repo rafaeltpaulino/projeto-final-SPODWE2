@@ -137,7 +137,8 @@ class App extends Component {
           <Route 
             path="/receitas/:receitaId" 
             element={<BuscaReceita receitas={this.state.receitas}
-                                   avaliacoes={this.state.avaliacoes} />} 
+                                   avaliacoes={this.state.avaliacoes}
+                                   logado={this.state.logado} />} 
           />
           <Route 
             path="/categorias"
