@@ -126,29 +126,8 @@ class App extends Component {
     }
   };
 
-  handleAtualizarNotaReceita = (idReceita, nota) => {
-    const receita = this.state.receitas.find((r) => r.id === idReceita);
-
-    const qtdAvaliacoes = receita.quantidade_avaliacoes;
-    console.log(qtdAvaliacoes);
-
-    const somatorioNotas = receita.nota_media * qtdAvaliacoes;
-    console.log(somatorioNotas);
-
-    const novaMedia = (somatorioNotas + nota) / (qtdAvaliacoes + 1);
-    console.log((somatorioNotas + nota));
-    console.log('/');
-    console.log((qtdAvaliacoes + 1));
-    console.log(novaMedia);
-
-    const receitaAtualizada = {...receita, nota_media: novaMedia, quantidade_avaliacoes: qtdAvaliacoes + 1};
-    console.log('Receita atualizada');
-    console.log(receitaAtualizada);
-    
-    this.handleEditarReceita(receitaAtualizada);
-  };
-
   handleNovaAvaliacao = (idReceita, idUsuario, nota, comentario) => {
+    const receita = this.state.receitas.find((r) => r.id === idReceita);
     const usuario = this.state.usuarios.find((u) => u.id === idUsuario);
 
     const data = Date.now();
@@ -163,10 +142,13 @@ class App extends Component {
       data_avaliacao: data
     };
 
-    this.handleAtualizarNotaReceita(idReceita, nota);
-    console.log('Nova avaliação!');
-    console.log(avaliacao);
-
+    const qtdAvaliacoes = receita.quantidade_avaliacoes;
+    const somatorioNotas = receita.nota_media * qtdAvaliacoes;
+    const novaMedia = (somatorioNotas + nota) / (qtdAvaliacoes + 1);
+    const receitaAtualizada = {...receita, nota_media: novaMedia, quantidade_avaliacoes: qtdAvaliacoes + 1};
+    
+    this.handleEditarReceita(receitaAtualizada);
+    
     const avaliacoes = [...this.state.avaliacoes, avaliacao];
 
     this.setState({avaliacoes});

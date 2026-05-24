@@ -30,7 +30,7 @@ const TabelaCategorias = (props) => {
       nome: categoria.nome,
       descricao: categoria.descricao,
       icone: categoria.icone
-    })
+    });
     setExibirFormulario(true);
   };
 

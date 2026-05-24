@@ -1,8 +1,10 @@
 import React, { Fragment } from 'react';
 import DateObject from 'react-date-object'
-import NovaAvaliacao from './NovaAvaliacao';
+import Avaliacao from './Avaliacao';
 
 const ReceitaCompleta = (props) => {
+    const idUsuario = sessionStorage.getItem('usuarioId');
+    const possuiAvaliacao = props.avaliacoes.find((a) => a.id_usuario === Number(idUsuario));
 
     return (
         <div className="principal">
@@ -12,7 +14,7 @@ const ReceitaCompleta = (props) => {
                     <span>📁 <strong>Categoria:</strong> {props.receita.categoria}</span>
                     <span>✍️ <strong>Por:</strong> {props.receita.autor}</span>
                     <span>⏱️ <strong>Preparo:</strong> {props.receita.tempo}</span>
-                    <span>⭐ <strong>Nota média:</strong> {props.receita.nota_media}</span>
+                    <span>⭐ <strong>Nota média:</strong> {props.receita.nota_media ? props.receita.nota_media.toFixed(2) : '--'}</span>
                 </div>
             </header>
 
@@ -31,7 +33,10 @@ const ReceitaCompleta = (props) => {
                 <button onClick={() => window.history.back()} className="btn-voltar">Voltar</button>
             </section>
 
-            <NovaAvaliacao logado={props.logado} handleNovaAvaliacao={props.handleNovaAvaliacao} idReceita={props.receita.id}/>
+            <Avaliacao logado={props.logado} 
+                           handleNovaAvaliacao={props.handleNovaAvaliacao}
+                           idReceita={props.receita.id} 
+                           possuiAvaliacao={possuiAvaliacao}/>
 
             <div className='avaliacoes'>
                 <h2>
