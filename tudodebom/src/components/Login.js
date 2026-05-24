@@ -12,14 +12,13 @@ const Login = (props) => {
         const res = props.handleLogin(email, senha);
 
         if (res) {
-            sessionStorage.setItem('usuario', res.nome);
             alert('Login realizado com sucesso!');
             setSucesso(true);
         } else {
             alert('Email ou senha incorretos');
             setSucesso(false);
         }
-    }
+    };
 
     return (
         <>

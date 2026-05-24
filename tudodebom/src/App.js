@@ -20,6 +20,7 @@ class App extends Component {
     receitas: [],
     usuarios: [],
     categorias: [],
+    avaliacoes: [],
     logado: false
   };
 
@@ -32,16 +33,20 @@ class App extends Component {
       const { data: receitas } = await axios.get('/api/receitas.json');
       const { data: usuarios } = await axios.get('/api/usuarios.json');
       const { data: categorias } = await axios.get('/api/categorias.json');
+      const { data: avaliacoes } = await axios.get('/api/avaliacoes.json');
 
       this.setState({ receitas });
       this.setState({ usuarios });
       this.setState({ categorias });
+      this.setState({avaliacoes});
     } catch (error) {
       console.log(error);
       document.querySelectorAll('.principal')[0].insertAdjacentHTML(
         "beforeend",
         "<p class'erro'>Mensagem de erro</p>"
       );
+    } finally {
+      console.log(this.state.avaliacoes);
     }
   }
 
@@ -104,13 +109,20 @@ class App extends Component {
   }
 
   handleLogin = (email, senha) => {
-    const logado = this.state.usuarios.find((usuario) => 
+    const usuario = this.state.usuarios.find((usuario) => 
       email === usuario.email && senha === usuario.senha
     );
 
-    this.setState({logado})
+    if(usuario) {
+      sessionStorage.setItem('usuarioId', usuario.id);
+      this.setState({logado: true});
 
-    return logado;
+      return true;
+    } else {
+      this.setState({logado: false});
+
+      return false;
+    }
   }
 
   render() {
@@ -124,7 +136,8 @@ class App extends Component {
           />
           <Route 
             path="/receitas/:receitaId" 
-            element={<BuscaReceita receitas={this.state.receitas} />} 
+            element={<BuscaReceita receitas={this.state.receitas}
+                                   avaliacoes={this.state.avaliacoes} />} 
           />
           <Route 
             path="/categorias"
