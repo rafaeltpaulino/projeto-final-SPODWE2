@@ -1,7 +1,9 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 
 const Navegacao = (props) => {
+
+  const usuarioId = sessionStorage.getItem('usuarioId');
 
   return (
     <ul>
@@ -31,25 +33,27 @@ const Navegacao = (props) => {
         </NavLink>
       </li>
       {!props.logado ? 
-      (
-        <>
+        (
+          <>
+            <li>
+              <NavLink to='/cadastro'>
+                Cadastrar-se
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to='/login'>
+                Login
+              </NavLink>
+            </li>
+          </>
+        ) : 
+        (
           <li>
-            <NavLink to='/cadastro'>
-              Cadastrar-se
+            <NavLink to={`/dashboard/${usuarioId}`}>
+              Minha conta
             </NavLink>
-          </li>
-          <li>
-            <NavLink to='/login'>
-              Login
-            </NavLink>
-          </li>
-        </>
-      ) : 
-      (
-        <li>
-          teste
-        </li> 
-      )
+          </li> 
+        )
       }
     </ul>
   );
