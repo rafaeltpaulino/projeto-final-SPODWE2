@@ -4,7 +4,7 @@ import Avaliacao from './Avaliacao';
 
 const ReceitaCompleta = (props) => {
     const idUsuario = sessionStorage.getItem('usuarioId');
-    const possuiAvaliacao = props.avaliacoes.find((a) => a.id_usuario === Number(idUsuario));
+    const possuiAvaliacao = props.avaliacoes.find((a) => a.id_usuario === Number(idUsuario) && a.id_receita === props.receita.id);
 
     useEffect(() => {
         console.log('Estado do possui avaliação:');
