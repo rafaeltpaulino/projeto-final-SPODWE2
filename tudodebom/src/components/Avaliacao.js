@@ -1,15 +1,39 @@
 import React, { useEffect, useState } from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Avaliacao = (props) => {
-    const [nota, setNota] = useState(null);
+    const [nota, setNota] = useState('');
     const [comentario, setComentario] = useState('');
+    const [edicao, setEdicao] = useState(false);
+
+    useEffect(() => {
+        console.log(nota);
+        console.log(props.possuiAvaliacao);
+    }, [nota]);
+
+    useEffect(() => {
+        console.log(comentario);
+    }, [comentario]);
+
+    useEffect(() => {
+        if(props.possuiAvaliacao) {
+            setNota(props.possuiAvaliacao.nota);
+            setComentario(props.possuiAvaliacao.comentario);
+        }
+    }, [edicao]);
 
     const handleAvaliacaoForm = (e) => {
         e.preventDefault();
         const usuarioId = sessionStorage.getItem('usuarioId');
 
-        props.handleNovaAvaliacao(props.idReceita, Number(usuarioId), Number(nota), comentario);
+        if(!props.possuiAvaliacao) {
+            props.handleNovaAvaliacao(props.idReceita, Number(usuarioId), Number(nota), comentario);
+            alert('Avaliação enviada com sucesso!');
+        } else {
+            props.handleEditarAvaliacao(props.idReceita, props.possuiAvaliacao, nota, comentario);
+            alert('Avaliação editada com sucesso!');
+            setEdicao(false);
+        }
     };
 
     return (
@@ -25,9 +49,9 @@ const Avaliacao = (props) => {
                         </div>
 
                         <div className="grupo-form comentario-form">
-                        <label htmlFor="comentarioReceita">Comentário</label>
-                            <Link to='/login' style={{textDecoration: 'underline'}}>
-                                <textarea id="comentarioReceita" rows="3" value='Entre para avaliar a receita.' style={{cursor: 'pointer'}} readOnly />
+                            <label htmlFor="comentarioReceita">Comentário</label>
+                            <Link to='/login' style={{ textDecoration: 'underline' }}>
+                                <textarea id="comentarioReceita" rows="3" value='Entre para avaliar a receita.' style={{ cursor: 'pointer' }} readOnly />
                             </Link>
                         </div>
                     </form>
@@ -57,17 +81,26 @@ const Avaliacao = (props) => {
                     <form onSubmit={handleAvaliacaoForm}>
                         <div className="grupo-form">
                             <label htmlFor="notaReceita">Nota (1 a 5)</label>
-                            <input type="number" id="notaReceita" min="1" max="5" placeholder="5" value={props.possuiAvaliacao.nota} required onChange={(e) => setNota(e.target.value)} />
+                            <input type="number" id="notaReceita" min="1" max="5" placeholder="5" value={!edicao ? props.possuiAvaliacao.nota : nota} required onChange={(e) => setNota(e.target.value)} disabled={edicao ? false : true} />
                         </div>
 
                         <div className="grupo-form comentario-form">
                             <label htmlFor="comentarioReceita">Comentário</label>
-                            <textarea id="comentarioReceita" rows="3" placeholder="O que você achou desta receita?" value={props.possuiAvaliacao.comentario} required onChange={(e) => setComentario(e.target.value)} />
+                            <textarea id="comentarioReceita" rows="3" placeholder="O que você achou desta receita?" value={!edicao ? props.possuiAvaliacao.comentario : comentario} required onChange={(e) => setComentario(e.target.value)} disabled={edicao ? false : true} />
                         </div>
 
-                        <button type="submit" className="btn-enviar-avaliacao">
+                        {!edicao ? (<button type="button" className="btn-enviar-avaliacao" onClick={() => setEdicao(true)}>
                             Editar Avaliação
-                        </button>
+                        </button>) : (
+                            <>
+                                <button type="submit" className="btn-enviar-avaliacao">
+                                    Enviar Avaliação
+                                </button>
+                                <button type="button" className="btn-enviar-avaliacao" onClick={() => setEdicao(false)}>
+                                    Cancelar
+                                </button>
+                            </>
+                        )}
                     </form>
                 </div>
             )}

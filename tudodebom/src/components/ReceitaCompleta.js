@@ -1,10 +1,15 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import DateObject from 'react-date-object'
 import Avaliacao from './Avaliacao';
 
 const ReceitaCompleta = (props) => {
     const idUsuario = sessionStorage.getItem('usuarioId');
     const possuiAvaliacao = props.avaliacoes.find((a) => a.id_usuario === Number(idUsuario));
+
+    useEffect(() => {
+        console.log('Estado do possui avaliação:');
+        console.log(possuiAvaliacao);
+    }, [possuiAvaliacao]);
 
     return (
         <div className="principal">
@@ -36,7 +41,9 @@ const ReceitaCompleta = (props) => {
             <Avaliacao logado={props.logado} 
                            handleNovaAvaliacao={props.handleNovaAvaliacao}
                            idReceita={props.receita.id} 
-                           possuiAvaliacao={possuiAvaliacao}/>
+                           possuiAvaliacao={possuiAvaliacao}
+                           handleEditarAvaliacao={props.handleEditarAvaliacao}
+                           />
 
             <div className='avaliacoes'>
                 <h2>

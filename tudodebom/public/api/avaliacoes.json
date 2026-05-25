@@ -6,7 +6,7 @@
         "nome_usuario": "Rafael Teixeira",
         "nota": 5,
         "comentario": "Meu bolo favorito!! Ficou delicioso e eu nem sei cozinhar!",
-        "data_avaliacao": "2026-05-24T11:11:00.000Z"
+        "data_avaliacao": "22/05/2026 11:25"
     },
     {
         "id": 2,
@@ -15,7 +15,7 @@
         "nome_usuario": "Vinícius Tiago",
         "nota": 1,
         "comentario": "n gosto de nada",
-        "data_avaliacao": "2026-05-24T08:56:00.000Z"
+        "data_avaliacao": "24/05/2026 19:31"
     },
     {
         "id": 3,
@@ -24,7 +24,7 @@
         "nome_usuario": "Amanda Jen",
         "nota": 5,
         "comentario": "fui eu q fiz, então vou dar nota 5",
-        "data_avaliacao": "2026-05-24T02:44:00.000Z"
+        "data_avaliacao": "25/05/2026 03:25"
     },
     {
         "id": 4,
@@ -33,6 +33,6 @@
         "nome_usuario": "Kethelyn Alves",
         "nota": 5,
         "comentario": "mto boooom",
-        "data_avaliacao": "2026-05-24T14:21:00.000Z"
+        "data_avaliacao": "23/05/2026 14:16"
     }
 ]

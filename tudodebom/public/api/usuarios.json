@@ -26,5 +26,12 @@
       "email": "rafael@email.com",
       "papel": "Editor",
       "senha": "corinthians"
+    },
+    {
+      "id": 5,
+      "nome": "Giorno Giovanna",
+      "email": "giorno@email.com",
+      "papel": "Chefe",
+      "senha": "jojo"
     }
 ]
