@@ -30,10 +30,18 @@ body {
 }
 
 .logo span {
-  font-size: 26px;
+  font-size: 24px;
   font-weight: bold;
   color: white;
   letter-spacing: 1px;
+  border-radius: 20px;
+}
+.logo img {
+  width: 40%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border-radius: 35px;
 }
 
 .topo ul {
@@ -87,11 +95,9 @@ body {
 /* Estilos para os cards de receita */
 
 .cards-container{
-  display: flex; 
-  flex-wrap: wrap;
-  margin: 15px 0 0 0;
-  gap: 20px;         
-  justify-content: center;
+  display: grid; 
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
 }
 
 .card{
@@ -103,6 +109,23 @@ body {
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-text-title{
+  display: block;
+  font-size: 1.8em; 
+  margin: 0 0 10px 0; 
+  color: #333;
+  overflow: hidden;
+}
+
+.card-footer{
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
 }
 
 .card-body{
@@ -112,17 +135,12 @@ body {
   display: flex;
 }
 
-.card-title{
-  font-size: 1.5em; 
-  margin: 0 0 10px 0; 
-  color: #333;
-}
-
 .card-text-categoria,.card-text-autor{
-  font-size: 0.9em; 
+  font-size: 0.9em;
   color: #666; 
-  height: 40px; 
+  height: auto;
   overflow: hidden;
+  display: block;
 }
 
 .card-img-top{
