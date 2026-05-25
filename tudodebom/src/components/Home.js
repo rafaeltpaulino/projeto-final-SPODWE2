@@ -24,14 +24,17 @@ const Home = (props) => {
               
               {/* Corpo do Card */}
               <div className="card-body">
-                <h5 className="card-title" >{receita.nome} </h5>
-                <p className="card-text-categoria">{receita.categoria} </p>
-                <p className="card-text-autor">{receita.autor} </p>
+                <div className="card-text-title">
+                  <h5>{receita.nome} </h5>
+                </div>
+                
+                <div className="card-footer">
+                  <p className="card-text-categoria">{receita.categoria} </p>
+                  <p className="card-text-autor">{receita.autor} </p>
+                </div>
                 
                 <CardReceita key={receita.id} receita={receita} className="modal-janela" />
-          
                 </div>
-
               </div>
             ))}
         </div>
