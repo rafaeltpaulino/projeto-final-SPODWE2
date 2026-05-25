@@ -6,7 +6,7 @@ const Logo = () => {
         <Link to="/">
             <h1 className="logo">
                 <span>
-                    Logo
+                    <img src="/imagens/logoIcon.png" alt="Logo do site" />
                 </span>
             </h1>
         </Link>
