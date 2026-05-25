@@ -193,10 +193,10 @@ class App extends Component {
           <Route
             path="/receitas/:receitaId"
             element={<BuscaReceita receitas={this.state.receitas}
-              avaliacoes={this.state.avaliacoes}
-              logado={this.state.logado}
-              handleNovaAvaliacao={this.handleNovaAvaliacao}
-              handleEditarAvaliacao={this.handleEditarAvaliacao} />}
+                                   avaliacoes={this.state.avaliacoes}
+                                   logado={this.state.logado}
+                                   handleNovaAvaliacao={this.handleNovaAvaliacao}
+                                   handleEditarAvaliacao={this.handleEditarAvaliacao} />}
           />
           <Route
             path="/categorias"
@@ -205,25 +205,25 @@ class App extends Component {
           <Route
             path="/tabela_receitas"
             element={<TabelaReceitas receitas={this.state.receitas}
-              adicionarReceita={this.handleAdicionarReceita}
-              editarReceita={this.handleEditarReceita}
-              excluirReceita={this.handleExcluirReceita}
-              categorias={this.state.categorias}
-              usuarios={this.state.usuarios} />}
+                                     adicionarReceita={this.handleAdicionarReceita}
+                                     editarReceita={this.handleEditarReceita}
+                                     excluirReceita={this.handleExcluirReceita}
+                                     categorias={this.state.categorias}
+                                     usuarios={this.state.usuarios} />}
           />
           <Route
             path="/tabela_usuarios"
             element={<TabelaUsuarios usuarios={this.state.usuarios}
-              adicionarUsuario={this.handleAdicionarUsuario}
-              editarUsuario={this.handleEditarUsuario}
-              excluirUsuario={this.handleExcluirUsuario} />}
+                                     adicionarUsuario={this.handleAdicionarUsuario}
+                                     editarUsuario={this.handleEditarUsuario}
+                                     excluirUsuario={this.handleExcluirUsuario} />}
           />
           <Route
             path="/tabela_categorias"
             element={<TabelaCategorias categorias={this.state.categorias}
-              adicionarCategoria={this.handleAdicionarCategoria}
-              editarCategoria={this.handleEditarCategoria}
-              excluirCategoria={this.handleExcluirCategoria} />}
+                                       adicionarCategoria={this.handleAdicionarCategoria}
+                                       editarCategoria={this.handleEditarCategoria}
+                                       excluirCategoria={this.handleExcluirCategoria} />}
           />
           <Route
             path="*"
@@ -244,7 +244,13 @@ class App extends Component {
           />
           <Route 
             path="/dashboard/:usuarioId"
-            element={<BuscaDashBoard avaliacoes={this.state.avaliacoes} />}
+            element={<BuscaDashBoard avaliacoes={this.state.avaliacoes}
+                                     receitas={this.state.receitas}
+                                     usuarios={this.state.usuarios}
+                                     categorias={this.state.categorias}
+                                     adicionarReceita={this.handleAdicionarReceita}
+                                     editarReceita={this.handleEditarReceita}
+                                     excluirReceita={this.handleExcluirReceita} />}
           />      
         </Routes>
         <Rodape />

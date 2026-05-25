@@ -44,8 +44,8 @@ const Avaliacao = (props) => {
 
                     <form>
                         <div className="grupo-form">
-                            <label htmlFor="notaReceita">Nota (1 a 5)</label>
-                            <input type="number" disabled={true} id="notaReceita" min="1" max="5" placeholder="5" />
+                            <label htmlFor="notaReceita">Nota (0 a 5)</label>
+                            <input type="number" disabled={true} id="notaReceita" min="0" max="5" placeholder="--" readOnly />
                         </div>
 
                         <div className="grupo-form comentario-form">
@@ -61,13 +61,13 @@ const Avaliacao = (props) => {
                     <h3>Deixe sua avaliação</h3>
                     <form onSubmit={handleAvaliacaoForm}>
                         <div className="grupo-form">
-                            <label htmlFor="notaReceita">Nota (1 a 5)</label>
-                            <input type="number" id="notaReceita" min="1" max="5" placeholder="5" required onChange={(e) => setNota(e.target.value)} />
+                            <label htmlFor="notaReceita">Nota (0 a 5)</label>
+                            <input type="number" id="notaReceita" min="0" max="5" placeholder="--" required onChange={(e) => setNota(e.target.value)} />
                         </div>
 
                         <div className="grupo-form comentario-form">
                             <label htmlFor="comentarioReceita">Comentário</label>
-                            <textarea id="comentarioReceita" rows="3" placeholder="O que você achou desta receita?" required onChange={(e) => setComentario(e.target.value)} />
+                            <textarea id="comentarioReceita" rows="3" placeholder="O que você achou desta receita?" onChange={(e) => setComentario(e.target.value)} />
                         </div>
 
                         <button type="submit" className="btn-enviar-avaliacao">
@@ -80,13 +80,13 @@ const Avaliacao = (props) => {
                     <h3>Deixe sua avaliação</h3>
                     <form onSubmit={handleAvaliacaoForm}>
                         <div className="grupo-form">
-                            <label htmlFor="notaReceita">Nota (1 a 5)</label>
-                            <input type="number" id="notaReceita" min="1" max="5" placeholder="5" value={!edicao ? props.possuiAvaliacao.nota : nota} required onChange={(e) => setNota(e.target.value)} disabled={edicao ? false : true} />
+                            <label htmlFor="notaReceita">Nota (0 a 5)</label>
+                            <input type="number" id="notaReceita" min="0" max="5" placeholder="5" value={!edicao ? props.possuiAvaliacao.nota : nota} required onChange={(e) => setNota(e.target.value)} disabled={edicao ? false : true} />
                         </div>
 
                         <div className="grupo-form comentario-form">
                             <label htmlFor="comentarioReceita">Comentário</label>
-                            <textarea id="comentarioReceita" rows="3" placeholder="O que você achou desta receita?" value={!edicao ? props.possuiAvaliacao.comentario : comentario} required onChange={(e) => setComentario(e.target.value)} disabled={edicao ? false : true} />
+                            <textarea id="comentarioReceita" rows="3" placeholder="O que você achou desta receita?" value={!edicao ? props.possuiAvaliacao.comentario : comentario} onChange={(e) => setComentario(e.target.value)} disabled={edicao ? false : true} />
                         </div>
 
                         {!edicao ? (<button type="button" className="btn-enviar-avaliacao" onClick={() => setEdicao(true)}>

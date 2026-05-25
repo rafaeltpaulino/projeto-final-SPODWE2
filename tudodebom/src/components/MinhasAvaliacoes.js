@@ -1,11 +1,6 @@
 import { useEffect } from 'react';
 
-
 const MinhasAvaliacoes = (props) => {
-    useEffect(() => {
-        console.log('Teste minha avaliações');
-        console.log(props.avaliacoes);
-    }, [props.avaliacoes]);
     
     return (
         <div className='avaliacoes'>

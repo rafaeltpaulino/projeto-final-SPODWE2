@@ -670,3 +670,40 @@ form button[type="submit"]:hover {
 .btn-enviar-avaliacao:hover {
   background-color: #1a252f;
 }
+
+/* Container Principal do Dashboard */
+.dashboard-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Cartão de Perfil do Usuário */
+.cartao-perfil {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.cartao-perfil h2 {
+  margin-top: 0;
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.info-linha {
+  font-size: 1.1rem;
+  color: #34495e;
+  margin-bottom: 8px;
+}
+
+.info-linha strong {
+  color: #2c3e50;
+  margin-right: 8px;
+}
