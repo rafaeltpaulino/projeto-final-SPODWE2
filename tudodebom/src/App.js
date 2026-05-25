@@ -27,7 +27,7 @@ class App extends Component {
 
   currentReceitaId = 18;
   currentCategoriaId = 3;
-  currentUsuarioId = 4;
+  currentUsuarioId = 5;
   currentAvaliacaoId = 4;
 
   async componentDidMount() {
