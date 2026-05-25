@@ -15,6 +15,7 @@ import BuscaCategoria from "./components/BuscaCategoria";
 import ReceitaCompleta from "./components/ReceitaCompleta";
 import BuscaReceita from "./components/BuscaReceita";
 import { format } from 'date-fns';
+import BuscaDashBoard from "./components/BuscaDashboard";
 
 class App extends Component {
   state = {
