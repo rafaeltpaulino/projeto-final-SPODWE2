@@ -241,6 +241,10 @@ class App extends Component {
             element={<BuscaCategoria categorias={this.state.categorias}
               receitas={this.state.receitas} />}
           />
+          <Route 
+            path="/dashboard/:usuarioId"
+            element={<BuscaDashBoard avaliacoes={this.state.avaliacoes} />}
+          />      
         </Routes>
         <Rodape />
       </Router>
