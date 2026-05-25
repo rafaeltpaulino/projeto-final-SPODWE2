@@ -240,7 +240,7 @@ class App extends Component {
           <Route
             path="/categoria/:categoriaSlug"
             element={<BuscaCategoria categorias={this.state.categorias}
-              receitas={this.state.receitas} />}
+                                     receitas={this.state.receitas} />}
           />
           <Route 
             path="/dashboard/:usuarioId"
