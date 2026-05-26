@@ -13,9 +13,11 @@ const Categoria = (props) => {
       <h3>
         {props.categoria.descricao}
       </h3>
-      <Link to='/categorias'>
-        Voltar
-      </Link>
+      <div className="btn-voltar-container">
+        <Link className="btn-ver" to='/categorias'>
+          Voltar
+        </Link>
+      </div>
 
       <div className='cards-container'>
         {props.receitas.filter((receita) => receita.categoria === categoriaNome).map(r => (

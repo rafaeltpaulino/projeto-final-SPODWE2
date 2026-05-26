@@ -45,9 +45,11 @@ const Login = (props) => {
                         <p>
                             Não possui uma conta?
                             <br />
-                            <Link to='/cadastro'>
-                                Cadastrar-se
-                            </Link>
+                            <div className="btn-voltar-container">
+                                <Link to='/cadastro' className="btn-ver">
+                                    Cadastrar-se
+                                </Link>
+                            </div>
                         </p>
                     </div>
                 )

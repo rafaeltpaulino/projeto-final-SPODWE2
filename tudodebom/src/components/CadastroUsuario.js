@@ -79,7 +79,7 @@ const CadastroUsuario = (props) => {
               Cadastro realizado com sucesso!
             </h2>
             <p>
-              <Link to='/login'>
+              <Link to='/login' className="btn-ver">
                 Entrar
               </Link>
             </p>
@@ -93,7 +93,7 @@ const CadastroUsuario = (props) => {
             <h2>
               Cadastro de usuário.
             </h2>
-            <form style={{ margin: "20px 0", padding: "15px", border: "1px solid #ccc", borderRadius: "5px" }} onSubmit={handleCadastroForm}>
+            <form className="form-cadastro" onSubmit={handleCadastroForm}>
               <label htmlFor='nome'>
                 Nome:
                 <span className={nome ? 'valid' : 'hide'}>
@@ -202,9 +202,11 @@ const CadastroUsuario = (props) => {
             <p>
               Já possui uma conta?<br />
               <span>
-                <Link to='/login'>
-                  Entrar
-                </Link>
+                <div className="btn-voltar-container">
+                  <Link to='/login' className="btn-ver">
+                    Entrar
+                  </Link>
+                </div>
               </span>
             </p>
           </div>
