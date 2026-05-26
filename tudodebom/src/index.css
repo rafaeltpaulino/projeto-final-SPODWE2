@@ -15,9 +15,8 @@ body {
    Topo e Navegação[cite: 1]
 ========================================= */
 .topo {
-  background-color: #ff6b6b;
-  /* Vermelho/Laranja quente (remete a comida) */
-  color: white;
+  background-color: #fc833d;
+  background: linear-gradient(#db7336, #cf4921);
   padding: 20px 40px;
   display: flex;
   justify-content: space-between;
@@ -53,14 +52,16 @@ body {
 .topo ul li a {
   color: white;
   font-weight: 600;
-  padding: 8px 12px;
-  border-radius: 4px;
+  font-weight: bold;
+  padding: 10px 16px;
+  border-radius: 15px;
   transition: background-color 0.3s ease;
 }
 
 .topo ul li a:hover,
 .topo ul li a.active {
-  background-color: #ee5253;
+  background: linear-gradient(#ee8548,  #eb624a);
+  border-radius: 30px;
 }
 
 /* =========================================
@@ -163,11 +164,13 @@ body {
 }
 
 .btn-ver{
+  text-decoration: none;
+  font-weight: bold;  
   margin-right: 5px;
   cursor: pointer;
   background-color: #db7336;
   color: white;
-  padding: 5px 10px;
+  padding: 10px 15px;
   border-radius: 7px;
   border: none;
   font-size: 0.9em;
@@ -179,7 +182,8 @@ body {
   cursor: pointer;
   background-color: #a1300d;
   color: white;
-  padding: 5px 10px;
+  padding: 10px 15px;
+  font-weight: bold;
   border-radius: 6px;
   border: none;
   font-size: 0.9em;
@@ -190,6 +194,12 @@ body {
 }
 .btn-fechar-ingredientes:hover{
   background-color: #7a2209;
+  font-weight: bold;
+}
+
+.btn-voltar-container {
+  display: flex;
+  margin-top: 10px;
 }
 
 .modal-overlay{
@@ -314,6 +324,7 @@ body {
   border: none;
   padding: 12px 150px;
   border-radius: 15px;
+  font-weight: bold;
   font-size: 16px;
   font-weight: bold;
   margin-top: 15px;
@@ -328,7 +339,7 @@ body {
   Formulários e Botão Adicionar
 ========================================= */
 .btn-adicionar {
-  background-color: #10ac84;
+  background-color: #34ac10;
   /* Verde agradável para "Novo item" */
   color: white;
   border: none;
@@ -343,12 +354,13 @@ body {
 }
 
 .btn-adicionar:hover {
-  background-color: #01a3a4;
+  background-color: #138f07;
 }
 
 form label {
   display: block;
-  font-weight: 600;
+  font-weight: 700;
+  margin-top: 15px;
   margin-bottom: 6px;
   color: #2d3436;
 }
@@ -373,7 +385,7 @@ form textarea:focus {
 }
 
 form button[type="submit"] {
-  background-color: #0984e3;
+  background-color: #8a4710;
   color: white;
   border: none;
   padding: 12px 20px;
@@ -385,7 +397,7 @@ form button[type="submit"] {
 }
 
 form button[type="submit"]:hover {
-  background-color: #74b9ff;
+  background-color: #c45308;
 }
 
 /* =========================================
@@ -438,6 +450,7 @@ form button[type="submit"]:hover {
   background-color: #feca57;
   /* Cor Amarela para o botão de Editar */
   color: #2d3436;
+  margin-bottom: 5px;
 }
 
 .tabela-dados button:last-child {
@@ -537,17 +550,16 @@ form button[type="submit"]:hover {
 
 /* O cartão (card) de cada avaliação individual */
 .avaliacao {
-  background-color: #fcfcfc;
-  border: 1px solid #e0e0e0;
+  background-color: #fffefb;
+  border: 1px solid #f5b974;
   border-radius: 8px;
   padding: 15px;
   margin-bottom: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   
-  /* Usando Grid para alinhar os itens sem precisar alterar o seu HTML */
   display: grid;
   grid-template-columns: 1fr auto; /* Coluna 1 cresce, Coluna 2 ajusta ao conteúdo */
-  row-gap: 5px; /* Espaço entre as linhas */
+  row-gap: 5px; 
 }
 
 /* Estilização dos itens internos */
@@ -559,11 +571,18 @@ form button[type="submit"]:hover {
 
 .nota {
   font-weight: bold;
-  color: #f39c12; /* Uma cor amarelo/laranja para remeter a estrelas */
-  background-color: #fff8e1;
-  padding: 2px 8px;
-  border-radius: 12px;
+  color: #fa6806;
+  background-color: #fde4bd;
+  border: 1px solid #f5b974;
+  padding: 4px 10px;
+  border-radius: 15px;
   font-size: 0.9rem;
+}
+
+.nota::before {
+  padding-right: 4px;
+  font-size: 0.8rem;
+  content: "⭐";
 }
 
 .data {
@@ -592,18 +611,18 @@ form button[type="submit"]:hover {
   max-width: 800px;
   margin: 2rem 0;
   padding: 20px;
-  background-color: #f8f9fa; /* Um cinza/azulado bem sutil para se diferenciar da lista */
-  border: 1px solid #e0e0e0;
+  background-color: #fdf4ec; 
+  border: 1px solid #d6705e;
   border-radius: 8px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .formulario-avaliacao h3 {
   font-size: 1.25rem;
-  color: #333;
+  color: #772f2f;
   margin-top: 0;
   margin-bottom: 15px;
-  border-bottom: 2px solid #eee;
+  border-bottom: 2px solid #e4bbbb;
   padding-bottom: 10px;
 }
 
@@ -628,7 +647,7 @@ form button[type="submit"]:hover {
 .grupo-form label {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #2c3e50;
+  color: #502c2c;
   margin-bottom: 5px;
 }
 
@@ -636,11 +655,11 @@ form button[type="submit"]:hover {
 .grupo-form input,
 .grupo-form textarea {
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #af8e8e;
   border-radius: 6px;
   font-size: 0.95rem;
   font-family: inherit; /* Garante que o textarea use a mesma fonte do site */
-  background-color: #fff;
+  background-color: #ffffff;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
