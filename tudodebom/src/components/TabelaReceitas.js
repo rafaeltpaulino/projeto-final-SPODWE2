@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 const TabelaReceitas = (props) => {
   const [novaReceita, setNovaReceita] = useState({
@@ -13,9 +14,7 @@ const TabelaReceitas = (props) => {
   });
 
   const [exibirFormulario, setExibirFormulario] = useState(false);
-  
   const [edicao, setEdicao] = useState(false);
-
   const resetarFormulario = () => {
     setEdicao(false);
     setNovaReceita({
@@ -27,7 +26,7 @@ const TabelaReceitas = (props) => {
       tempo: null,
       autor: '',
       imagem: ''
-    })
+    });
     setExibirFormulario(false);
   };
 
@@ -41,25 +40,41 @@ const TabelaReceitas = (props) => {
       descricao: receita.descricao,
       tempo: receita.tempo,
       autor: receita.autor
-    })
+    });
     setExibirFormulario(true);
   };
 
+  const navigate = useNavigate();
+
   const handleReceitaForm = (e) => {
     e.preventDefault();
+
+    // 1. Descobre quem é o usuário selecionado no formulário para pegar o ID dele
+    const usuarioSelecionado = props.usuarios.find(u => u.nome === novaReceita.autor);
+
+    // 2. Monta o objeto final da receita garantindo que o autor_id exista
+    const receitaParaSalvar = {
+      ...novaReceita,
+      // Se achou o usuário no select, usa o ID dele. Se não, usa o ID da sessão como segurança.
+      autor_id: usuarioSelecionado ? usuarioSelecionado.id : Number(sessionStorage.getItem('usuarioId')),
+      // Garante que receitas novas comecem com nota zero
+      nota_media: edicao ? novaReceita.nota_media : 0,
+      quantidade_avaliacoes: edicao ? novaReceita.quantidade_avaliacoes : 0
+    };
+
     if(!edicao) {
-      props.adicionarReceita(novaReceita);
-      alert(`Receita de ${novaReceita.nome} inserida com sucesso!`);
+      props.adicionarReceita(receitaParaSalvar);
+      alert(`Receita de ${receitaParaSalvar.nome} inserida com sucesso!`);
     } else {
-      props.editarReceita(novaReceita);
-      alert(`Receita atualizada para ${novaReceita.nome} com sucesso!`);
+      props.editarReceita(receitaParaSalvar);
+      alert(`Receita atualizada para ${receitaParaSalvar.nome} com sucesso!`);
     }
 
     resetarFormulario();
   }
 
   return (
-    <main className="principal">
+    <main className={props.modoInterno ? "" : "principal"}>
       <h2>Gerenciar Receitas</h2>
 
       <button
@@ -83,7 +98,7 @@ const TabelaReceitas = (props) => {
               <select value={novaReceita.categoria} onChange={(e) => setNovaReceita({...novaReceita, categoria: e.target.value})} required>
               <option value="">Selecione uma categoria...</option>
               {props.categorias.map((categoria) => 
-                <option value={categoria.nome}>
+                <option key={categoria.id} value={categoria.nome}>
                   {categoria.nome}
                 </option>
               )}
@@ -102,7 +117,7 @@ const TabelaReceitas = (props) => {
 
           <div style={{ marginBottom: "10px" }}>
             <label>Tempo de Preparo: </label>
-            <input type="text" value={novaReceita.tempo} onChange={(e) => setNovaReceita({ ...novaReceita, tempo: e.target.value })} placeholder="Ex: 45min" required />
+            <input type="text" value={novaReceita.tempo} onChange={(e) => setNovaReceita({ ...novaReceita, tempo: e.target.value })} placeholder="Ex: 45" required />
           </div>
 
           <div style={{ marginBottom: "10px" }}>
@@ -110,7 +125,7 @@ const TabelaReceitas = (props) => {
             <select value={novaReceita.autor} onChange={(e) => setNovaReceita({ ...novaReceita, autor: e.target.value })} required>
               <option value="">Selecione um autor...</option>            
               {props.usuarios.map((usuario) => 
-                <option value={usuario.nome}>
+                <option key={usuario.id} value={usuario.nome}>
                   {usuario.nome}
                 </option>
               )}
@@ -118,11 +133,11 @@ const TabelaReceitas = (props) => {
           </div>
 
           <div style={{ marginBottom: "10px" }}>
-            <label>Imagem: </label>
+            <label>Imagem (URL ou caminho local): </label>
             <input type="text" value={novaReceita.imagem} onChange={(e) => setNovaReceita({ ...novaReceita, imagem: e.target.value })} />
           </div>
 
-          <button type="submit" style={{ cursor: "pointer" }}>
+          <button type="submit" style={{ cursor: "pointer" }} className="btn-ver">
             {edicao ? "Atualizar Receita" : "Salvar Receita"}
           </button>
         </form>
@@ -147,13 +162,21 @@ const TabelaReceitas = (props) => {
               <td>{receita.id}</td>
               <td>{receita.nome}</td>
               <td>{receita.categoria}</td>
-              <td>{receita.ingredientes}</td>
-              <td>{receita.descricao}</td>
-              <td>{receita.tempo} {'min'}</td>
+              {/* Limitando o texto na tabela para não quebrar o layout */}
+              <td style={{ maxWidth: "150px", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{receita.ingredientes}</td>
+              <td style={{ maxWidth: "150px", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{receita.descricao}</td>
+              <td>{receita.tempo} min</td>
               <td>{receita.autor}</td>
               <td>
+                <button 
+                  style={{ marginRight: "5px", cursor: "pointer", color: "#000000", fontWeight: "bold" }} 
+                  onClick={() => navigate(`/receitas/${receita.id}`)}
+                >
+                  Ver
+                </button>
+                
                 <button style={{ marginRight: "5px", cursor: "pointer" }} onClick={() => iniciarEdicao(receita)}>Editar</button>
-                <button style={{ cursor: "pointer" }} onClick={() => props.excluirReceita(receita.id)}>Excluir</button>
+                <button style={{ cursor: "pointer", color: "red" }} onClick={() => props.excluirReceita(receita.id)}>Excluir</button>
               </td>
             </tr>
           ))}
