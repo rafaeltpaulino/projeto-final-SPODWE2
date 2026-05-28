@@ -16,6 +16,7 @@ import ReceitaCompleta from "./components/ReceitaCompleta";
 import BuscaReceita from "./components/BuscaReceita";
 import { format } from 'date-fns';
 import BuscaDashBoard from "./components/BuscaDashboard";
+import Unauthorized from "./components/Unauthorized";
 
 class App extends Component {
   state = {
@@ -92,6 +93,10 @@ class App extends Component {
       this.setState({ usuarios });
     }
   };
+  handleLogout = () => {
+    sessionStorage.clear();
+    this.setState({ logado: false });
+  };
 
   handleAdicionarCategoria = (categoria) => {
     this.currentCategoriaId++;
@@ -115,11 +120,12 @@ class App extends Component {
     const usuario = this.state.usuarios.find((usuario) =>
       email === usuario.email && senha === usuario.senha
     );
-
+    
     if(usuario) {
+      sessionStorage.setItem('usuarioPapel', usuario.papel);
       sessionStorage.setItem('usuarioId', usuario.id);
+      sessionStorage.setItem('usuarioNome', usuario.nome);
       this.setState({ logado: true });
-
       return true;
     } else {
       this.setState({ logado: false });
@@ -202,28 +208,49 @@ class App extends Component {
             path="/categorias"
             element={<Categorias categorias={this.state.categorias} />}
           />
+
           <Route
             path="/tabela_receitas"
-            element={<TabelaReceitas receitas={this.state.receitas}
-                                     adicionarReceita={this.handleAdicionarReceita}
-                                     editarReceita={this.handleEditarReceita}
-                                     excluirReceita={this.handleExcluirReceita}
-                                     categorias={this.state.categorias}
-                                     usuarios={this.state.usuarios} />}
+            element={
+              sessionStorage.getItem('usuarioPapel') === 'Administrador' ? (
+                <TabelaReceitas receitas={this.state.receitas}
+                                 adicionarReceita={this.handleAdicionarReceita}
+                                 editarReceita={this.handleEditarReceita}
+                                 excluirReceita={this.handleExcluirReceita}
+                                 categorias={this.state.categorias}
+                                 usuarios={this.state.usuarios} />
+              ) : (
+                <Unauthorized />
+              )
+            }
+          />
+          
+          <Route
+            path="/tabela_categorias"
+            element={
+              sessionStorage.getItem('usuarioPapel') === 'Administrador' ? (
+                <TabelaCategorias categorias={this.state.categorias}
+                                   adicionarCategoria={this.handleAdicionarCategoria}
+                                   editarCategoria={this.handleEditarCategoria}
+                                   excluirCategoria={this.handleExcluirCategoria} />
+              ) : (
+                <Unauthorized />
+              )
+            }
           />
           <Route
             path="/tabela_usuarios"
-            element={<TabelaUsuarios usuarios={this.state.usuarios}
-                                     adicionarUsuario={this.handleAdicionarUsuario}
-                                     editarUsuario={this.handleEditarUsuario}
-                                     excluirUsuario={this.handleExcluirUsuario} />}
-          />
-          <Route
-            path="/tabela_categorias"
-            element={<TabelaCategorias categorias={this.state.categorias}
-                                       adicionarCategoria={this.handleAdicionarCategoria}
-                                       editarCategoria={this.handleEditarCategoria}
-                                       excluirCategoria={this.handleExcluirCategoria} />}
+            element={
+              sessionStorage.getItem('usuarioPapel') === 'Administrador' ? ( /* Verifica se é ADM */
+                <TabelaUsuarios usuarios={this.state.usuarios}
+                                adicionarUsuario={this.handleAdicionarUsuario}
+                                editarUsuario={this.handleEditarUsuario}
+                                excluirUsuario={this.handleExcluirUsuario} 
+                />
+              ) : (
+                <Unauthorized />
+              )
+            }
           />
           <Route
             path="*"
@@ -250,8 +277,12 @@ class App extends Component {
                                      categorias={this.state.categorias}
                                      adicionarReceita={this.handleAdicionarReceita}
                                      editarReceita={this.handleEditarReceita}
-                                     excluirReceita={this.handleExcluirReceita} />}
-          />      
+                                     excluirReceita={this.handleExcluirReceita}
+                                     
+                                     editarUsuario={this.handleEditarUsuario}
+                                     excluirUsuario={this.handleExcluirUsuario}
+                                     handleLogout={this.handleLogout} />}
+          />    
         </Routes>
         <Rodape />
       </Router>
