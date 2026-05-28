@@ -10,8 +10,13 @@ const Categorias = (props) => {
       <div className='cards-container'>
         {props.categorias.map((categoria) => (
           <div key={categoria.id} className='card'>
-            <Link to={`/categoria/${categoria.slug}`} style={{ textDecoration: 'none' }}>
-              <img src={categoria.icone} className="card-img-top" alt={categoria.titulo} style={{ width: "100%", height: "160px", objectFit: "cover" }} />
+            <Link to={`/categoria/${categoria.slug}`} style={{ textDecoration: 'none' }}>    
+             <img 
+                src={categoria.icone.startsWith('http') ? categoria.icone : '/' + categoria.icone} 
+                className="card-img-top" 
+                alt={categoria.nome} 
+              />
+              
               <div className="card-body" style={{ padding: "15px" }}>
                 <h5 className="card-title" style={{ fontSize: "1.5em", margin: "0 0 10px 0", color: "#333" }}>
                   {categoria.nome}
