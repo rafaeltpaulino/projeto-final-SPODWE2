@@ -13,15 +13,20 @@ const BuscaDashBoard = (props) => {
     } else {
         const usuario = props.usuarios.find((u) => u.id === currentUsuarioIdNumber);
         const avaliacoes = props.avaliacoes.filter((avaliacao) => avaliacao.id_usuario === currentUsuarioIdNumber);
-        const receitas = props.receitas.filter((receita) => receita.autor_id === currentUsuarioIdNumber);
-        console.log(avaliacoes);
+        
+        const minhasReceitas = props.receitas.filter((receita) => receita.autor_id === currentUsuarioIdNumber);
+        
         return <Dashboard avaliacoes={avaliacoes}
                           usuario={usuario}
-                          receitas={receitas}
+                          receitas={minhasReceitas}         
+                          todasReceitas={props.receitas}     
                           categorias={props.categorias}
-                          adicionarReceita={props.handleAdicionarReceita}
-                          editarReceita={props.handleEditarReceita}
-                          excluirReceita={props.handleExcluirReceita} 
+                          adicionarReceita={props.adicionarReceita}
+                          editarReceita={props.editarReceita}
+                          excluirReceita={props.excluirReceita} 
+                          editarUsuario={props.editarUsuario}
+                          excluirUsuario={props.excluirUsuario}
+                          handleLogout={props.handleLogout}
                            />  
     }
 };
