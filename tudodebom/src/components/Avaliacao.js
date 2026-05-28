@@ -45,7 +45,7 @@ const Avaliacao = (props) => {
                     <form>
                         <div className="grupo-form">
                             <label htmlFor="notaReceita">Nota (0 a 5)</label>
-                            <input type="number" disabled={true} id="notaReceita" min="0" max="5" placeholder="--" readOnly />
+                            <input type="number" disabled={true} id="notaReceita" min="0" max="5" step="0.5" placeholder="--" readOnly />
                         </div>
 
                         <div className="grupo-form comentario-form">
@@ -62,7 +62,7 @@ const Avaliacao = (props) => {
                     <form onSubmit={handleAvaliacaoForm}>
                         <div className="grupo-form">
                             <label htmlFor="notaReceita">Nota (0 a 5)</label>
-                            <input type="number" id="notaReceita" min="0" max="5" placeholder="--" required onChange={(e) => setNota(e.target.value)} />
+                            <input type="number" id="notaReceita" min="0" max="5" step="0.5" placeholder="--" required onChange={(e) => setNota(e.target.value)} />
                         </div>
 
                         <div className="grupo-form comentario-form">
@@ -81,7 +81,7 @@ const Avaliacao = (props) => {
                     <form onSubmit={handleAvaliacaoForm}>
                         <div className="grupo-form">
                             <label htmlFor="notaReceita">Nota (0 a 5)</label>
-                            <input type="number" id="notaReceita" min="0" max="5" placeholder="5" value={!edicao ? props.possuiAvaliacao.nota : nota} required onChange={(e) => setNota(e.target.value)} disabled={edicao ? false : true} />
+                            <input type="number" id="notaReceita" min="0" max="5" step="0.5" placeholder="5" value={!edicao ? props.possuiAvaliacao.nota : nota} required onChange={(e) => setNota(e.target.value)} disabled={edicao ? false : true} />
                         </div>
 
                         <div className="grupo-form comentario-form">
