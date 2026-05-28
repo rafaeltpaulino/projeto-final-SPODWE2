@@ -11,6 +11,8 @@ const ReceitaCompleta = (props) => {
         console.log(possuiAvaliacao);
     }, [possuiAvaliacao]);
 
+    const avaliacoesDestaReceita = props.avaliacoes.filter((avaliacao) => avaliacao.id_receita === props.receita.id);
+    
     return (
         <div className="principal">
             <header className="receita-header">
@@ -49,22 +51,29 @@ const ReceitaCompleta = (props) => {
                 <h2>
                     Avaliações
                 </h2>
-                {props.avaliacoes.filter((avaliacao) => avaliacao.id_receita === props.receita.id).map((a) => (
-                    <div key={a.id} className='avaliacao'>
-                        <div className='nome-usuario'>
-                            {a.nome_usuario}
+                
+                {avaliacoesDestaReceita.length > 0 ? (
+                    avaliacoesDestaReceita.map((a) => (
+                        <div key={a.id} className='avaliacao'>
+                            <div className='nome-usuario'>
+                                {a.nome_usuario}
+                            </div>
+                            <div className='nota'>
+                                {a.nota}
+                            </div>
+                            <div className='data'>
+                                {a.data_avaliacao}
+                            </div>
+                            <div className='comentario'>
+                                {a.comentario}
+                            </div>
                         </div>
-                        <div className='nota'>
-                            {a.nota}
-                        </div>
-                        <div className='data'>
-                            {a.data_avaliacao}
-                        </div>
-                        <div className='comentario'>
-                            {a.comentario}
-                        </div>
-                    </div>
-                ))}
+                    ))
+                ) : (
+                    <p style={{ color: "#7f8c8d", fontStyle: "italic", marginTop: "15px", fontSize: "1.05em" }}>
+                        Essa receita ainda não recebeu avaliações. Seja o primeiro a avaliar!
+                    </p>
+                )}
             </div>
         </div>
     );
