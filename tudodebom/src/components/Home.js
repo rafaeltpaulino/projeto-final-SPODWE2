@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import CardReceita from "./CardReceita";
 
 const Home = (props) => {
   const [expandido, setExpandido] = useState(false);
@@ -16,63 +17,13 @@ const Home = (props) => {
         inesquecível ou do prato principal perfeito.</p>
       <p>Portanto vamos começar! Utilize o menu acima para gerenciar as Receitas, Categorias e Usuários do sistema.</p>
 
-      <div className="cards-container">
-            {props.receitas.map((receita) => (
-              <div key={receita.id} className="card">
-
-              <img src={receita.imagem} className="card-img-top" alt={receita.titulo} />
-              
-              {/* Corpo do Card */}
-              <div className="card-body">
-                <div className="card-text-title">
-                  <h5>{receita.nome} </h5>
-                </div>
-                
-                <div className="card-footer">
-                  <p className="card-text-categoria">{receita.categoria} </p>
-                  <p className="card-text-autor">{receita.autor} </p>
-                </div>
-                
-                <CardReceita key={receita.id} receita={receita} className="modal-janela" />
-                </div>
-              </div>
-            ))}
-        </div>
+     <div className="cards-container">
+        {props.receitas.map((receita) => (
+          <CardReceita key={receita.id} receita={receita} />
+        ))}
+      </div>
     </main>
   );
 }
-
-function CardReceita({ receita }) {
-  const [expandido, setExpandido] = useState(false);
-  const navigate = useNavigate();
-
-  const ReceitaCompleta = () => {
-    navigate(`/receitas/${receita.id}`);
-  }
-
-  return (
-    <div className="card-acoes">
-      <span className="card-tempo">⏱️ {receita.tempo}</span>
-      <button onClick={() => setExpandido(true)} className="btn-ver">Ver Ingredientes </button>
-
-      {expandido && (
-        <div className="modal-overlay">
-          <div className="modal-janela">
-            <h2>{receita.nome}</h2>
-            <hr />
-            <p className="text-quebra-linha"><strong>Ingredientes:</strong> {receita.ingredientes} </p>
-            <hr />
-            
-            <div className="modal-botoes-container">
-              <button onClick={() => setExpandido(false)} className="btn-fechar-ingredientes">Fechar Janela </button>
-              <button onClick={ReceitaCompleta} className="btn-ver">Ver Receita</button>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
-
 
 export default Home;
