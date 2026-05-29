@@ -179,6 +179,16 @@ body {
   transform: none !important; /* Remove o zoom do nome */
 }
 
+.dropdown-menu .link-sair {
+  border-top: 2px solid #f1f2f6;
+  color: #e74c3c !important;
+}
+
+.dropdown-menu .link-sair:hover {
+  background-color: #fce4e4 !important;
+  color: #c0392b !important;
+}
+
 /* =========================================
    Área Principal
 ========================================= */
@@ -1004,3 +1014,4 @@ form button[type="submit"]:hover {
   display: flex;
   justify-content: flex-end;
 }
+
