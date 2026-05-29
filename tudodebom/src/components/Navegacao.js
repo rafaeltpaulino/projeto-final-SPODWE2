@@ -49,6 +49,17 @@ const Navegacao = (props) => {
               <Link to={`/dashboard/${usuarioId}`} onClick={() => setDropdownAberto(false)}>Minha Conta</Link>
               <Link to={`/dashboard/${usuarioId}#avaliacoes`} onClick={() => setDropdownAberto(false)}>Minhas Avaliações</Link>
               <Link to={`/dashboard/${usuarioId}#receitas`} onClick={() => setDropdownAberto(false)}>Minhas Receitas</Link>
+              <Link 
+                to="/" 
+                className="link-sair" 
+                onClick={() => {
+                  setDropdownAberto(false);
+                  props.handleLogout(); // Desloga o usuário
+                }}
+              >
+                Sair
+              </Link>
+            
             </div>
           )}
         </li> 
