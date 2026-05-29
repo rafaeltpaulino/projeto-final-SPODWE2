@@ -190,8 +190,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Topo logado={this.state.logado} />
-        <Routes>
+        <Topo logado={this.state.logado} handleLogout={this.handleLogout} />        <Routes>
           <Route
             path="/"
             element={<Home receitas={this.state.receitas} />}
