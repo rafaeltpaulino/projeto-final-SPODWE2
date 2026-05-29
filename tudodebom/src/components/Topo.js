@@ -23,7 +23,7 @@ const Topo = (props) => {
   return (
     <header className={`topo ${rolagem ? 'topo-scroll' : ''}`}>
       <Logo />
-      <Navegacao logado={props.logado}/>
+      <Navegacao logado={props.logado} handleLogout={props.handleLogout} />
     </header>
   );
 };
