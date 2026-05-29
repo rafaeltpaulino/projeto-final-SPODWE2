@@ -38,6 +38,11 @@ const Dashboard = (props) => {
         }
     };
 
+    const handleSair = () => {
+        props.handleLogout();
+        navigate('/');
+    };
+
     return (
         <div className='principal'>
             
@@ -87,9 +92,16 @@ const Dashboard = (props) => {
                         <button type="submit" className="btn-ver" style={{ padding: '10px 20px', height: '42px', margin: 0 }}>Atualizar Senha</button>
                     </form>
 
-                    <button onClick={handleExcluirConta} className="btn-perigo">
-                        Excluir Minha Conta
-                    </button>
+                    { /* Botões de Ação da Conta */}
+                    <div style={{ display: 'flex', gap: '15px', marginTop: '10px' }}>
+                        <button onClick={handleSair} className="btn-ver" style={{ backgroundColor: '#34495e', margin: 0 }}>
+                            Sair da Conta
+                        </button>
+                        
+                        <button onClick={handleExcluirConta} className="btn-perigo" style={{ margin: 0 }}>
+                            Excluir Minha Conta
+                        </button>
+                    </div>
                 </div>
             )}
 
