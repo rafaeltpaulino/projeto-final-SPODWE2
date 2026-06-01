@@ -23,6 +23,7 @@ const Navegacao = (props) => {
           <li><NavLink to="/tabela_receitas">Tabela de Receitas</NavLink></li>
           <li><NavLink to="/tabela_categorias">Tabela de Categorias</NavLink></li>
           <li><NavLink to="/tabela_usuarios">Tabela de Usuários</NavLink></li>
+          <li><NavLink to="/tabela_avaliacoes">Tabela de Avaliações</NavLink></li>
         </>
       )}
 
