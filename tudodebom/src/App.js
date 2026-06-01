@@ -285,7 +285,11 @@ class App extends Component {
           />
           <Route
             path="/tabela_avaliacoes"
-            element={<TabelaAvaliacoes avaliacoes={this.state.avaliacoes} />}
+            element={<TabelaAvaliacoes avaliacoes={this.state.avaliacoes}
+                                       adicionarAvaliacao={this.handleNovaAvaliacao}
+                                       editarAvaliacao={this.handleEditarAvaliacao}
+                                       usuarios={this.state.usuarios}
+                                       />}
           />                                 
         </Routes>
         <Rodape />
