@@ -17,6 +17,7 @@ import BuscaReceita from "./components/BuscaReceita";
 import { format } from 'date-fns';
 import BuscaDashBoard from "./components/BuscaDashboard";
 import Unauthorized from "./components/Unauthorized";
+import TabelaAvaliacoes from "./components/TabelaAvaliacoes";
 
 class App extends Component {
   state = {
