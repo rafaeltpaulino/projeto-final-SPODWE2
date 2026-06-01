@@ -281,7 +281,11 @@ class App extends Component {
                                      editarUsuario={this.handleEditarUsuario}
                                      excluirUsuario={this.handleExcluirUsuario}
                                      handleLogout={this.handleLogout} />}
-          />    
+          />
+          <Route
+            path="/tabela_avaliacoes"
+            element={<TabelaAvaliacoes avaliacoes={this.state.avaliacoes} />}
+          />                                 
         </Routes>
         <Rodape />
       </Router>
