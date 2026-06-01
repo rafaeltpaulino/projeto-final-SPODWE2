@@ -24,19 +24,19 @@ body {
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  
-  position: fixed; 
+
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  
+
   transition: all 0.3s ease;
 }
 
 /*Ativa quando rola a tela para baixo*/
 .topo.topo-scroll {
-  padding: 8px 40px; 
+  padding: 8px 40px;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
@@ -58,12 +58,13 @@ body {
   margin: 0;
   padding: 0;
   border-radius: 35px;
-  
-  transition: width 0.3s ease, transform 0.2s ease; 
+
+  transition: width 0.3s ease, transform 0.2s ease;
 }
 
 .logo img:hover {
-  transform: scale(1.08); /* Aumenta a logo em 8% */
+  transform: scale(1.08);
+  /* Aumenta a logo em 8% */
   cursor: pointer;
 }
 
@@ -89,17 +90,17 @@ body {
   font-weight: 700;
   padding: 10px 16px;
   border-radius: 15px;
-  
-  display: inline-block; 
-  
-  transition: all 0.2s ease; 
+
+  display: inline-block;
+
+  transition: all 0.2s ease;
 }
 
 .topo ul li a:hover,
 .topo ul li a.active {
   background-color: #c44d1a;
   border-radius: 30px;
-  
+
   transform: scale(1.1);
 }
 
@@ -134,7 +135,7 @@ body {
   height: 35px;
   border-radius: 50%;
   border: 2px solid #c44d1a;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .setinha {
@@ -161,9 +162,9 @@ body {
 }
 
 .dropdown-menu a {
-  color: #2c3e50 !important; 
+  color: #2c3e50 !important;
   padding: 12px 20px !important;
-  border-radius: 0 !important; 
+  border-radius: 0 !important;
   font-weight: 600 !important;
   border-bottom: 1px solid #f1f2f6;
   transition: background-color 0.2s !important;
@@ -176,7 +177,8 @@ body {
 .dropdown-menu a:hover {
   background-color: #fdf5e6 !important;
   color: #db7336 !important;
-  transform: none !important; /* Remove o zoom do nome */
+  transform: none !important;
+  /* Remove o zoom do nome */
 }
 
 .dropdown-menu .link-sair {
@@ -196,8 +198,8 @@ body {
   padding: 40px;
   min-height: calc(100vh - 160px);
   max-width: 1100px;
-  
-  margin: 130px auto 20px auto;  
+
+  margin: 130px auto 20px auto;
   background-color: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
   border-radius: 8px;
@@ -220,11 +222,12 @@ body {
 
 /* Estilos para os cards de receita */
 
-.cards-container{
-  display: grid; 
+.cards-container {
+  display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
 }
+
 .card {
   width: 18rem;
   border: 1px solid #ffaf97;
@@ -235,13 +238,15 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição */
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Transição */
   cursor: pointer;
 }
 
 .card:hover {
-  transform: scale(1.05); /*Zoom*/
+  transform: scale(1.05);
+  /*Zoom*/
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
@@ -252,60 +257,61 @@ body {
 
 .card-text-title {
   display: block;
-  font-size: 1.8em; 
-  margin: 0 0 10px 0; 
+  font-size: 1.8em;
+  margin: 0 0 10px 0;
   color: #333;
   overflow: hidden;
-  
-  min-height: 60px; 
+
+  min-height: 60px;
 }
 
 .card-acoes {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
-  margin-top: 15px; 
+
+  margin-top: 15px;
 }
 
 .card-footer {
-  margin-top: auto; 
+  margin-top: auto;
   display: flex;
   flex-direction: column;
   gap: 4px;
   width: 100%;
 }
 
-.card-body{
+.card-body {
   padding: 15px;
   flex-grow: 1;
   flex-direction: column;
   display: flex;
 }
 
-.card-text-categoria,.card-text-autor{
+.card-text-categoria,
+.card-text-autor {
   font-size: 0.9em;
-  color: #666; 
+  color: #666;
   height: auto;
   overflow: hidden;
   display: block;
 }
 
-.card-img-top{
+.card-img-top {
   width: 100%;
   height: 160px;
   object-fit: cover;
 }
 
-.card-tempo{
+.card-tempo {
   font-size: 0.8em;
   color: #999;
   margin-right: 10px;
 }
 
-.btn-ver{
+.btn-ver {
   text-decoration: none;
-  font-weight: bold;  
+  font-weight: bold;
   margin-right: 5px;
   cursor: pointer;
   background-color: #db7336;
@@ -317,7 +323,7 @@ body {
   transition: background 0.2s;
 }
 
-.btn-fechar-ingredientes{
+.btn-fechar-ingredientes {
   margin-right: 5px;
   cursor: pointer;
   background-color: #a1300d;
@@ -329,10 +335,11 @@ body {
   font-size: 0.9em;
 }
 
-.btn-ver:hover{
+.btn-ver:hover {
   background-color: #c44d1a;
 }
-.btn-fechar-ingredientes:hover{
+
+.btn-fechar-ingredientes:hover {
   background-color: #7a2209;
   font-weight: bold;
 }
@@ -359,21 +366,23 @@ body {
   background-color: #c0392b;
 }
 
-.modal-overlay{
+.modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  -webkit-backdrop-filter: blur(2px);/*para Safari e IOS*/
+  -webkit-backdrop-filter: blur(2px);
+  /*para Safari e IOS*/
   backdrop-filter: blur(2px);
 
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.modal-janela{
+
+.modal-janela {
   background-color: white;
   padding: 20px;
   border-radius: 8px;
@@ -381,16 +390,18 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
   display: flex;
-  flex-direction: column;  
-  overflow-y: auto;      
-  box-sizing: border-box; 
+  flex-direction: column;
+  overflow-y: auto;
+  box-sizing: border-box;
 }
 
 .modal-janela h2 {
   margin-top: 0;
   color: #2d3436;
 }
-.modal-janela p{font-size: 1em;
+
+.modal-janela p {
+  font-size: 1em;
   color: #444;
   line-height: 1.5;
   margin: 10px 0;
@@ -406,7 +417,7 @@ body {
   display: flex;
   gap: 20px;
   margin: 15px 0;
-  align-items: flex-start; 
+  align-items: flex-start;
 }
 
 .modal-coluna-imagem {
@@ -417,37 +428,41 @@ body {
 .modal-imagem-produto {
   width: 100%;
   height: 250px;
-  object-fit: cover; 
+  object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Barra de Rolagem*/
 .modal-coluna-texto {
-  flex: 1.5; 
+  flex: 1.5;
   max-height: 250px;
-  overflow-y: auto; 
-  padding-right: 10px; 
+  overflow-y: auto;
+  padding-right: 10px;
 }
+
 .modal-coluna-texto::-webkit-scrollbar {
-  width: 8px; 
+  width: 8px;
 }
 
 /* Define a cor do fundo ("trilho") da barra */
 .modal-coluna-texto::-webkit-scrollbar-track {
-  background: #fdf5e6; /* Mesmo tom de fundo do site para ficar discreto */
+  background: #fdf5e6;
+  /* Mesmo tom de fundo do site para ficar discreto */
   border-radius: 4px;
 }
 
 /* Define a cor da barrinha em si (Laranja Claro) */
 .modal-coluna-texto::-webkit-scrollbar-thumb {
-  background-color: rgb(249, 179, 158); /* Tom do botão laranja para dar feedback de interação */
+  background-color: rgb(249, 179, 158);
+  /* Tom do botão laranja para dar feedback de interação */
   border-radius: 4px;
 }
 
 /* Cor da barrinha quando o usuário passa o mouse por cima (Hover) */
 .modal-coluna-texto::-webkit-scrollbar-thumb:hover {
-  background-color: #db7336; /* Tom do botão laranja para dar feedback de interação */
+  background-color: #db7336;
+  /* Tom do botão laranja para dar feedback de interação */
 }
 
 .modal-botoes-container {
@@ -457,7 +472,7 @@ body {
   margin-top: 20px;
 }
 
-.text-quebra-linha{
+.text-quebra-linha {
   white-space: pre-line;
 }
 
@@ -483,7 +498,7 @@ body {
   font-size: 2.5em;
   color: #2c3e50;
   margin-bottom: 15px;
-  font-family: 'Georgia', serif; 
+  font-family: 'Georgia', serif;
 }
 
 /* Faixa com as informações de tempo, categoria e autor */
@@ -494,18 +509,18 @@ body {
   flex-wrap: wrap;
   font-size: 0.95em;
   color: #7f8c8d;
-  background-color: #fdf6f0; 
+  background-color: #fdf6f0;
   padding: 12px 20px;
   border-radius: 8px;
 }
 
 .receita-meta-dados strong {
-  color: #db7336; 
+  color: #db7336;
 }
 
 .receita-divisor {
   border: 0;
-  border-top: 2px dashed #f1f2f6; 
+  border-top: 2px dashed #f1f2f6;
   margin: 30px 0;
 }
 
@@ -517,7 +532,7 @@ body {
 .receita-secao h3 {
   font-size: 1.5em;
   color: #2c3e50;
-  border-left: 4px solid #db7336; 
+  border-left: 4px solid #db7336;
   padding-left: 10px;
   margin-bottom: 15px;
 }
@@ -529,7 +544,7 @@ body {
   padding-left: 14px;
 }
 
-.btn-voltar{
+.btn-voltar {
   background-color: #fa790f;
   color: white;
   border: none;
@@ -542,7 +557,7 @@ body {
   transition: background-color 0.2s;
 }
 
-.btn-voltar:hover{
+.btn-voltar:hover {
   background-color: #d87212;
 }
 
@@ -744,9 +759,9 @@ form button[type="submit"]:hover {
   justify-content: center;
 }
 
-* Container principal das avaliações */
-.avaliacoes {
-  max-width: 800px; /* Limita a largura para leitura confortável */
+* Container principal das avaliações */ .avaliacoes {
+  max-width: 800px;
+  /* Limita a largura para leitura confortável */
   margin: 2rem 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -767,10 +782,11 @@ form button[type="submit"]:hover {
   padding: 15px;
   margin-bottom: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  
+
   display: grid;
-  grid-template-columns: 1fr auto; /* Coluna 1 cresce, Coluna 2 ajusta ao conteúdo */
-  row-gap: 5px; 
+  grid-template-columns: 1fr auto;
+  /* Coluna 1 cresce, Coluna 2 ajusta ao conteúdo */
+  row-gap: 5px;
 }
 
 /* Estilização dos itens internos */
@@ -799,12 +815,14 @@ form button[type="submit"]:hover {
 .data {
   font-size: 0.8rem;
   color: #7f8c8d;
-  grid-column: 1 / -1; /* Faz a data ocupar as duas colunas inteiras */
+  grid-column: 1 / -1;
+  /* Faz a data ocupar as duas colunas inteiras */
   margin-bottom: 8px;
 }
 
 .comentario {
-  grid-column: 1 / -1; /* Faz o comentário ocupar as duas colunas inteiras */
+  grid-column: 1 / -1;
+  /* Faz o comentário ocupar as duas colunas inteiras */
   color: #444;
   line-height: 1.5;
   font-size: 0.95rem;
@@ -822,7 +840,7 @@ form button[type="submit"]:hover {
   max-width: 800px;
   margin: 2rem 0;
   padding: 20px;
-  background-color: #fdf4ec; 
+  background-color: #fdf4ec;
   border: 1px solid #d6705e;
   border-radius: 8px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -840,7 +858,8 @@ form button[type="submit"]:hover {
 /* Usando Grid para estruturar os campos */
 .formulario-avaliacao form {
   display: grid;
-  grid-template-columns: 3fr 1fr; /* O campo de nome fica 3x maior que o campo de nota */
+  grid-template-columns: 3fr 1fr;
+  /* O campo de nome fica 3x maior que o campo de nota */
   gap: 15px;
 }
 
@@ -851,7 +870,7 @@ form button[type="submit"]:hover {
 
 /* Faz o campo de comentário ocupar a largura total do grid */
 .comentario-form {
-  grid-column: 1 / -1; 
+  grid-column: 1 / -1;
 }
 
 /* Estilos das labels */
@@ -869,7 +888,8 @@ form button[type="submit"]:hover {
   border: 1px solid #af8e8e;
   border-radius: 6px;
   font-size: 0.95rem;
-  font-family: inherit; /* Garante que o textarea use a mesma fonte do site */
+  font-family: inherit;
+  /* Garante que o textarea use a mesma fonte do site */
   background-color: #ffffff;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
@@ -884,7 +904,8 @@ form button[type="submit"]:hover {
 
 /* Estilo do botão de envio */
 .btn-enviar-avaliacao {
-  grid-column: 1 / -1; /* Força o botão a ir para a linha de baixo e ocupar tudo */
+  grid-column: 1 / -1;
+  /* Força o botão a ir para a linha de baixo e ocupar tudo */
   background-color: #2c3e50;
   color: #fff;
   border: none;
@@ -956,15 +977,17 @@ form button[type="submit"]:hover {
   border: 1px solid #f1f2f6;
   display: flex;
   flex-direction: column;
-  
+
   /* Aqui mora o segredo do zoom suave */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* O Zoom quando o mouse passa por cima */
 .card-avaliacao:hover {
-  transform: scale(1.03); /* Cresce 3% */
-  box-shadow: 0 10px 20px rgba(219, 115, 54, 0.15); /* Sombra ganha um tom alaranjado */
+  transform: scale(1.03);
+  /* Cresce 3% */
+  box-shadow: 0 10px 20px rgba(219, 115, 54, 0.15);
+  /* Sombra ganha um tom alaranjado */
 }
 
 .avaliacao-header {
@@ -985,7 +1008,8 @@ form button[type="submit"]:hover {
 }
 
 .avaliacao-body {
-  flex-grow: 1; /* Faz o corpo empurrar o botão para o fundo */
+  flex-grow: 1;
+  /* Faz o corpo empurrar o botão para o fundo */
   display: flex;
   flex-direction: column;
 }
@@ -1015,3 +1039,29 @@ form button[type="submit"]:hover {
   justify-content: flex-end;
 }
 
+.carrossel {
+  position: relative;
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carrossel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.texto-carrossel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4); 
+  color: #fff;
+}

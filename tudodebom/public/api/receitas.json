@@ -61,8 +61,8 @@
       "autor": "Rafael Teixeira",
       "autor_id": 4,
       "imagem": "imagens/receitas/5.jpg",
-      "nota_media": null,
-      "quantidade_avaliacoes": 0
+      "nota_media": 5,
+      "quantidade_avaliacoes": 1
     },
     {
       "id": 6,
@@ -74,8 +74,8 @@
       "autor": "Amanda Jen",
       "autor_id": 2,
       "imagem": "imagens/receitas/6.jpg",
-      "nota_media": null,
-      "quantidade_avaliacoes": 0
+      "nota_media": 5,
+      "quantidade_avaliacoes": 1
     },
     {
       "id": 7,
@@ -87,8 +87,8 @@
       "autor": "Kethelyn Alves",
       "autor_id": 3,
       "imagem": "imagens/receitas/7.jpg",
-      "nota_media": null,
-      "quantidade_avaliacoes": 0
+      "nota_media": 4,
+      "quantidade_avaliacoes": 1
     },
     {
       "id": 8,
@@ -100,8 +100,8 @@
       "autor": "Vinícius Tiago",
       "autor_id": 1,
       "imagem": "imagens/receitas/8.jpg",
-      "nota_media": null,
-      "quantidade_avaliacoes": 0
+      "nota_media": 5,
+      "quantidade_avaliacoes": 1
     },
     {
       "id": 9,
@@ -113,8 +113,8 @@
       "autor": "Rafael Teixeira",
       "autor_id": 4,
       "imagem": "imagens/receitas/9.jpg",
-      "nota_media": null,
-      "quantidade_avaliacoes": 0
+      "nota_media": 4,
+      "quantidade_avaliacoes": 1
     },
     {
       "id": 10,
@@ -126,8 +126,8 @@
       "autor": "Amanda Jen",
       "autor_id": 2,
       "imagem": "imagens/receitas/10.jpg",
-      "nota_media": null,
-      "quantidade_avaliacoes": 0
+      "nota_media": 4,
+      "quantidade_avaliacoes": 1
     },
     {
       "id": 11,
@@ -139,8 +139,8 @@
       "autor": "Kethelyn Alves",
       "autor_id": 3,
       "imagem": "imagens/receitas/11.jpg",
-      "nota_media": null,
-      "quantidade_avaliacoes": 0
+      "nota_media": 5,
+      "quantidade_avaliacoes": 1
     },
     {
       "id": 12,
@@ -152,8 +152,8 @@
       "autor": "Vinícius Tiago",
       "autor_id": 1,
       "imagem": "imagens/receitas/12.jpg",
-      "nota_media": null,
-      "quantidade_avaliacoes": 0
+      "nota_media": 5,
+      "quantidade_avaliacoes": 1
     },
     {
       "id": 13,
@@ -165,8 +165,8 @@
       "autor": "Rafael Teixeira",
       "autor_id": 4,
       "imagem": "imagens/receitas/13.jpg",
-      "nota_media": null,
-      "quantidade_avaliacoes": 0
+      "nota_media": 3,
+      "quantidade_avaliacoes": 1
     },
     {
       "id": 14,
@@ -204,8 +204,8 @@
       "autor": "Vinícius Tiago",
       "autor_id": 1,
       "imagem": "imagens/receitas/16.jpg",
-      "nota_media": null,
-      "quantidade_avaliacoes": 0
+      "nota_media": 5,
+      "quantidade_avaliacoes": 1
     },
     {
       "id": 17,

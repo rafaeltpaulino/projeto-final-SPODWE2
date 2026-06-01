@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import CardReceita from "./CardReceita";
+import Carrossel from "./Carrossel";
 
 const Home = (props) => {
   const [expandido, setExpandido] = useState(false);
@@ -17,6 +18,12 @@ const Home = (props) => {
         inesquecível ou do prato principal perfeito.</p>
       <p>Portanto vamos começar! Utilize o menu acima para gerenciar as Receitas, Categorias e Usuários do sistema.</p>
 
+      <p>
+        Dê uma olhada nas receitas mais bem avaliadas do site abaixo!
+      </p>
+
+      <Carrossel receitas={props.receitas} />
+
      <div className="cards-container">
         {props.receitas.map((receita) => (
           <CardReceita key={receita.id} receita={receita} />
@@ -24,6 +31,6 @@ const Home = (props) => {
       </div>
     </main>
   );
-}
+};
 
 export default Home;

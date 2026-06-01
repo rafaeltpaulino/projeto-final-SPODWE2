@@ -26,6 +26,7 @@ const CardReceita = ({ receita }) => {
           <div className="card-footer">
             <p className="card-text-categoria">{receita.categoria} </p>
             <p className="card-text-autor">{receita.autor} </p>
+            <p> ⭐ {receita.nota_media ? receita.nota_media  : "Nenhuma avaliação"} </p>
           </div>
           
           <div className="card-acoes">
