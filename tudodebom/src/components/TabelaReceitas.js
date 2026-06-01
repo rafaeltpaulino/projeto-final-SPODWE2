@@ -173,8 +173,6 @@ const TabelaReceitas = (props) => {
             <th>Descrição</th>
             <th>Tempo</th>
             <th>Autor</th>
-            <th>Nota Média</th>
-            <th>Quantidade Avaliações</th>
             <th>Ações</th>
           </tr>
         </thead>
@@ -189,8 +187,6 @@ const TabelaReceitas = (props) => {
               <td style={{ maxWidth: "150px", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{receita.descricao}</td>
               <td>{receita.tempo} min</td>
               <td>{receita.autor}</td>
-              <td>{receita.nota_media}</td>
-              <td>{receita.quantidade_avaliacoes}</td>
               <td>
                 <button
                   style={{ marginRight: "5px", cursor: "pointer", color: "#000000", fontWeight: "bold" }}
