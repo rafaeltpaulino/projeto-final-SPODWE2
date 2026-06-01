@@ -3,7 +3,7 @@ import { Carousel } from 'antd';
 import { Link } from 'react-router-dom';
 
 const Carrossel = (props) => {
-    const receitas = props.receitas;
+    const receitas = props.receitas.filter((r) => r.nota_media != null);
     const top5Receitas = [...receitas]
         .sort((a, b) => b.nota_media - a.nota_media)
         .slice(0, 5);
