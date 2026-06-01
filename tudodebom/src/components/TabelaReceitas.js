@@ -3,14 +3,17 @@ import { useNavigate } from 'react-router-dom';
 
 const TabelaReceitas = (props) => {
   const [novaReceita, setNovaReceita] = useState({
-    id: null,
+    id: '',
     nome: '',
     categoria: '',
     ingredientes: '',
     descricao: '',
-    tempo: null,
+    tempo: '',
     autor: '',
-    imagem: ''
+    autor_id: '',
+    imagem: '',
+    nota_media: '',
+    quantidade_avaliacoes: ''
   });
 
   const [exibirFormulario, setExibirFormulario] = useState(false);
@@ -18,14 +21,17 @@ const TabelaReceitas = (props) => {
   const resetarFormulario = () => {
     setEdicao(false);
     setNovaReceita({
-      id: null,
+      id: '',
       nome: '',
       categoria: '',
       ingredientes: '',
       descricao: '',
-      tempo: null,
+      tempo: '',
       autor: '',
-      imagem: ''
+      autor_id: '',
+      imagem: '',
+      nota_media: '',
+      quantidade_avaliacoes: ''
     });
     setExibirFormulario(false);
   };
@@ -39,7 +45,11 @@ const TabelaReceitas = (props) => {
       ingredientes: receita.ingredientes,
       descricao: receita.descricao,
       tempo: receita.tempo,
-      autor: receita.autor
+      autor: receita.autor,
+      autor_id: receita.autor_id,
+      imagem: receita.imagem,
+      nota_media: receita.nota_media,
+      quantidade_avaliacoes: receita.quantidade_avaliacoes
     });
     setExibirFormulario(true);
   };
@@ -62,7 +72,7 @@ const TabelaReceitas = (props) => {
       quantidade_avaliacoes: edicao ? novaReceita.quantidade_avaliacoes : 0
     };
 
-    if(!edicao) {
+    if (!edicao) {
       props.adicionarReceita(receitaParaSalvar);
       alert(`Receita de ${receitaParaSalvar.nome} inserida com sucesso!`);
     } else {
@@ -95,9 +105,9 @@ const TabelaReceitas = (props) => {
 
           <div style={{ marginBottom: "10px" }}>
             <label>Categoria: </label>
-              <select value={novaReceita.categoria} onChange={(e) => setNovaReceita({...novaReceita, categoria: e.target.value})} required>
+            <select value={novaReceita.categoria} onChange={(e) => setNovaReceita({ ...novaReceita, categoria: e.target.value })} required>
               <option value="">Selecione uma categoria...</option>
-              {props.categorias.map((categoria) => 
+              {props.categorias.map((categoria) =>
                 <option key={categoria.id} value={categoria.nome}>
                   {categoria.nome}
                 </option>
@@ -123,8 +133,8 @@ const TabelaReceitas = (props) => {
           <div style={{ marginBottom: "10px" }}>
             <label>Autor: </label>
             <select value={novaReceita.autor} onChange={(e) => setNovaReceita({ ...novaReceita, autor: e.target.value })} required>
-              <option value="">Selecione um autor...</option>            
-              {props.usuarios.map((usuario) => 
+              <option value="">Selecione um autor...</option>
+              {props.usuarios.map((usuario) =>
                 <option key={usuario.id} value={usuario.nome}>
                   {usuario.nome}
                 </option>
@@ -135,6 +145,16 @@ const TabelaReceitas = (props) => {
           <div style={{ marginBottom: "10px" }}>
             <label>Imagem (URL ou caminho local): </label>
             <input type="text" value={novaReceita.imagem} onChange={(e) => setNovaReceita({ ...novaReceita, imagem: e.target.value })} />
+          </div>
+
+          <div style={{ marginBottom: "10px" }}>
+            <label>Nota Média: </label>
+            <input type="text" value={novaReceita.nota_media} onChange={(e) => setNovaReceita({ ...novaReceita, nota_media: e.target.value })} />
+          </div>
+
+          <div style={{ marginBottom: "10px" }}>
+            <label>Quantidade de Avaliações (URL ou caminho local): </label>
+            <input type="text" value={novaReceita.quantidade_avaliacoes} onChange={(e) => setNovaReceita({ ...novaReceita, quantidade_avaliacoes: e.target.value })} />
           </div>
 
           <button type="submit" style={{ cursor: "pointer" }} className="btn-ver">
@@ -153,6 +173,8 @@ const TabelaReceitas = (props) => {
             <th>Descrição</th>
             <th>Tempo</th>
             <th>Autor</th>
+            <th>Nota Média</th>
+            <th>Quantidade Avaliações</th>
             <th>Ações</th>
           </tr>
         </thead>
@@ -167,14 +189,16 @@ const TabelaReceitas = (props) => {
               <td style={{ maxWidth: "150px", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{receita.descricao}</td>
               <td>{receita.tempo} min</td>
               <td>{receita.autor}</td>
+              <td>{receita.nota_media}</td>
+              <td>{receita.quantidade_avaliacoes}</td>
               <td>
-                <button 
-                  style={{ marginRight: "5px", cursor: "pointer", color: "#000000", fontWeight: "bold" }} 
+                <button
+                  style={{ marginRight: "5px", cursor: "pointer", color: "#000000", fontWeight: "bold" }}
                   onClick={() => navigate(`/receitas/${receita.id}`)}
                 >
                   Ver
                 </button>
-                
+
                 <button style={{ marginRight: "5px", cursor: "pointer" }} onClick={() => iniciarEdicao(receita)}>Editar</button>
                 <button style={{ cursor: "pointer", color: "red" }} onClick={() => props.excluirReceita(receita.id)}>Excluir</button>
               </td>
