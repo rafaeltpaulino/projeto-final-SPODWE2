@@ -14,6 +14,7 @@ const CadastroUsuario = (props) => {
   const [nome, setNome] = useState('');
   const [nomeValido, setNomeValido] = useState(false);
   const [focoNome, setFocoNome] = useState(false);
+  const [nomeTocado, setNomeTocado] = useState(false);
 
   const [email, setEmail] = useState('');
   const [emailValido, setEmailValido] = useState(false);
@@ -99,7 +100,8 @@ const CadastroUsuario = (props) => {
                 <span className={nome ? 'valid' : 'hide'}>
                   <FontAwesomeIcon icon={faCheck} />
                 </span>
-                <span className={!nome ? 'invalid' : 'hide'}>
+                
+                <span className={nomeTocado && !nome ? 'invalid' : 'hide'}>
                   <FontAwesomeIcon icon={faTimes} />
                 </span>
               </label>
@@ -112,7 +114,11 @@ const CadastroUsuario = (props) => {
                 required
                 aria-describedby='nnote'
                 onFocus={() => setFocoNome(true)}
-                onBlur={() => setFocoNome(false)}
+                
+                onBlur={() => {
+                  setFocoNome(false);
+                  setNomeTocado(true);
+                }}
               />
               <label htmlFor='email'>
                 Email:
