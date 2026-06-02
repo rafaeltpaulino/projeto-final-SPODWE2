@@ -219,6 +219,61 @@ body {
   line-height: 1.6;
   margin-bottom: 20px;
 }
+/* =========================================
+   Estilos da Barra de Pesquisa e Topo
+========================================= */
+
+.busca-container {
+  margin: 40px 0 20px 0;
+  width: 100%;
+}
+
+.input-busca {
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   Cabeçalho da Categoria (Subtítulo + Botão)
+========================================= */
+.categoria-subtitulo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 15px;
+}
+
+.categoria-subtitulo-container h3 {
+  margin: 0; 
+  color: #464d4d; 
+}
+
+.categoria-subtitulo-container .btn-ver {
+  margin: 0;
+}
+
+.input-busca-categoria {
+  width: 100%;
+  max-width: 350px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 0.95em;
+  box-sizing: border-box;
+}
+
+.texto-alerta-vazio {
+  color: #7f8c8d;
+  font-style: italic;
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 20px;
+}
 
 /* Estilos para os cards de receita */
 
@@ -499,6 +554,16 @@ body {
   color: #2c3e50;
   margin-bottom: 15px;
   font-family: 'Georgia', serif;
+}
+
+
+.imagem-receita-completa {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin: 20px 0 30px 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Faixa com as informações de tempo, categoria e autor */
