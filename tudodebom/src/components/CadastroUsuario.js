@@ -19,14 +19,17 @@ const CadastroUsuario = (props) => {
   const [email, setEmail] = useState('');
   const [emailValido, setEmailValido] = useState(false);
   const [focoEmail, setFocoEmail] = useState(false);
+  const [emailTocado, setEmailTocado] = useState(false);
 
   const [senha, setSenha] = useState('');
   const [senhaValida, setSenhaValida] = useState(false);
   const [focoSenha, setFocoSenha] = useState(false);
+  const [senhaTocado, setSenhaTocado] = useState(false);
 
   const [confirmacaoSenha, setConfirmacaoSenha] = useState('');
   const [confirmacaoValida, setConfirmacaoValida] = useState('');
   const [focoCofirmacao, setFocoConfirmacao] = useState('');
+  const [confirmacaoTocado, setConfirmacaoTocado] = useState(false);
 
   const [mensagemErr, setmensagemErr] = useState('');
   const [sucesso, setSucesso] = useState(false);
@@ -58,6 +61,17 @@ const CadastroUsuario = (props) => {
 
   const handleCadastroForm = (e) => {
     e.preventDefault();
+
+    if (!nomeValido || !emailValido || !senhaValida || !confirmacaoValida) {
+      // Dispara o alerta
+      alert("Por favor, preencha todos os campos corretamente antes de se cadastrar.");
+      setNomeTocado(true);
+      setEmailTocado(true);
+      setSenhaTocado(true);
+      setConfirmacaoTocado(true);
+      
+      return; 
+    }
 
     const usuario = {
       id: 0,
@@ -100,7 +114,6 @@ const CadastroUsuario = (props) => {
                 <span className={nome ? 'valid' : 'hide'}>
                   <FontAwesomeIcon icon={faCheck} />
                 </span>
-                
                 <span className={nomeTocado && !nome ? 'invalid' : 'hide'}>
                   <FontAwesomeIcon icon={faTimes} />
                 </span>
@@ -114,18 +127,18 @@ const CadastroUsuario = (props) => {
                 required
                 aria-describedby='nnote'
                 onFocus={() => setFocoNome(true)}
-                
                 onBlur={() => {
                   setFocoNome(false);
                   setNomeTocado(true);
                 }}
               />
+              
               <label htmlFor='email'>
                 Email:
                 <span className={emailValido ? 'valid' : 'hide'}>
                   <FontAwesomeIcon icon={faCheck} />
                 </span>
-                <span className={emailValido || !email ? 'hide' : 'invalid'}>
+                <span className={emailTocado && !emailValido ? 'invalid' : 'hide'}>
                   <FontAwesomeIcon icon={faTimes} />
                 </span>
               </label>
@@ -138,7 +151,10 @@ const CadastroUsuario = (props) => {
                 aria-invalid={emailValido ? 'false' : 'true'}
                 aria-describedby='eidnote'
                 onFocus={() => setFocoEmail(true)}
-                onBlur={() => setFocoEmail(false)}
+                onBlur={() => {
+                  setFocoEmail(false);
+                  setEmailTocado(true);
+                }}
               />
               <p id='eidnote' className={focoEmail && email && !emailValido ? 'instructions' : 'offscreen'}>
                 <FontAwesomeIcon icon={faInfoCircle} />
@@ -148,12 +164,13 @@ const CadastroUsuario = (props) => {
                 <FontAwesomeIcon icon={faInfoCircle} />
                 Deve haver apenas letras depois do ponto (ou pontos).<br />
               </p>
+              
               <label htmlFor='senha'>
                 Senha:
                 <span className={senhaValida ? 'valid' : 'hide'}>
                   <FontAwesomeIcon icon={faCheck} />
                 </span>
-                <span className={senhaValida || !senha ? 'hide' : 'invalid'}>
+                <span className={senhaTocado && !senhaValida ? 'invalid' : 'hide'}>
                   <FontAwesomeIcon icon={faTimes} />
                 </span>
               </label>
@@ -165,7 +182,10 @@ const CadastroUsuario = (props) => {
                 aria-invalid={senhaValida ? 'false' : 'true'}
                 aria-describedby='snote'
                 onFocus={() => setFocoSenha(true)}
-                onBlur={() => setFocoSenha(false)}
+                onBlur={() => {
+                  setFocoSenha(false);
+                  setSenhaTocado(true);
+                }}
               />
               <p id='snote' className={focoSenha && senha && !senhaValida ? 'instructions' : 'offscreen'}>
                 <FontAwesomeIcon icon={faInfoCircle} />
@@ -175,12 +195,13 @@ const CadastroUsuario = (props) => {
                 <FontAwesomeIcon icon={faInfoCircle} />
                 Caracteres especiais permitidos: <span aria-label='exclamation mark'>!</span> <span aria-label='at symbol'>@</span><span aria-label='hashtag'>#</span><span aria-label='dollar sign'>$</span><span aria-label='percent'>%</span>
               </p>
+              
               <label htmlFor='confirmacao_senha'>
                 Confirmação de senha:
                 <span className={confirmacaoValida && confirmacaoSenha ? 'valid' : 'hide'}>
                   <FontAwesomeIcon icon={faCheck} />
                 </span>
-                <span className={confirmacaoValida || !confirmacaoSenha ? 'hide' : 'invalid'}>
+                <span className={confirmacaoTocado && (!confirmacaoValida || !confirmacaoSenha) ? 'invalid' : 'hide'}>
                   <FontAwesomeIcon icon={faTimes} />
                 </span>
               </label>
@@ -192,14 +213,17 @@ const CadastroUsuario = (props) => {
                 aria-invalid={confirmacaoValida ? 'false' : 'true'}
                 aria-describedby='cnote'
                 onFocus={() => setFocoConfirmacao(true)}
-                onBlur={() => setFocoConfirmacao(false)}
+                onBlur={() => {
+                  setFocoConfirmacao(false);
+                  setConfirmacaoTocado(true);
+                }}
               />
               <p id='cnote' className={focoCofirmacao && confirmacaoSenha && !confirmacaoValida ? 'instructions' : 'offscreen'}>
                 <FontAwesomeIcon icon={faInfoCircle} />
                 As senhas devem ser iguais.
               </p>
 
-              <button type='submit' style={{ cursor: "pointer" }} disabled={!nomeValido || !emailValido || !senhaValida || !confirmacaoValida ? true : false}>
+              <button type='submit' style={{ cursor: "pointer" }}>
                 Cadastrar-se
               </button>
             </form>
