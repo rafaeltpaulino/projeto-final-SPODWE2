@@ -1,10 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 import CardReceita from "./CardReceita";
 import Carrossel from "./Carrossel";
 
 const Home = (props) => {
-  const [expandido, setExpandido] = useState(false);
+  const [pesquisa, setPesquisa] = useState('');
+
+  const receitasFiltradas = props.receitas.filter((receita) =>
+    receita.nome.toLowerCase().includes(pesquisa.toLowerCase())
+  );
+
   return (
     <main className="principal">
       <h2>Bem-vindo(a) ao Compartilhamento de Receitas!</h2>
@@ -18,16 +22,30 @@ const Home = (props) => {
         inesquecível ou do prato principal perfeito.</p>
       <p>Portanto vamos começar! Utilize o menu acima para gerenciar as Receitas, Categorias e Usuários do sistema.</p>
 
-      <p>
-        Dê uma olhada nas receitas mais bem avaliadas do site abaixo!
-      </p>
+      <p>Dê uma olhada nas receitas mais bem avaliadas do site abaixo!</p>
 
       <Carrossel receitas={props.receitas} />
 
-     <div className="cards-container">
-        {props.receitas.map((receita) => (
-          <CardReceita key={receita.id} receita={receita} />
-        ))}
+      <div className="busca-container">
+        <input
+          type="text"
+          placeholder="Digite aqui a receita desejada..."
+          value={pesquisa}
+          onChange={(e) => setPesquisa(e.target.value)}
+          className="input-busca"
+        />
+      </div>
+      
+      <div className="cards-container">
+        {receitasFiltradas.length > 0 ? (
+          receitasFiltradas.map((receita) => (
+            <CardReceita key={receita.id} receita={receita} />
+          ))
+        ) : (
+          <p className="texto-alerta-vazio">
+            Receita não encontrada.
+          </p>
+        )}
       </div>
     </main>
   );
