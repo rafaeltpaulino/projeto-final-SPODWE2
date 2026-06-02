@@ -25,9 +25,16 @@ const ReceitaCompleta = (props) => {
                 </div>
             </header>
 
+            {props.receita.imagem && (
+                <img 
+                    src={props.receita.imagem.startsWith('http') ? props.receita.imagem : `/${props.receita.imagem}`} 
+                    alt={props.receita.nome} 
+                    className="imagem-receita-completa" 
+                />
+            )}
+
             <hr className="receita-divisor" />
 
-            {/* Seções de Conteúdo */}
             <section className="receita-secao">
                 <h3>📋 Ingredientes</h3>
                 <p className="text-quebra-linha receita-texto">{props.receita.ingredientes}</p>
