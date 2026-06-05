@@ -188,10 +188,23 @@ class App extends Component {
     }
   };
 
+  handleExcluirAvaliacao = (idAvaliacao, idReceita, notaAvaliacao) => {
+    const avaliacoes = this.state.avaliacoes.filter((avaliacao) => avaliacao.id !== idAvaliacao);
+    this.setState({ avaliacoes });
+    
+    const receita = this.state.receitas.find((receita) => receita.id === idReceita);
+    const novaQtdAvaliacoes = receita.quantidade_avaliacoes - 1;
+    const somatorioNotas = receita.nota_media * (novaQtdAvaliacoes + 1);
+    const novaMedia = (somatorioNotas - notaAvaliacao) / novaQtdAvaliacoes;
+    const receitaAtualizada = {...receita, nota_media: novaMedia, quantidade_avaliacoes: novaQtdAvaliacoes}
+    this.handleEditarReceita(receitaAtualizada);
+  }
+
   render() {
     return (
       <Router>
-        <Topo logado={this.state.logado} handleLogout={this.handleLogout} />        <Routes>
+        <Topo logado={this.state.logado} handleLogout={this.handleLogout} />        
+        <Routes>
           <Route
             path="/"
             element={<Home receitas={this.state.receitas} />}
@@ -202,13 +215,13 @@ class App extends Component {
                                    avaliacoes={this.state.avaliacoes}
                                    logado={this.state.logado}
                                    handleNovaAvaliacao={this.handleNovaAvaliacao}
-                                   handleEditarAvaliacao={this.handleEditarAvaliacao} />}
+                                   handleEditarAvaliacao={this.handleEditarAvaliacao}
+                                   handleExcluirAvaliacao={this.handleExcluirAvaliacao} />}
           />
           <Route
             path="/categorias"
             element={<Categorias categorias={this.state.categorias} />}
           />
-
           <Route
             path="/tabela_receitas"
             element={
@@ -224,7 +237,6 @@ class App extends Component {
               )
             }
           />
-          
           <Route
             path="/tabela_categorias"
             element={
@@ -278,7 +290,6 @@ class App extends Component {
                                      adicionarReceita={this.handleAdicionarReceita}
                                      editarReceita={this.handleEditarReceita}
                                      excluirReceita={this.handleExcluirReceita}
-                                     
                                      editarUsuario={this.handleEditarUsuario}
                                      excluirUsuario={this.handleExcluirUsuario}
                                      handleLogout={this.handleLogout} />}
@@ -289,6 +300,7 @@ class App extends Component {
                                        adicionarAvaliacao={this.handleNovaAvaliacao}
                                        editarAvaliacao={this.handleEditarAvaliacao}
                                        usuarios={this.state.usuarios}
+                                       excluirAvaliacao={this.handleExcluirAvaliacao}
                                        />}
           />                                 
         </Routes>

@@ -155,7 +155,7 @@ const TabelaAvaliacoes = (props) => {
                                 </button>
 
                                 <button style={{ marginRight: "5px", cursor: "pointer" }} onClick={() => iniciarEdicao(avaliacao)}>Editar</button>
-                                <button style={{ cursor: "pointer", color: "red" }} onClick={() => props.excluirAvaliacao(avaliacao.id)}>Excluir</button>
+                                <button style={{ cursor: "pointer", color: "red" }} onClick={() => props.excluirAvaliacao(avaliacao.id, avaliacao.id_receita, avaliacao.nota)}>Excluir</button>
                             </td>
                         </tr>
                     ))}

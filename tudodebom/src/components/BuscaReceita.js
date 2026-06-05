@@ -11,7 +11,8 @@ const BuscaReceita = (props) => {
                                       avaliacoes={props.avaliacoes} 
                                       logado={props.logado} 
                                       handleNovaAvaliacao={props.handleNovaAvaliacao} 
-                                      handleEditarAvaliacao={props.handleEditarAvaliacao} /> : <NotFound />
+                                      handleEditarAvaliacao={props.handleEditarAvaliacao}
+                                      handleExcluirAvaliacao={props.handleExcluirAvaliacao} /> : <NotFound />
 };
 
 export default BuscaReceita;

@@ -52,6 +52,7 @@ const ReceitaCompleta = (props) => {
                            idReceita={props.receita.id} 
                            possuiAvaliacao={possuiAvaliacao}
                            handleEditarAvaliacao={props.handleEditarAvaliacao}
+                           handleExcluirAvaliacao={props.handleExcluirAvaliacao}
                            />
 
             <div className='avaliacoes'>

@@ -36,6 +36,15 @@ const Avaliacao = (props) => {
         }
     };
 
+    const handleExlcuirAvaliacaoButton = () => {
+        if(window.confirm('Tem certeza que deseja excluir essa avaliação?')) {
+            props.handleExcluirAvaliacao(props.possuiAvaliacao.id, props.idReceita, props.possuiAvaliacao.nota);
+            alert('Avaliação excluida com sucesso.');
+            setNota('');
+            setComentario('');
+        }
+    };
+
     return (
         <>
             {!props.logado ? (
@@ -62,12 +71,12 @@ const Avaliacao = (props) => {
                     <form onSubmit={handleAvaliacaoForm}>
                         <div className="grupo-form">
                             <label htmlFor="notaReceita">Nota (0 a 5)</label>
-                            <input type="number" id="notaReceita" min="0" max="5" step="0.5" placeholder="--" required onChange={(e) => setNota(e.target.value)} />
+                            <input type="number" id="notaReceita" min="0" max="5" step="0.5" placeholder="--" value={nota} required onChange={(e) => setNota(e.target.value)} />
                         </div>
 
                         <div className="grupo-form comentario-form">
                             <label htmlFor="comentarioReceita">Comentário</label>
-                            <textarea id="comentarioReceita" rows="3" placeholder="O que você achou desta receita?" onChange={(e) => setComentario(e.target.value)} />
+                            <textarea id="comentarioReceita" rows="3" placeholder="O que você achou desta receita?" value={comentario} onChange={(e) => setComentario(e.target.value)} />
                         </div>
 
                         <button type="submit" className="btn-enviar-avaliacao">
@@ -77,7 +86,17 @@ const Avaliacao = (props) => {
                 </div>
             ) : (
                 <div className="formulario-avaliacao">
-                    <h3>Deixe sua avaliação</h3>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
+                        <h3 style={{ margin: 0 }}>Sua avaliação</h3>
+                        <span 
+                            onClick={handleExlcuirAvaliacaoButton}
+                            title="Excluir Avaliação"
+                            style={{ cursor: 'pointer', fontSize: '1.2rem' }}
+                            data-disabled={edicao ? 'false' : 'true'}
+                        >
+                            🗑️
+                        </span>
+                    </div>
                     <form onSubmit={handleAvaliacaoForm}>
                         <div className="grupo-form">
                             <label htmlFor="notaReceita">Nota (0 a 5)</label>
@@ -94,7 +113,7 @@ const Avaliacao = (props) => {
                         </button>) : (
                             <>
                                 <button type="submit" className="btn-enviar-avaliacao">
-                                    Enviar Avaliação
+                                    Enviar Edição
                                 </button>
                                 <button type="button" className="btn-enviar-avaliacao" onClick={() => setEdicao(false)}>
                                     Cancelar
