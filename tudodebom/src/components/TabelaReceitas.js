@@ -59,10 +59,10 @@ const TabelaReceitas = (props) => {
   const handleReceitaForm = (e) => {
     e.preventDefault();
 
-    // 1. Descobre quem é o usuário selecionado no formulário para pegar o ID dele
+    // Descobre quem é o usuário selecionado no formulário para pegar o ID dele
     const usuarioSelecionado = props.usuarios.find(u => u.nome === novaReceita.autor);
 
-    // 2. Monta o objeto final da receita garantindo que o autor_id exista
+    // Monta o objeto final da receita garantindo que o autor_id exista
     const receitaParaSalvar = {
       ...novaReceita,
       // Se achou o usuário no select, usa o ID dele. Se não, usa o ID da sessão como segurança.
