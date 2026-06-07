@@ -13,13 +13,11 @@ const MinhasAvaliacoes = (props) => {
             ) : (
                 <div className="grid-avaliacoes">
                     {props.avaliacoes.map((avaliacao) => {
-                        // Busca receita com o mesmo ID
                         const receita = props.receitas.find(r => r.id === avaliacao.id_receita);
                         
                         return (
                             <div key={avaliacao.id} className="card-avaliacao">
                                 <div className="avaliacao-header">
-                                    {/* Se a receita existir, mostra o nome. Se foi deletada do sistema, mostra um aviso */}
                                     <h4>{receita ? receita.nome : 'Receita indisponível'}</h4>
                                     <span className="autor-receita">
                                         por {receita ? receita.autor : 'Desconhecido'}

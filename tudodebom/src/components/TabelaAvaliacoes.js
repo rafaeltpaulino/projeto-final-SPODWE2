@@ -49,13 +49,10 @@ const TabelaAvaliacoes = (props) => {
     const handleAvaliacaoForm = (e) => {
         e.preventDefault();
 
-        // Descobre quem é o usuário selecionado no formulário para pegar o ID dele
         const usuarioSelecionado = props.usuarios.find(u => u.nome === novaAvaliacao.nome_usuario);
 
-        // Monta o objeto final da avaliação garantindo que o id_usuario exista
         const avaliacaoParaSalvar = {
             ...novaAvaliacao,
-            // Se achou o usuário no select, usa o ID dele. Se não, usa o ID da sessão como segurança.
             id_usuario: usuarioSelecionado ? usuarioSelecionado.id : Number(sessionStorage.getItem('usuarioId'))
         };
 

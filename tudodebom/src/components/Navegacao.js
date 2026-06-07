@@ -6,7 +6,6 @@ const Navegacao = (props) => {
   const usuarioPapel = sessionStorage.getItem('usuarioPapel'); 
   const usuarioNome = sessionStorage.getItem('usuarioNome'); 
   
-  // Estado para controlar se o menu está aberto
   const [dropdownAberto, setDropdownAberto] = useState(false);
 
   return (
@@ -35,7 +34,6 @@ const Navegacao = (props) => {
       ) : (
         <li className="menu-usuario" onMouseLeave={() => setDropdownAberto(false)}>
           <button className="btn-usuario" onClick={() => setDropdownAberto(!dropdownAberto)}>
-            {/* Gera Imagem com as letras iniciais*/}
             <img 
               src={`https://ui-avatars.com/api/?name=${usuarioNome}&background=feca57&color=2d3436&bold=true`} 
               alt="Avatar" 
@@ -55,7 +53,7 @@ const Navegacao = (props) => {
                 className="link-sair" 
                 onClick={() => {
                   setDropdownAberto(false);
-                  props.handleLogout(); // Desloga o usuário
+                  props.handleLogout();
                 }}
               >
                 Sair

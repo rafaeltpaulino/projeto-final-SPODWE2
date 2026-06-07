@@ -9,11 +9,9 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #fdf5e6;
-  /* Tom pastel*/
   color: #333;
 }
 
-/* --------------  Topo e Navegação -------------- */
 .topo {
   font-family: 'Nunito', sans-serif;
   background-color: #db7336;
@@ -32,7 +30,6 @@ body {
   transition: all 0.3s ease;
 }
 
-/*Ativa quando rola a tela para baixo*/
 .topo.topo-scroll {
   padding: 8px 40px;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
@@ -62,11 +59,9 @@ body {
 
 .logo img:hover {
   transform: scale(1.08);
-  /* Aumenta a logo em 8% */
   cursor: pointer;
 }
 
-/* Reduz o tamanho da logo ao rolar a tela*/
 .topo.topo-scroll .logo img {
   width: 25%;
 }
@@ -102,7 +97,6 @@ body {
   transform: scale(1.1);
 }
 
-/* Usuário (Navegação) */
 .menu-usuario {
   position: relative;
   display: flex;
@@ -176,7 +170,6 @@ body {
   background-color: #fdf5e6 !important;
   color: #db7336 !important;
   transform: none !important;
-  /* Remove o zoom do nome */
 }
 
 .dropdown-menu .link-sair {
@@ -189,7 +182,6 @@ body {
   color: #c0392b !important;
 }
 
-/* Área Principal */
 .principal {
   padding: 40px;
   min-height: calc(100vh - 160px);
@@ -215,7 +207,6 @@ body {
   line-height: 1.6;
   margin-bottom: 20px;
 }
-/* Estilos da Barra de Pesquisa e Topo da página */
 
 .busca-container {
   margin: 40px 0 20px 0;
@@ -231,7 +222,6 @@ body {
   box-sizing: border-box;
 }
 
-/* Cabeçalho da Categoria*/
 .categoria-subtitulo-container {
   display: flex;
   justify-content: space-between;
@@ -267,8 +257,6 @@ body {
   padding: 20px;
 }
 
-/* Cards de receita estilos */
-
 .cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -294,9 +282,6 @@ body {
   transform: scale(1.05);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
-
-
-/* Alinhamento de texto - card */
 
 .card-text-title {
   display: block;
@@ -352,7 +337,6 @@ body {
   margin-right: 10px;
 }
 
-/* Botões */
 .btn-ver {
   text-decoration: none;
   font-weight: bold;
@@ -477,7 +461,6 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Barra de Rolagem*/
 .modal-coluna-texto {
   flex: 1.5;
   max-height: 250px;
@@ -489,19 +472,16 @@ body {
   width: 8px;
 }
 
-/* Cor da barra / fundo */
 .modal-coluna-texto::-webkit-scrollbar-track {
   background: #fdf5e6;
   border-radius: 4px;
 }
 
-/* Cor da Barra / botão*/
 .modal-coluna-texto::-webkit-scrollbar-thumb {
   background-color: rgb(249, 179, 158);
   border-radius: 4px;
 }
 
-/* Muda a cor da barra com interação */
 .modal-coluna-texto::-webkit-scrollbar-thumb:hover {
   background-color: #db7336;
 }
@@ -517,8 +497,6 @@ body {
   white-space: pre-line;
 }
 
-/*Aba das receitas*/
-
 .pagina-receita-container {
   max-width: 800px;
   margin: 40px auto;
@@ -529,7 +507,6 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Cabeçalho da página */
 .receita-header {
   text-align: center;
   margin-bottom: 20px;
@@ -552,7 +529,6 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Faixa com as informações de tempo, categoria e autor */
 .receita-meta-dados {
   display: flex;
   justify-content: center;
@@ -575,7 +551,6 @@ body {
   margin: 30px 0;
 }
 
-/* Seções de Ingredientes e Preparo */
 .receita-secao {
   margin-bottom: 35px;
 }
@@ -612,7 +587,6 @@ body {
   background-color: #d87212;
 }
 
-/* Formulários*/
 .btn-adicionar {
   background-color: #34ac10;
   color: white;
@@ -674,7 +648,6 @@ form button[type="submit"]:hover {
   background-color: #c45308;
 }
 
-/* Tabela de Dados (CRUD) */
 .tabela-dados {
   width: 100%;
   border-collapse: collapse;
@@ -701,10 +674,8 @@ form button[type="submit"]:hover {
 
 .tabela-dados tr:hover {
   background-color: #ffeaa7;
-  /* Destaque com interação*/
 }
 
-/* Botões dentro da tabela */
 .tabela-dados button {
   padding: 6px 12px;
   margin-right: 8px;
@@ -718,20 +689,17 @@ form button[type="submit"]:hover {
   opacity: 0.8;
 }
 
-/* Botão Editar*/
 .tabela-dados button:first-child {
   background-color: #feca57;
   color: #2d3436;
   margin-bottom: 5px;
 }
 
-/* Botão Excluir*/
 .tabela-dados button:last-child {
   background-color: #ff7675;
   color: white;
 }
 
-/* Rodapé */
 .rodape {
   background-color: #2d3436;
   color: #b2bec3;
@@ -805,7 +773,6 @@ form button[type="submit"]:hover {
 
 * Container principal das avaliações */ .avaliacoes {
   max-width: 800px;
-  /* Limita a largura */
   margin: 2rem 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -818,7 +785,6 @@ form button[type="submit"]:hover {
   margin-bottom: 20px;
 }
 
-/* O cartão (card) de cada avaliação individual */
 .avaliacao {
   background-color: #fffefb;
   border: 1px solid #f5b974;
@@ -829,11 +795,9 @@ form button[type="submit"]:hover {
 
   display: grid;
   grid-template-columns: 1fr auto;
-  /* Coluna 1 cresce, Coluna 2 ajusta ao conteúdo */
   row-gap: 5px;
 }
 
-/* Estilização dos itens internos */
 .nome-usuario {
   font-weight: 600;
   color: #2c3e50;
@@ -860,26 +824,22 @@ form button[type="submit"]:hover {
   font-size: 0.8rem;
   color: #7f8c8d;
   grid-column: 1 / -1;
-  /* Faz a data ocupar as duas colunas inteiras */
   margin-bottom: 8px;
 }
 
 .comentario {
   grid-column: 1 / -1;
-  /* Faz o comentário ocupar as duas colunas inteiras */
   color: #444;
   line-height: 1.5;
   font-size: 0.95rem;
 }
 
-/* Efeito sutil ao passar o mouse por cima do card */
 .avaliacao:hover {
   background-color: #ffffff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
   transition: all 0.2s ease-in-out;
 }
 
-/* Container do formulário em formato de cartão */
 .formulario-avaliacao {
   max-width: 800px;
   margin: 2rem 0;
@@ -899,11 +859,9 @@ form button[type="submit"]:hover {
   padding-bottom: 10px;
 }
 
-/* Usando Grid para estruturar os campos */
 .formulario-avaliacao form {
   display: grid;
   grid-template-columns: 3fr 1fr;
-  /* O campo de nome fica 3x maior que o campo de nota */
   gap: 15px;
 }
 
@@ -912,12 +870,10 @@ form button[type="submit"]:hover {
   flex-direction: column;
 }
 
-/* Faz o campo de comentário ocupar a largura total do grid */
 .comentario-form {
   grid-column: 1 / -1;
 }
 
-/* Estilos das labels */
 .grupo-form label {
   font-size: 0.9rem;
   font-weight: 600;
@@ -925,7 +881,6 @@ form button[type="submit"]:hover {
   margin-bottom: 5px;
 }
 
-/* Estilos dos inputs e textarea */
 .grupo-form input,
 .grupo-form textarea {
   padding: 10px;
@@ -933,12 +888,10 @@ form button[type="submit"]:hover {
   border-radius: 6px;
   font-size: 0.95rem;
   font-family: inherit;
-  /* Garante que o textarea use a mesma fonte do site */
   background-color: #ffffff;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-/* Efeito ao clicar no campo para digitar */
 .grupo-form input:focus,
 .grupo-form textarea:focus {
   outline: none;
@@ -946,10 +899,8 @@ form button[type="submit"]:hover {
   box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
 }
 
-/* Estilo do botão de envio */
 .btn-enviar-avaliacao {
   grid-column: 1 / -1;
-  /* Força o botão a ir para a linha de baixo */
   background-color: #2c3e50;
   color: #fff;
   border: none;
@@ -966,7 +917,6 @@ form button[type="submit"]:hover {
   background-color: #1a252f;
 }
 
-/* Container Principal do Dashboard */
 .dashboard-container {
   max-width: 1000px;
   margin: 0 auto;
@@ -974,7 +924,6 @@ form button[type="submit"]:hover {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Cartão de Perfil do Usuário */
 .cartao-perfil {
   background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   border: 1px solid #e0e0e0;
@@ -1003,7 +952,6 @@ form button[type="submit"]:hover {
   margin-right: 8px;
 }
 
-/* Cards de Minhas Avaliações (Dashboard) */
 .grid-avaliacoes {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -1020,11 +968,9 @@ form button[type="submit"]:hover {
   display: flex;
   flex-direction: column;
 
-  /* Aqui mora o segredo do zoom suave */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Dá Zoom com interação*/
 .card-avaliacao:hover {
   transform: scale(1.03);
   box-shadow: 0 10px 20px rgba(219, 115, 54, 0.15);
@@ -1049,7 +995,6 @@ form button[type="submit"]:hover {
 
 .avaliacao-body {
   flex-grow: 1;
-  /* Faz o corpo empurrar o botão para o fundo */
   display: flex;
   flex-direction: column;
 }

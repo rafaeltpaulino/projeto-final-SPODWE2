@@ -8,9 +8,8 @@ const Dashboard = (props) => {
     const [confirmarSenha, setConfirmarSenha] = useState('');
     
     const navigate = useNavigate();
-    const location = useLocation(); // Hook para ler a URL atual
+    const location = useLocation();
 
-    // Define qual aba está ativa.
     const abaAtiva = location.hash || '#conta';
 
     const handleAtualizarSenha = (e) => {
@@ -46,7 +45,6 @@ const Dashboard = (props) => {
     return (
         <div className='principal'>
             
-            {/* Menu de Abas Internas */}
             <div style={{ display: 'flex', gap: '20px', marginBottom: '25px', borderBottom: '2px solid #f1f2f6', paddingBottom: '10px' }}>
                 <button 
                     onClick={() => navigate(`#conta`)} 
@@ -65,7 +63,6 @@ const Dashboard = (props) => {
                 </button>
             </div>
 
-            {/* Renderiza apenas '#conta' */}
             {abaAtiva === '#conta' && (
                 <div className="cartao-perfil">
                     <h2>Minha Conta</h2>
@@ -92,7 +89,6 @@ const Dashboard = (props) => {
                         <button type="submit" className="btn-ver" style={{ padding: '10px 20px', height: '42px', margin: 0 }}>Atualizar Senha</button>
                     </form>
 
-                    { /* Botões de Ação da Conta */}
                     <div style={{ display: 'flex', gap: '15px', marginTop: '10px' }}>
                         <button onClick={handleSair} className="btn-ver" style={{ backgroundColor: '#34495e', margin: 0 }}>
                             Sair da Conta
@@ -105,15 +101,12 @@ const Dashboard = (props) => {
                 </div>
             )}
 
-            {/* Renderiza apenas'#avaliacoes' */}
             {abaAtiva === '#avaliacoes' && (
                 <div id="avaliacoes">
-                    {/* Encontra a receita e o autor */}
                     <MinhasAvaliacoes avaliacoes={props.avaliacoes} receitas={props.todasReceitas} />
                 </div>
             )}
             
-            {/* Renderiza apenas '#receitas' */}
             {abaAtiva === '#receitas' && (
                 <div id="receitas">
                     <TabelaReceitas receitas={props.receitas}
@@ -122,7 +115,7 @@ const Dashboard = (props) => {
                                     excluirReceita={props.excluirReceita}
                                     categorias={props.categorias}
                                     usuarios={[props.usuario]} 
-                                    modoInterno={true} /* Concerta um espaçamento extra*//>
+                                    modoInterno={true} />
                 </div>
             )}
             
