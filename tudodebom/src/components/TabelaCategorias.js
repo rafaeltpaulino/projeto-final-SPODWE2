@@ -9,9 +9,9 @@ const TabelaCategorias = (props) => {
   });
 
   const [exibirFormulario, setExibirFormulario] = useState(false);
-  
+
   const [edicao, setEdicao] = useState(false);
-  
+
   const resetarFormulario = () => {
     setEdicao(false);
     setNovaCategoria({
@@ -47,6 +47,12 @@ const TabelaCategorias = (props) => {
     resetarFormulario();
   }
 
+  const handleExcluirCategoriaButton = (idCategoria) => {
+    if(window.confirm('Deseja realmente excluir essa categoria?')) {
+      props.excluirCategoria(idCategoria);
+    }
+  }
+
   return (
     <main className="principal">
       <h2>Gerenciar Categorias</h2>
@@ -64,17 +70,17 @@ const TabelaCategorias = (props) => {
 
           <div style={{ marginBottom: "10px" }}>
             <label>Nome da Categoria: </label>
-            <input type="text" value={novaCategoria.nome} onChange={(e) => setNovaCategoria({...novaCategoria, nome: e.target.value})} required />
+            <input type="text" value={novaCategoria.nome} onChange={(e) => setNovaCategoria({ ...novaCategoria, nome: e.target.value })} required />
           </div>
 
           <div style={{ marginBottom: "10px" }}>
             <label>Descrição: </label>
-            <textarea value={novaCategoria.descricao} onChange={(e) => setNovaCategoria({...novaCategoria, descricao: e.target.value})} rows="2" style={{ width: "100%" }} required />
+            <textarea value={novaCategoria.descricao} onChange={(e) => setNovaCategoria({ ...novaCategoria, descricao: e.target.value })} rows="2" style={{ width: "100%" }} required />
           </div>
 
           <div style={{ marginBottom: "10px" }}>
             <label>Caminho do Ícone: </label>
-            <input type="text" value={novaCategoria.icone} onChange={(e) => setNovaCategoria({...novaCategoria, icone: e.target.value})} placeholder="Ex: imagens/categorias/doces.jpg" />
+            <input type="text" value={novaCategoria.icone} onChange={(e) => setNovaCategoria({ ...novaCategoria, icone: e.target.value })} placeholder="Ex: imagens/categorias/doces.jpg" />
           </div>
 
           <button type="submit" style={{ cursor: "pointer" }}>
@@ -102,7 +108,7 @@ const TabelaCategorias = (props) => {
               <td>{categoria.icone}</td>
               <td>
                 <button style={{ marginRight: "5px", cursor: "pointer" }} onClick={() => iniciarEdicao(categoria)}>Editar</button>
-                <button style={{ cursor: "pointer" }} onClick={() => props.excluirCategoria(categoria.id)}>Excluir</button>
+                <button style={{ cursor: "pointer" }} onClick={() => handleExcluirCategoriaButton(categoria.id)}>Excluir</button>
               </td>
             </tr>
           ))}

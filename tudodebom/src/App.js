@@ -28,10 +28,10 @@ class App extends Component {
     logado: false
   };
 
-  currentReceitaId = 18;
-  currentCategoriaId = 3;
-  currentUsuarioId = 5;
-  currentAvaliacaoId = 4;
+  currentReceitaId = 25;
+  currentCategoriaId = 6;
+  currentUsuarioId = 20;
+  currentAvaliacaoId = 68;
 
   async componentDidMount() {
     try {
@@ -71,7 +71,9 @@ class App extends Component {
   handleExcluirReceita = (receitaId) => {
     if (window.confirm('Deseja realmente excluir essa receita?')) {
       const receitas = this.state.receitas.filter((r) => r.id !== receitaId);
+      const avaliacoes = this.state.avaliacoes.filter((a) => a.id_receita !== receitaId);
       this.setState({ receitas });
+      this.setState({ avaliacoes })
     }
   };
 
@@ -91,7 +93,9 @@ class App extends Component {
   handleExcluirUsuario = (usuarioId) => {
     if (window.confirm('Deseja realmente excluir esse usuário?')) {
       const usuarios = this.state.usuarios.filter((u) => u.id !== usuarioId);
+      const avaliacoes = this.state.avaliacoes.filter((a) => a.id_usuario !== usuarioId);
       this.setState({ usuarios });
+      this.setState({ avaliacoes });
     }
   };
   handleLogout = () => {
@@ -113,8 +117,11 @@ class App extends Component {
   };
 
   handleExcluirCategoria = (categoriaId) => {
+    const nomeCategoria = this.state.categorias.find((c) => c.id === categoriaId).nome;
     const categorias = this.state.categorias.filter((c) => c.id !== categoriaId);
+    const receitas = this.state.receitas.filter((r) => r.categoria !== nomeCategoria);
     this.setState({ categorias });
+    this.setState({ receitas });
   };
 
   handleLogin = (email, senha) => {

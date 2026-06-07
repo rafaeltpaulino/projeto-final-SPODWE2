@@ -12,8 +12,6 @@ const TabelaReceitas = (props) => {
     autor: '',
     autor_id: '',
     imagem: '',
-    nota_media: '',
-    quantidade_avaliacoes: ''
   });
 
   const [exibirFormulario, setExibirFormulario] = useState(false);
@@ -30,8 +28,6 @@ const TabelaReceitas = (props) => {
       autor: '',
       autor_id: '',
       imagem: '',
-      nota_media: '',
-      quantidade_avaliacoes: ''
     });
     setExibirFormulario(false);
   };
@@ -48,8 +44,6 @@ const TabelaReceitas = (props) => {
       autor: receita.autor,
       autor_id: receita.autor_id,
       imagem: receita.imagem,
-      nota_media: receita.nota_media,
-      quantidade_avaliacoes: receita.quantidade_avaliacoes
     });
     setExibirFormulario(true);
   };
@@ -64,8 +58,6 @@ const TabelaReceitas = (props) => {
     const receitaParaSalvar = {
       ...novaReceita,
       autor_id: usuarioSelecionado ? usuarioSelecionado.id : Number(sessionStorage.getItem('usuarioId')),
-      nota_media: edicao ? novaReceita.nota_media : 0,
-      quantidade_avaliacoes: edicao ? novaReceita.quantidade_avaliacoes : 0
     };
 
     if (!edicao) {
@@ -141,16 +133,6 @@ const TabelaReceitas = (props) => {
           <div style={{ marginBottom: "10px" }}>
             <label>Imagem (URL ou caminho local): </label>
             <input type="text" value={novaReceita.imagem} onChange={(e) => setNovaReceita({ ...novaReceita, imagem: e.target.value })} />
-          </div>
-
-          <div style={{ marginBottom: "10px" }}>
-            <label>Nota Média: </label>
-            <input type="text" value={novaReceita.nota_media} onChange={(e) => setNovaReceita({ ...novaReceita, nota_media: e.target.value })} />
-          </div>
-
-          <div style={{ marginBottom: "10px" }}>
-            <label>Quantidade de Avaliações (URL ou caminho local): </label>
-            <input type="text" value={novaReceita.quantidade_avaliacoes} onChange={(e) => setNovaReceita({ ...novaReceita, quantidade_avaliacoes: e.target.value })} />
           </div>
 
           <button type="submit" style={{ cursor: "pointer" }} className="btn-ver">

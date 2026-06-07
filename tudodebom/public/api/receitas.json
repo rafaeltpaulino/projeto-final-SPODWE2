@@ -9,8 +9,8 @@
     "autor": "Amanda Jen",
     "autor_id": 2,
     "imagem": "imagens/receitas/1.jpg",
-    "nota_media": 4,
-    "quantidade_avaliacoes": 4
+    "nota_media": 4.166666667,
+    "quantidade_avaliacoes": 6
   },
   {
     "id": 2,
@@ -22,8 +22,8 @@
     "autor": "Kethelyn Alves",
     "autor_id": 3,
     "imagem": "imagens/receitas/2.jpg",
-    "nota_media": null,
-    "quantidade_avaliacoes": 0
+    "nota_media": 4.666666667,
+    "quantidade_avaliacoes": 3
   },
   {
     "id": 3,
@@ -35,8 +35,8 @@
     "autor": "Rafael Teixeira",
     "autor_id": 4,
     "imagem": "imagens/receitas/3.jpg",
-    "nota_media": null,
-    "quantidade_avaliacoes": 0
+    "nota_media": 4.5,
+    "quantidade_avaliacoes": 2
   },
   {
     "id": 4,
@@ -48,8 +48,8 @@
     "autor": "Vinícius Tiago",
     "autor_id": 1,
     "imagem": "imagens/receitas/4.jpg",
-    "nota_media": null,
-    "quantidade_avaliacoes": 0
+    "nota_media": 4.666666667,
+    "quantidade_avaliacoes": 3
   },
   {
     "id": 5,
@@ -61,8 +61,8 @@
     "autor": "Rafael Teixeira",
     "autor_id": 4,
     "imagem": "imagens/receitas/5.jpg",
-    "nota_media": 5,
-    "quantidade_avaliacoes": 1
+    "nota_media": 4.666666667,
+    "quantidade_avaliacoes": 3
   },
   {
     "id": 6,
@@ -74,8 +74,8 @@
     "autor": "Amanda Jen",
     "autor_id": 2,
     "imagem": "imagens/receitas/6.jpg",
-    "nota_media": 5,
-    "quantidade_avaliacoes": 1
+    "nota_media": 4.5,
+    "quantidade_avaliacoes": 2
   },
   {
     "id": 7,
@@ -87,8 +87,8 @@
     "autor": "Kethelyn Alves",
     "autor_id": 3,
     "imagem": "imagens/receitas/7.jpg",
-    "nota_media": 4,
-    "quantidade_avaliacoes": 1
+    "nota_media": 4.25,
+    "quantidade_avaliacoes": 4
   },
   {
     "id": 8,
@@ -101,7 +101,7 @@
     "autor_id": 1,
     "imagem": "imagens/receitas/8.jpg",
     "nota_media": 5,
-    "quantidade_avaliacoes": 1
+    "quantidade_avaliacoes": 4
   },
   {
     "id": 9,
@@ -113,8 +113,8 @@
     "autor": "Rafael Teixeira",
     "autor_id": 4,
     "imagem": "imagens/receitas/9.jpg",
-    "nota_media": 4,
-    "quantidade_avaliacoes": 1
+    "nota_media": 4.333333333,
+    "quantidade_avaliacoes": 3
   },
   {
     "id": 10,
@@ -126,8 +126,8 @@
     "autor": "Amanda Jen",
     "autor_id": 2,
     "imagem": "imagens/receitas/10.jpg",
-    "nota_media": 4,
-    "quantidade_avaliacoes": 1
+    "nota_media": 4.5,
+    "quantidade_avaliacoes": 4
   },
   {
     "id": 11,
@@ -139,8 +139,8 @@
     "autor": "Kethelyn Alves",
     "autor_id": 3,
     "imagem": "imagens/receitas/11.jpg",
-    "nota_media": 5,
-    "quantidade_avaliacoes": 1
+    "nota_media": 4.666666667,
+    "quantidade_avaliacoes": 3
   },
   {
     "id": 12,
@@ -152,8 +152,8 @@
     "autor": "Vinícius Tiago",
     "autor_id": 1,
     "imagem": "imagens/receitas/12.jpg",
-    "nota_media": 5,
-    "quantidade_avaliacoes": 1
+    "nota_media": 4.666666667,
+    "quantidade_avaliacoes": 3
   },
   {
     "id": 13,
@@ -165,8 +165,8 @@
     "autor": "Rafael Teixeira",
     "autor_id": 4,
     "imagem": "imagens/receitas/13.jpg",
-    "nota_media": 3,
-    "quantidade_avaliacoes": 1
+    "nota_media": 4,
+    "quantidade_avaliacoes": 3
   },
   {
     "id": 14,
@@ -178,8 +178,8 @@
     "autor": "Amanda Jen",
     "autor_id": 2,
     "imagem": "imagens/receitas/14.jpg",
-    "nota_media": null,
-    "quantidade_avaliacoes": 0
+    "nota_media": 5,
+    "quantidade_avaliacoes": 2
   },
   {
     "id": 15,
@@ -191,8 +191,8 @@
     "autor": "Kethelyn Alves",
     "autor_id": 3,
     "imagem": "imagens/receitas/15.jpg",
-    "nota_media": null,
-    "quantidade_avaliacoes": 0
+    "nota_media": 5,
+    "quantidade_avaliacoes": 2
   },
   {
     "id": 16,
@@ -205,7 +205,7 @@
     "autor_id": 1,
     "imagem": "imagens/receitas/16.jpg",
     "nota_media": 5,
-    "quantidade_avaliacoes": 1
+    "quantidade_avaliacoes": 2
   },
   {
     "id": 17,
@@ -217,8 +217,8 @@
     "autor": "Rafael Teixeira",
     "autor_id": 4,
     "imagem": "imagens/receitas/17.jpg",
-    "nota_media": null,
-    "quantidade_avaliacoes": 0
+    "nota_media": 4,
+    "quantidade_avaliacoes": 2
   },
   {
     "id": 18,
@@ -230,8 +230,8 @@
     "autor": "Amanda Jen",
     "autor_id": 2,
     "imagem": "imagens/receitas/18.jpg",
-    "nota_media": null,
-    "quantidade_avaliacoes": 0
+    "nota_media": 5,
+    "quantidade_avaliacoes": 2
   },
   {
     "id": 19,
@@ -243,8 +243,8 @@
     "autor": "Vinícius Tiago",
     "autor_id": 1,
     "imagem": "https://sabores-new.s3.amazonaws.com/public/2024/11/pao-com-ovo-pratico.jpg",
-    "nota_media": 5,
-    "quantidade_avaliacoes": 1
+    "nota_media": 4.5,
+    "quantidade_avaliacoes": 2
   },
   {
     "id": 20,
@@ -269,8 +269,8 @@
     "autor": "Kethelyn Alves",
     "autor_id": 3,
     "imagem": "https://i.ytimg.com/vi/xBaMj7M5BnU/maxresdefault.jpg",
-    "nota_media": null,
-    "quantidade_avaliacoes": 0
+    "nota_media": 4.5,
+    "quantidade_avaliacoes": 2
   },
   {
     "id": 22,
@@ -282,8 +282,8 @@
     "autor": "Amanda Jen",
     "autor_id": 2,
     "imagem": "https://i.ytimg.com/vi/TXmwEDH4nDc/maxresdefault.jpg",
-    "nota_media": 4,
-    "quantidade_avaliacoes": 3
+    "nota_media": 4.5,
+    "quantidade_avaliacoes": 2
   },
   {
     "id": 23,
@@ -296,7 +296,7 @@
     "autor_id": 4,
     "imagem": "https://i.ytimg.com/vi/xBaMj7M5BnU/maxresdefault.jpg",
     "nota_media": 5,
-    "quantidade_avaliacoes": 5
+    "quantidade_avaliacoes": 2
   },
   {
     "id": 24,
@@ -308,8 +308,8 @@
     "autor": "Vinícius Tiago",
     "autor_id": 1,
     "imagem": "https://blog.sanavita.com.br/wp-content/uploads/2013/11/Cha-de-hibisco_Easy-Resize.com_-1140x720-1.jpg",
-    "nota_media": null,
-    "quantidade_avaliacoes": 0
+    "nota_media": 4,
+    "quantidade_avaliacoes": 2
   },
   {
     "id": 25,
@@ -322,6 +322,6 @@
     "autor_id": 3,
     "imagem": "https://queijosvitoria.com.br/wp-content/uploads/2023/02/Receitas_BRUSCHETTA-DE-TOMATE.jpg",
     "nota_media": 5,
-    "quantidade_avaliacoes": 2
+    "quantidade_avaliacoes": 3
   }
 ]

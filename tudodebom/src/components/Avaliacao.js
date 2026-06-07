@@ -6,6 +6,9 @@ const Avaliacao = (props) => {
     const [comentario, setComentario] = useState('');
     const [edicao, setEdicao] = useState(false);
 
+    console.log('Estado de props.possuiAvaliacao')
+    console.log(props.possuiAvaliacao)
+
     useEffect(() => {
         console.log(nota);
         console.log(props.possuiAvaliacao);
