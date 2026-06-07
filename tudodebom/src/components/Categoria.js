@@ -14,7 +14,6 @@ const Categoria = (props) => {
     <div className='principal'>
       <h2>{categoriaNome}</h2>
       
-      {/* 1. Subtítulo e botão alinhados lado a lado */}
       <div className="categoria-subtitulo-container">
         <h3>{props.categoria.descricao}</h3>
         <Link className="btn-ver" to='/categorias'>
@@ -22,8 +21,7 @@ const Categoria = (props) => {
         </Link>
       </div>
 
-      {/* 2. Barra de pesquisa na linha abaixo, ocupando 100% da largura */}
-      {/* Reduzi a margem superior (margin: '0 0 25px 0') para ficar próxima do subtítulo */}
+      {/* Barra de pesquisa */}
       <div className="busca-container" style={{ margin: '0 0 25px 0' }}>
         <input
           type="text"
@@ -34,7 +32,7 @@ const Categoria = (props) => {
         />
       </div>
 
-      {/* 3. Área dos Cards */}
+      {/* Cards */}
       <div className='cards-container'>
         {receitasFiltradas.length > 0 ? (
           receitasFiltradas.map(r => (
